@@ -45,7 +45,7 @@ class User
 	}
 
 	// Liste des setters
-	public function setNom($name)
+	public function setName($name)
 	{
 		
 			$this->name = $name;

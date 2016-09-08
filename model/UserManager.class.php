@@ -70,7 +70,7 @@ class UserManager
 		VALUES('".$password."', '".$mail."', '".$name."', '".$firstname."', 
 			'".$address."', '".$phone."', '".$admin."')";
 		mysqli_query($this->db, $query);
-		$id = mysqli_insert_id($this->db);
+		$id_user = mysqli_insert_id($this->db);
 		return $this->findById($id);
 	}
 }
