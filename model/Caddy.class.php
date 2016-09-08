@@ -8,18 +8,49 @@ class Caddy
 	private $full_price;
 	private $date ;
 	private $status;
-	
-	
 
-	// Méthodes
+
+	private $db;
+	private $user;
+	private $products;
+	
+	
+	public function __construct($db)
+	{
+		$this->db = $db;
+	}
+
+	// Méthodes 
 	// Liste des getters
 	public function getIdCaddy()
 	{
 		return $this->id_caddy;
 	}
+	/*
 	public function getIdUser()
 	{
 		return $this->id_user;
+	}
+	*/
+	public function getUser()
+	{
+		//
+		if (!$this->user)
+		{
+			$manager = new UserManager($this->db);
+			$this->user = $manager->findById($this->id_user);
+		}
+		return $this->user;
+	}
+	public function getProducts()
+	{
+		//
+		if (!$this->products)
+		{
+			$manager = new ProductManager($this->db);
+			$this->products = $manager->findByCaddy($this);
+		}
+		return $this->products;
 	}
 	public function getFullPrice()
 	{
@@ -34,17 +65,28 @@ class Caddy
 		return $this->status;
 	}
 	
-
+	public function addProducts(Product $product)
+	{
+		$this->products[] = $product;
+	}
+	public function removeProducts(Product $product)
+	{
+		// array_splice
+	}
 	// Liste des setters
 	public function setCaddy($caddy)
 	{
 		
 			$this->caddy = $caddy;
 	}
-	public function setIdUser($id_user)
+	// public function setIdUser($id_user)
+	// {
+	// 	$this->id_user = $id_user;
+	// }
+	public function setUser(User $user)
 	{
-		
-			$this->id_user = $id_user;
+		$this->id_user = $user->getId();
+		$this->user = $user;
 	}
 	public function setFullPrice($full_price)
 	{
@@ -65,5 +107,6 @@ class Caddy
 	// Liste des fonctions spécifiques
 	// Ici vide
 }
-
+// $caddy->getUser()->getLogin();
+// $listProduits = $caddy->getProducts();
 ?>
