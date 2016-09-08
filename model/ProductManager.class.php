@@ -72,23 +72,6 @@ class ProductManager
 
 	public function create ($password,$mail,$name,$firstname,$address,$phone,$admin)
 	{
-		private $id_product  ;
-	private $name  ;
-	private $price_buy;
-	private $margin_sale ;
-	private $price_sell;
-	private $description ;
-	private $stock  ;
-	private $image;
-	private $id_producer  ;
-	private $id_category;
-	
-
-
-
-
-
-
 		$product = new product();
 		$product -> setName($name);
 		
