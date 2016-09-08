@@ -27,50 +27,50 @@ class CaddyManager
 	// {
 	// 	return $this->findById($id);
 	// }
-
-	public function save(Caddy $caddy)// la variable $caddy DOIT etre de la classe caddy -> Type hinting
+	public function save(Caddy $caddy)// la variable $article DOIT etre de la classe Article -> Type hinting
 	{
-		$email = mysqli_real_escape_string($this->db, $caddy->getemail());
-		$pseudo = mysqli_real_escape_string($this->db, $caddy->getpseudo());
-		$id_caddy = $caddy->getId();
-		$apassword = mysqli_real_escape_string($this->db, $caddy->getpassword());
+	
+		$id_caddy = $caddy->getIdCaddy();
+		$id_user = mysqli_real_escape_string($this->db, $caddy->getIdUser());
+		$full_price = mysqli_real_escape_string($this->db, $caddy->getFullPrice());
+		$date = mysqli_real_escape_string($this->db, $caddy->getDate());
+		$status = mysqli_real_escape_string($this->db, $caddy->getStatus());
 		if ($id_author == $_SESSION['id'])
 		{
-			$query = "UPDATE caddys SET pseudo='".$pseudo."', email='".$email."' WHERE id='".$id_caddy."'";
+			$query = "UPDATE caddy SET id_caddy='".$id_caddy."', 
+			id_user='".$id_user."', 
+			full_price='".$full_price."', 
+			id_user='".$id_user."', 
+			date='".$date."', 
+			caddy='".$caddy."' WHERE id_caddy='".$id_caddy."'";
 			mysqli_query($this->db, $query);
 			return $this->findById($id_caddy);
 		}
 	}
 
-	// public function remove(caddy $caddy)
-	// {
-	// 	$id_caddy = $caddy->getId();
-	// 	$id_author = $caddy->getIdAuthor();
-	// 	if ($id_author == $_SESSION['id'])// || $_SESSION['admin'] === true)
-	// 	{
-	// 		$query = "DELETE FROM caddys WHERE id='".$id_caddy."'";
-	// 		mysqli_query($this->db, $query);
-	// 	}
-	// }
+	public function remove(Caddy $caddy)
+	{
+		$id_caddy = $caddy->getIdCaddy();
+		$status = $caddy->getStatus();
+		if ($id_user == $_SESSION['id'])
+		{
+			$query = "DELETE FROM caddy WHERE id='".$id_caddy."'";
+			mysqli_query($this->db, $query);
+		}
+	}
 
-	public function create($password,$mail '".$name '".$firstname 
-			'".$adress '".$phone '".$admin.)
+	public function create($full_price, $date, $status)
 	{
 		$caddy = new caddy();
-		$caddy -> setsetName($name)
-		$caddy->setPassword($password);
-		$caddy->setMail($mail);
-		$caddy->setFirstname($firstname);
-		$caddy-> setAdress($adress);
-		$caddy-> setPhone($phone);
-		$caddy-> setAdmin($admin);
-		$email = mysqli_real_escape_string($this->db, $caddy->getEmail());
-		$password = mysqli_real_escape_string($this->db, $getPassword());
-		$query = "INSERT INTO caddy (password, mail, name) 
-		VALUES('".$password."', '".$mail."', '".$name."', '".$firstname."', 
-			'".$adress."', '".$phone."', '".$admin."')";
+		$id_user = mysqli_real_escape_string($this->db, $caddy->getIdUser());
+		$caddy -> setsetFullPrice($full_price)
+		$caddy->setDate($date);
+		$caddy->setStatus($status);
+		
+		$query = "INSERT INTO caddy (full_price, date, status) 
+		VALUES('".$full_price."', '".$date."', '".$status."')";
 		mysqli_query($this->db, $query);
-		$id = mysqli_insert_id($this->db);
+		$id_caddy = mysqli_insert_id($this->db);
 		return $this->findById($id);
 	}
 }
