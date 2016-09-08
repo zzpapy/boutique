@@ -63,7 +63,7 @@ class CaddyManager
 	{
 		$caddy = new caddy();
 		$id_user = mysqli_real_escape_string($this->db, $caddy->getIdUser());
-		$caddy -> setsetFullPrice($full_price)
+		$caddy -> setsetFullPrice($full_price);
 		$caddy->setDate($date);
 		$caddy->setStatus($status);
 		
