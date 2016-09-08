@@ -32,7 +32,7 @@ class ProductManager
 
 	public function save(product $product)// la variable $product DOIT etre de la classe product -> Type hinting
 	{
-		$id_product = $product->getId();
+		$id_product = $product->getIdProduct();
 		$name = mysqli_real_escape_string($this->db, $product->getName());
 		$price_buy = mysqli_real_escape_string($this->db, $product->getPriceBuy());
 		$margin_sale = mysqli_real_escape_string($this->db, $product->getMarginSale());
@@ -85,10 +85,10 @@ class ProductManager
 		$product-> setImage($image);
 		$product-> setIdProducer($id_producer);
 		$product-> setIdCategory($id_category);
-		$query = "INSERT INTO product (price_buy, mail, name,price_buy 
+		$query = "INSERT INTO product (price_buy,  name,price_buy 
 			,margin_sale ,margin_sale,price_sell,description,stock,image,id_producer,
 			id_category) 
-		VALUES('".$price_buy."', '".$mail."', '".$name."', '".$price_buy."', 
+		VALUES('".$price_buy."',  '".$name."', '".$price_buy."', 
 			'".$margin_sale."', '".$margin_sale."', '".$price_sell."',
 			'".$description."',
 			'".$stock."',
