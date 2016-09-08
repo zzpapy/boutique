@@ -32,18 +32,18 @@ class ProductManager
 
 	public function save(product $product)// la variable $product DOIT etre de la classe product -> Type hinting
 	{
-		$id_product = $product->getId();
+		$id_product = $product->getIdProduct();
 		$name = mysqli_real_escape_string($this->db, $product->getName());
 		$price_buy = mysqli_real_escape_string($this->db, $product->getPriceBuy());
-		$margin_sale = mysqli_real_escape_string($this->db, $product->getMarginSale());
+		$margin_sell = mysqli_real_escape_string($this->db, $product->getMarginSell());
 		$price_sell = mysqli_real_escape_string($this->db, $product->getPriceSell());
-		$description = mysqli_real_escape_string($this->db, $product->getDescrition());
+		$description = mysqli_real_escape_string($this->db, $product->getDescription());
 		$stock = mysqli_real_escape_string($this->db, $product->getStock());
 		$image = mysqli_real_escape_string($this->db, $product->getImage());
-		$id_producer = intval($this->db, $product->getIdProducer());
-		$id_category = intval($this->db, $product->getIdCategory());
+		$id_producer = mysqli_real_escape_string($this->db, $product->getIdProducer());
+		$id_category = mysqli_real_escape_string($this->db, $product->getIdCategory());
 		
-		if ($id_author == $_SESSION['id'])
+		if (isset( $_SESSION['admin']))
 		{
 			$query = "UPDATE products SET name='".$name."', 
 			price_buy='".$price_buy."',
@@ -70,22 +70,31 @@ class ProductManager
 	// 	}
 	// }
 
-	public function create ($password,$mail,$name,$firstname,$address,$phone,$admin)
+	public function create ($name,$price_buy,$margin_sale,$price_sell,$description,$stock,
+		$image,$id_producer,$id_category)
 	{
 		$product = new product();
 		$product -> setName($name);
-		$product->setPassword($password);
-		$product->setMail($mail);
-		$product->setFirstname($firstname);
-		$product-> setAddress($address);
-		$product-> setPhone($phone);
-		$product-> setAdmin($admin);
-		$email = mysqli_real_escape_string($this->db, $product->getMail());
-		$password = mysqli_real_escape_string($this->db, $product-> getPassword());
-		$query = "INSERT INTO product (password, mail, name,firstname 
-			,address ,phone,admin) 
-		VALUES('".$password."', '".$mail."', '".$name."', '".$firstname."', 
-			'".$address."', '".$phone."', '".$admin."')";
+		
+		
+		$product->setPriceBuy($price_buy);
+		$product-> setMarginSell($margin_sale);
+		$product-> setPriceSell($price_sell);
+		$product-> setDescription($description);
+		$product->setStock($stock);
+		$product-> setImage($image);
+		$product-> setIdProducer($id_producer);
+		$product-> setIdCategory($id_category);
+		$query = "INSERT INTO product (price_buy,  name,price_buy 
+			,margin_sale ,margin_sale,price_sell,description,stock,image,id_producer,
+			id_category) 
+		VALUES('".$price_buy."',  '".$name."', '".$price_buy."', 
+			'".$margin_sale."', '".$margin_sale."', '".$price_sell."',
+			'".$description."',
+			'".$stock."',
+			'".$image."',
+			'".$id_producer."',
+			'".$id_category."')";
 		mysqli_query($this->db, $query);
 		$id_product = mysqli_insert_id($this->db);
 		return $this->findById($id_product);
