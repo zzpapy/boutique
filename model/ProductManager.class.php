@@ -43,7 +43,7 @@ class ProductManager
 		$id_producer = mysqli_real_escape_string($this->db, $product->getIdProducer());
 		$id_category = mysqli_real_escape_string($this->db, $product->getIdCategory());
 		
-		if ($id_author == $_SESSION['id'])
+		if (isset( $_SESSION['admin']))
 		{
 			$query = "UPDATE products SET name='".$name."', 
 			price_buy='".$price_buy."',

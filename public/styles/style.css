@@ -118,12 +118,12 @@ header{
 .menu ul li:hover ul{
 	display: block;
 	background: white;
-	padding: 0px 0px;	
+	padding: 0px;	
 }
 
 .nav{
 	display: block;
-	padding: 15px 10px;
+	padding: 20px 10px;
 	text-transform: uppercase;
 	color: #333;
 	text-decoration: none;
@@ -242,7 +242,18 @@ figure{
 	padding: 10px 40px 10px 0px;
 	margin: 0px 40px;
 }
-
+/*--404--------------------------------------------*/
+.error{
+	display: block;
+	border: 1px black solid;
+	background: white;
+	padding: 5px 5px;
+	margin: 5px 0px;
+	padding: 0% 30%;
+}
+.big{
+	font-size: 100px;
+}
 /*--FOOTER--------------------------------------------*/
 footer{
 	display: block;
