@@ -1,1 +1,67 @@
-<p>login_register_pro.phtml</p>
+<article >
+	<div class="formulaire">
+	<!--	<?=$error?>  -->
+		<h2>Connexion:</h2>
+		<form method="post">
+			<!-- login -->
+			<div>
+				<label for="aliaslogin">Société :</label>
+				<input id="aliaslogin" type="text" name="society" placeholder=""/>
+			</div>
+			<!-- password -->
+			<div>
+				<label for="aliasmdp">Password :</label>
+			    <input id="aliasmdp" type="password" name="password"/>
+			</div>
+			<!-- Connexion -->
+			<div>
+				<button type="submit" name="login" value="login">Connexion</button>
+			</div>
+		</form>
+	</div>
+
+	<div class="formulaire">
+		<h2>Je suis un professionnel :</h2>
+		<form method="post">	
+	    	<!-- société -->
+			<div>
+	    		<label for="aliassociété">Nom de la Société :</label>
+	    		<input id="aliassociété" type="text" name="society" placeholder="Nom de la Société :"/>
+			<div>
+	    		<label for="aliassiret">N° de siret :</label>
+	    		<input id="aliassiret" type="text" name="siret" placeholder="0000000000000"/>
+			</div>
+			
+			<!-- e-mail -->
+			<div>
+				<label for="aliasemail">Adresse e-mail :</label>
+				<input id="aliasemail" type="email" name="mail" placeholder="Votre EMAIL"/>
+			</div>
+			<!-- password -->
+			<div>
+				<label for="aliasmdp">Password :</label>
+			    <input id="aliasmdp" type="password" name="password"/>
+		    </div>
+		    <div>
+		    	<label for="aliascmdp">Comfirm.Password :</label>
+			    <input id="aliascmdp" type="password" name="password2"/>
+			</div>
+			<!-- adresse -->
+			<p class="white">Siege social :</p>
+			<div>
+	    		<label for="aliasadresse">Adresse :</label>
+	    		<input id="aliasadresse" type="text" name="address" placeholder="Rue, Ville et Code postal :"/>
+			</div>
+			<!-- telephone -->
+			<div>
+		    	<label for="aliastel">Téléphone :</label>
+		    	<input id="aliastel" type="text" name="phone" placeholder="+33"/>
+			</div>
+			
+			<!-- valid -->
+			<div>
+				<button type="submit" name="register" value="register">Envoyer</button>
+			</div>
+		</form>
+	</div>
+</article>
