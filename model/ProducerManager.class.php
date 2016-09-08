@@ -2,7 +2,7 @@ Prod<?php
 // http://192.168.1.95/partage/models/producerManager.class.php
 class ProducerManager
 {
-	address
+	
 	private $db;
 
 	public function __construct($db)
