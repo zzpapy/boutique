@@ -1,1 +1,75 @@
-<p>login_register_user.phtml</p>
+<article >
+	<div class="formulaire">
+	<!--	<?=$error?>  -->
+		<h2>Connexion:</h2>
+		<form method="post">
+			<!-- login -->
+			<div>
+				<label for="aliaslogin">Email :</label>
+				<input id="aliaslogin" type="email" name="email" placeholder=""/>
+			</div>
+			<!-- password -->
+			<div>
+				<label for="aliasmdp">Password :</label>
+			    <input id="aliasmdp" type="password" name="password"/>
+			</div>
+			<!-- Connexion -->
+			<div>
+				<button type="submit" name="login" value="login">Connexion</button>
+			</div>
+		</form>
+	</div>
+
+	<div class="formulaire">
+		<h2>Je crée un compte :</h2>
+		<form method="post">	
+	    	<!-- nom -->
+	    	<div>
+	    		<label class="white" for="aliasnom">Nom :</label>
+	    		<input id="aliasnom" type="text" name="nom" placeholder="Votre NOM"/>
+			</div>
+			<!-- prenom -->
+			<div>
+	    		<label class="white" for="aliasprenom">Prénom :</label>
+	    		<input id="aliasprenom" type="text" name="prenom" placeholder="Votre PRENOM"/>
+			</div>
+			<!-- adresse -->
+			<p class="white">Remplir l'adresse de facturation :</p>
+			<div>
+	    		<label for="aliasrue">N°, Rue ou voie :</label>
+	    		<input id="aliasprue" type="text" name="adresse" placeholder="N°, Rue ou voie :"/>
+			</div>
+			<div>
+	    		<label for="aliascp">Code postal :</label>
+	    		<input id="aliaspcp" type="text" name="cp" placeholder="00000"/>
+			</div>
+			<div>
+	    		<label for="aliasville">Ville :</label>
+	    		<input id="aliasville" type="text" name="ville" placeholder="Ville"/>
+			</div>
+			<!-- telephone -->
+			<div>
+		    	<label for="aliastel">Téléphone :</label>
+		    	<input id="aliastel" type="text" name="tel" placeholder="+33"/>
+			</div>
+			<!-- e-mail -->
+			<div>
+				<label for="aliasemail">Adresse e-mail :</label>
+				<input id="aliasemail" type="email" name="email" placeholder="Votre EMAIL"/>
+			</div>
+			<!-- password -->
+			<div>
+				<label for="aliasmdp">Password :</label>
+			    <input id="aliasmdp" type="password" name="password"/>
+		    </div>
+		    <div>
+		    	<label for="aliascmdp">Comfirm.Password :</label>
+			    <input id="aliascmdp" type="password" name="password2"/>
+			</div>
+			<!-- valid -->
+			<div>
+				<button type="submit" name="register" value="register">Envoyer</button>
+			</div>
+		</form>
+	</div>
+</article>
