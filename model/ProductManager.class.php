@@ -78,7 +78,7 @@ class ProductManager
 		
 		
 		$product->setPriceBuy($price_buy);
-		$product-> setMarginSale($margin_sale);
+		$product-> setMarginSell($margin_sale);
 		$product-> setPriceSell($price_sell);
 		$product-> setDescription($description);
 		$product->setStock($stock);
