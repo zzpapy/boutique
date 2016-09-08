@@ -19,7 +19,7 @@ class CaddyManager
 	public function findById($id)
 	{
 		$id = intval($id);
-		$query = "SELECT * FROM caddy WHERE id_caddy='".$id_caddy."'";
+		$query = "SELECT * FROM caddy WHERE id_caddy='".$id."'";
 		$res = mysqli_query($this->db, $query);
 		$caddy = mysqli_fetch_object($res, "Caddy");
 		return $caddy;
