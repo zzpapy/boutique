@@ -37,7 +37,7 @@ class ProductManager
 		$price_buy = mysqli_real_escape_string($this->db, $product->getPriceBuy());
 		$margin_sell = mysqli_real_escape_string($this->db, $product->getMarginSell());
 		$price_sell = mysqli_real_escape_string($this->db, $product->getPriceSell());
-		$description = mysqli_real_escape_string($this->db, $product->getDescrition());
+		$description = mysqli_real_escape_string($this->db, $product->getDescription());
 		$stock = mysqli_real_escape_string($this->db, $product->getStock());
 		$image = mysqli_real_escape_string($this->db, $product->getImage());
 		$id_producer = intval($this->db, $product->getIdProducer());
