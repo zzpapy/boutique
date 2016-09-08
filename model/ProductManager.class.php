@@ -13,7 +13,7 @@ class ProductManager
 		$list=[];
 		$query = "SELECT * FROM product";
 		$res = mysqli_query($this->db, $query);
-		while ($product = mysqli_fetch_object($res, "product"))
+		while ($product = mysqli_fetch_object($res, "Product"))
 			$list[] = $product;
 		return $list;
 	}
@@ -22,8 +22,17 @@ class ProductManager
 		$id = intval($id);
 		$query = "SELECT * FROM product WHERE id_product='".$id."'";
 		$res = mysqli_query($this->db, $query);
-		$product = mysqli_fetch_object($res, "product");
+		$product = mysqli_fetch_object($res, "Product");
 		return $product;
+	}
+	public function findByCaddy(Caddy $caddy)
+	{
+		$list=[];
+		$query = "SELECT * FROM rel_caddy_product LEFT JOIN product ON product.id_product=rel_caddy_product.id_product WHERE id_caddy='".$caddy->getId()."'";
+		$res = mysqli_query($this->db, $query);
+		while ($product = mysqli_fetch_object($res, "Product"))
+			$list[] = $product;
+		return $list;
 	}
 	// public function find($id)
 	// {
