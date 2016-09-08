@@ -53,7 +53,7 @@ class CaddyManager
 	{
 		$id_caddy = $caddy->getIdCaddy();
 		$status = $caddy->getStatus();
-		if ($id_caddy == $_SESSION['id'])
+		if ($id_caddy == $_SESSION['id'] && $status=="1")
 		{
 			$query = "DELETE FROM caddy WHERE id_caddy='".$id_caddy."'";
 			mysqli_query($this->db, $query);
