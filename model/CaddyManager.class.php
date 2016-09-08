@@ -72,7 +72,7 @@ class CaddyManager
 		VALUES('".$full_price."', '".$date."', '".$status."')";
 		mysqli_query($this->db, $query);
 		$id_caddy = mysqli_insert_id($this->db);
-		return $this->findById($id);
+		return $this->findById($id_caddy);
 	}
 }
 ?>
