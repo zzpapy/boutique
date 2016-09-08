@@ -1,3 +1,55 @@
+/*  ------ Reset CSS  ------ */
+
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+*/
+
+/* HTML5 display-role reset for older browsers */
+/*
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*/
+
 /*--STRUCTURE--------------------------------------------*/
 body{
 	background: white;
@@ -38,14 +90,8 @@ nav ul li{
 nav ul li a{
 	text-decoration: none;
 }
+
 /*--ARTICLE--------------------------------------------*/
-article{
-	display: block;
-	border: 1px black solid;
-	overflow: hidden;
-	padding: 5px 5px;
-	margin: 5px 0px;
-}
 
 .block1{
 	display: block;
@@ -63,6 +109,82 @@ article{
 	text-align: left;
 	border: 1px black solid;
 }
+/*-- BLOC ARTICLE-----------------------------------------*/
+
+/*.clearfix{
+	clear: both;
+	overflow: hidden;
+}
+*/
+figure{
+	margin:15px;
+	padding-top:15px;
+}
+
+.blocHome{
+	display: block;
+	width: 400px;
+	text-align: center;
+	margin: 0 auto;
+	background-color: #E0ECE0;
+	box-shadow: 0px 0px 0.7em #768976;
+}
+
+.imageHome{
+	margin: 0 auto;
+	width:100%;
+	box-shadow: 0px 0px 0.5em #78A378;
+}
+
+
+.borderGreen{
+	border-width: 3px;
+	border-color: #17980A;
+}
+
+
+.textCenter{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.prixHome{
+	display: inline-block;
+	margin:0px;
+	font-size:4em;
+	font-weight: bold;
+	color:#17980A;
+}
+
+.devisePoids{
+	padding-left: 10px;	
+	display: inline-block;
+	margin:0px;
+	font-size:2rem;
+	margin-bottom: 8px;
+	font-style: italic;
+	color:#345134;
+}
+
+.nameHome{	
+	margin:0px;	
+	font-size:2em;
+	margin-bottom: 5px;
+	color:#345134;	
+}
+
+.descripHome{
+	margin:0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size:1em;	
+}
+
+
+.boutonPanier{	margin: 20px; }
+.boutonPanier:hover{	box-shadow: 0px 0px 1.5em #78A378; }
+
+
 /*--FOOTER--------------------------------------------*/
 footer{
 	display: block;
