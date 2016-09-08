@@ -15,16 +15,15 @@ img{
 	display: block;
 }
 
-ul li{
-	margin: 0;
-}
 
 main, .contenair{
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
-h1{}
+h1{
+	margin: 0;
+}
 
 h2{
 	margin: 0;
@@ -32,10 +31,14 @@ h2{
 
 /*--HEADER--------------------------------------------*/
 header{
-	display: block;
 	border: 1px black solid;
 }
 /*--NAV--------------------------------------------*/
+.menu{
+	width: 100%;
+	text-align: center;
+}
+
 .menu ul li{
 	display: inline-block;
 	position: relative;
@@ -43,43 +46,39 @@ header{
 
 .menu ul li.sous-menu > a:after{
 	content: "↓";
-	position: relative;
-	top: -3px;
-	left: 5px;
+	position: relative;		
 }
 
 /* Sous menu */
 .menu ul ul{
 	position: absolute;
 	top: 100%;
-	left: 0;
 	border: 1px solid #CCC;
 	display: none;
 }
 
 .menu ul ul li{
 	display: block;
+	text-align: center;
 }
 
-.menu ul ul li a{
-	text-align:left;
-}
 /* Au survol, on affiche la sous liste */
 .menu ul li:hover ul{
 	display: block;
 	background: white;
+	padding: 0px 0px;	
 }
 
 a{
 	display: block;
-	padding: 15px 20px;
+	padding: 15px 10px;
 	text-transform: uppercase;
 	color: #333;
 	text-decoration: none;
 	white-space: nowrap;
-
 }
-a:hover{
+
+a:hover{	
 	color: #555;
 	background: #f1f1f1;
 }
