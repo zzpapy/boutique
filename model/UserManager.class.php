@@ -71,7 +71,7 @@ class UserManager
 			'".$address."', '".$phone."', '".$admin."')";
 		mysqli_query($this->db, $query);
 		$id_user = mysqli_insert_id($this->db);
-		return $this->findById($id);
+		return $this->findById($id_user);
 	}
 }
 ?>
