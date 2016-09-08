@@ -11,6 +11,7 @@ class ProducerManager
 
 	public function findAll()
 	{
+		$list=[];
 		$query = "SELECT * FROM producer";
 		$res = mysqli_query($this->db, $query);
 		while ($producer = mysqli_fetch_object($res, "Producer"))
@@ -59,7 +60,7 @@ class ProducerManager
 		$producer->setSociety($society);
 		$producer->setPassword($password);
 		$producer->setMail($mail);
-		$producer->setAdresse($adress);
+		$producer->setAdress($adress);
 		$producer->setSiret($siret);
 		var_dump($producer);
 		
