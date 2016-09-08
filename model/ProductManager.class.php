@@ -83,7 +83,7 @@ class ProductManager
 		$product-> setDescription($description);
 		$product->setStock($stock);
 		$product-> setImage($image);
-		$product-> setPIdPrducer($id_producer);
+		$product-> setPIdProducer($id_producer);
 		$product-> setIdCategory($id_category);
 		$query = "INSERT INTO product (price_buy, mail, name,price_buy 
 			,margin_sale ,margin_sale,price_sell,description,stock,image,id_producer,
