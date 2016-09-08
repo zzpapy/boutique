@@ -72,20 +72,47 @@ class ProductManager
 
 	public function create ($password,$mail,$name,$firstname,$address,$phone,$admin)
 	{
+		private $id_product  ;
+	private $name  ;
+	private $price_buy;
+	private $margin_sale ;
+	private $price_sell;
+	private $description ;
+	private $stock  ;
+	private $image;
+	private $id_producer  ;
+	private $id_category;
+	
+
+
+
+
+
+
 		$product = new product();
 		$product -> setName($name);
-		$product->setPassword($password);
+		
 		$product->setMail($mail);
-		$product->setFirstname($firstname);
-		$product-> setAddress($address);
-		$product-> setPhone($phone);
-		$product-> setAdmin($admin);
+		$product->setPriceBuy($price_buy);
+		$product-> setMarginSale($margin_sale);
+		$product-> setPriceSell($price_sell);
+		$product-> setDescription($description);
+		$product->setStock($stock);
+		$product-> setImage($image);
+		$product-> setPIdPrducer($id_producer);
+		$product-> setIdCategory($id_category);
 		$email = mysqli_real_escape_string($this->db, $product->getMail());
 		$password = mysqli_real_escape_string($this->db, $product-> getPassword());
-		$query = "INSERT INTO product (password, mail, name,firstname 
-			,address ,phone,admin) 
-		VALUES('".$password."', '".$mail."', '".$name."', '".$firstname."', 
-			'".$address."', '".$phone."', '".$admin."')";
+		$query = "INSERT INTO product (price_buy, mail, name,price_buy 
+			,margin_sale ,margin_sale,price_sell,description,stock,image,id_producer,
+			id_category) 
+		VALUES('".$price_buy."', '".$mail."', '".$name."', '".$price_buy."', 
+			'".$margin_sale."', '".$margin_sale."', '".$price_sell."',
+			'".$description."',
+			'".$stock."',
+			'".$image."',
+			'".$id_producer."',
+			'".$id_category."')";
 		mysqli_query($this->db, $query);
 		$id_product = mysqli_insert_id($this->db);
 		return $this->findById($id_product);
