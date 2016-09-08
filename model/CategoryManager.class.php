@@ -54,7 +54,7 @@ class CategoryManager
 		}
 	}
 
-	public function create ($password,$mail,$name,$firstname,$address,$phone,$admin)
+	public function create ($title)
 	{
 		$category = new category();
 		
