@@ -64,7 +64,8 @@ class PrducerManager
 		var_dump($producer);
 		
 		
-		$query = "INSERT INTO producer (society, password, mail, adress,siret) VALUES('".$society."','". $password."','". $mail."','"''.$adress."','".$siret."')";
+		$query = "INSERT INTO producer (society, password, mail, adress,siret) 
+		VALUES('".$society."','". $password."','". $mail."','".$adress."','".$siret."')";
 		mysqli_query($this->db, $query);
 		var_dump($query, mysqli_error($this->db));
 		$id_producer = mysqli_insert_id($this->db);
