@@ -7,7 +7,7 @@ class Product
 	private $id_product  ;
 	private $name  ;
 	private $price_buy;
-	private $margin_sale ;
+	private $margin_sell ;
 	private $price_sell;
 	private $description ;
 	private $stock  ;
