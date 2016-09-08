@@ -75,7 +75,7 @@ class ProductManager
 		$product = new product();
 		$product -> setName($name);
 		
-		$product->setMail($mail);
+		
 		$product->setPriceBuy($price_buy);
 		$product-> setMarginSale($margin_sale);
 		$product-> setPriceSell($price_sell);
@@ -84,8 +84,6 @@ class ProductManager
 		$product-> setImage($image);
 		$product-> setPIdPrducer($id_producer);
 		$product-> setIdCategory($id_category);
-		$email = mysqli_real_escape_string($this->db, $product->getMail());
-		$password = mysqli_real_escape_string($this->db, $product-> getPassword());
 		$query = "INSERT INTO product (price_buy, mail, name,price_buy 
 			,margin_sale ,margin_sale,price_sell,description,stock,image,id_producer,
 			id_category) 
