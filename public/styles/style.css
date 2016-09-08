@@ -1,3 +1,55 @@
+/*  ------ Reset CSS  ------ */
+
+/*
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+*/
+
+/* HTML5 display-role reset for older browsers */
+/*
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*/
+
 /*--STRUCTURE--------------------------------------------*/
 body{
 	background: white;
@@ -15,16 +67,15 @@ img{
 	display: block;
 }
 
-ul li{
-	margin: 0;
-}
 
 main, .contenair{
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
-h1{}
+h1{
+	margin: 0;
+}
 
 h2{
 	margin: 0;
@@ -32,10 +83,14 @@ h2{
 
 /*--HEADER--------------------------------------------*/
 header{
-	display: block;
 	border: 1px black solid;
 }
 /*--NAV--------------------------------------------*/
+.menu{
+	width: 100%;
+	text-align: center;
+}
+
 .menu ul li{
 	display: inline-block;
 	position: relative;
@@ -43,54 +98,44 @@ header{
 
 .menu ul li.sous-menu > a:after{
 	content: "↓";
-	position: relative;
-	top: -3px;
-	left: 5px;
+	position: relative;		
 }
 
 /* Sous menu */
 .menu ul ul{
 	position: absolute;
 	top: 100%;
-	left: 0;
 	border: 1px solid #CCC;
 	display: none;
 }
 
 .menu ul ul li{
 	display: block;
+	text-align: center;
 }
 
-.menu ul ul li a{
-	text-align:left;
-}
 /* Au survol, on affiche la sous liste */
 .menu ul li:hover ul{
 	display: block;
 	background: white;
+	padding: 0px;	
 }
 
 a{
 	display: block;
-	padding: 15px 20px;
+	padding: 20px 10px;
 	text-transform: uppercase;
 	color: #333;
 	text-decoration: none;
 	white-space: nowrap;
-
 }
-a:hover{
+
+a:hover{	
 	color: #555;
 	background: #f1f1f1;
 }
+
 /*--ARTICLE--------------------------------------------*/
-article{
-	display: block;
-	border: 1px black solid;
-	overflow: hidden;
-	padding: 5px 5px;
-	margin: 5px 0px;
-}
 
 .block1{
 	display: block;
@@ -108,6 +153,84 @@ article{
 	text-align: left;
 	border: 1px black solid;
 }
+
+/*-- BLOC ARTICLE-----------------------------------------*/
+
+/*.clearfix{
+	clear: both;
+	overflow: hidden;
+}
+*/
+figure{
+	margin:15px;
+	padding-top:15px;
+}
+
+.blocHome{
+	display: block;
+	width: 400px;
+	text-align: center;
+	margin: 0 auto;
+	background-color: #E0ECE0;
+	box-shadow: 0px 0px 0.7em #768976;
+}
+
+.imageHome{
+	margin: 0 auto;
+	width:100%;
+	box-shadow: 0px 0px 0.5em #78A378;
+}
+
+
+.borderGreen{
+	border-width: 3px;
+	border-color: #17980A;
+}
+
+
+.textCenter{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.prixHome{
+	display: inline-block;
+	margin:0px;
+	font-size:4em;
+	font-weight: bold;
+	color:#17980A;
+}
+
+.devisePoids{
+	padding-left: 10px;	
+	display: inline-block;
+	margin:0px;
+	font-size:2rem;
+	margin-bottom: 8px;
+	font-style: italic;
+	color:#345134;
+}
+
+.nameHome{	
+	margin:0px;	
+	font-size:2em;
+	margin-bottom: 5px;
+	color:#345134;	
+}
+
+.descripHome{
+	margin:0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size:1em;	
+}
+
+
+.boutonPanier{	margin: 20px; }
+.boutonPanier:hover{	box-shadow: 0px 0px 1.5em #78A378; }
+
+
+
 /*--FORMULAIRE--------------------------------------------*/
 .formulaire{
 	display: inline-block;
@@ -116,6 +239,18 @@ article{
 	border: 1px black solid;
 	padding: 10px 40px 10px 0px;
 	margin: 0px 40px;
+}
+/*--404--------------------------------------------*/
+.error{
+	display: block;
+	border: 1px black solid;
+	background: white;
+	padding: 5px 5px;
+	margin: 5px 0px;
+	padding: 0% 30%;
+}
+.big{
+	font-size: 100px;
 }
 /*--FOOTER--------------------------------------------*/
 footer{

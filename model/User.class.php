@@ -2,7 +2,7 @@
 // Définition de la classe Article
 class User
 {
-	
+
 	// Propriétés
 	private $id_user  ;
 	private $name  ;
@@ -20,7 +20,7 @@ class User
 	{
 		return $this->id;
 	}
-	public function getNam()
+	public function getName()
 	{
 		return $this->name;
 	}
@@ -35,6 +35,10 @@ class User
 	public function getAddress()
 	{
 		return $this->address;
+	}
+	public function getPhone()
+	{
+		return $this->phone;
 	}
 	public function getPassword()
 	{
