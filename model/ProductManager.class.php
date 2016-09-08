@@ -9,6 +9,7 @@ class ProductManager
 	}
 
 	public function findAll()
+	$list=[];
 	{
 		$query = "SELECT * FROM product";
 		$res = mysqli_query($this->db, $query);

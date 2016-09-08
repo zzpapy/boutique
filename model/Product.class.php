@@ -66,39 +66,39 @@ class Product
 	}
 	public function setName()
 	{
-		return $this->name=$name;
+		return $this->name=($name);
 	}
 	public function setPriceBuy()
 	{
-		return $this->price_buy=$price_buy;
+		return $this->price_buy=($price_buy);
 	}
 	public function setMarginSell()
 	{
-		return $this->margin_sell=$margin_sell;
+		return $this->margin_sell=$(margin_sell);
 	}
 	public function setPriceSell()
 	{
-		return $this->price_sell=$price_sell;
+		return $this->price_sell=($price_sell);
 	}
 	public function setDescription()
 	{
-		return $this->description=$description;
+		return $this->description=($description);
 	}
 	public function setStock()
 	{
-		return $this->stock=$stock;
+		return $this->stock=($stock);
 	}
 	public function setImage()
 	{
-		return $this->image=$image;
+		return $this->image=($image);
 	}
 	public function setIdProducer()
 	{
-		return $this->id_producer=$id_producer;
+		return $this->id_producer=($id_producer);
 	}
 	public function setIdCategory()
 	{
-		return $this->id_category=$id_category;
+		return $this->id_category=($id_category);
 	}
 
 	// Liste des fonctions spécifiques
