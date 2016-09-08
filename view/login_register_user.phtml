@@ -5,8 +5,8 @@
 		<form method="post">
 			<!-- login -->
 			<div>
-				<label for="aliaslogin">Email :</label>
-				<input id="aliaslogin" type="email" name="email" placeholder=""/>
+				<label for="aliaslogin">Nom :</label>
+				<input id="aliaslogin" type="text" name="name" placeholder=""/>
 			</div>
 			<!-- password -->
 			<div>
@@ -26,36 +26,18 @@
 	    	<!-- nom -->
 	    	<div>
 	    		<label class="white" for="aliasnom">Nom :</label>
-	    		<input id="aliasnom" type="text" name="nom" placeholder="Votre NOM"/>
+	    		<input id="aliasnom" type="text" name="name" placeholder="Votre NOM"/>
 			</div>
 			<!-- prenom -->
 			<div>
 	    		<label class="white" for="aliasprenom">Prénom :</label>
-	    		<input id="aliasprenom" type="text" name="prenom" placeholder="Votre PRENOM"/>
+	    		<input id="aliasprenom" type="text" name="firstname" placeholder="Votre PRENOM"/>
 			</div>
-			<!-- adresse -->
-			<p class="white">Remplir l'adresse de facturation :</p>
-			<div>
-	    		<label for="aliasrue">N°, Rue ou voie :</label>
-	    		<input id="aliasprue" type="text" name="adresse" placeholder="N°, Rue ou voie :"/>
-			</div>
-			<div>
-	    		<label for="aliascp">Code postal :</label>
-	    		<input id="aliascp" type="text" name="cp" placeholder="00000"/>
-			</div>
-			<div>
-	    		<label for="aliasville">Ville :</label>
-	    		<input id="aliasville" type="text" name="ville" placeholder="Ville"/>
-			</div>
-			<!-- telephone -->
-			<div>
-		    	<label for="aliastel">Téléphone :</label>
-		    	<input id="aliastel" type="text" name="tel" placeholder="+33"/>
-			</div>
+			
 			<!-- e-mail -->
 			<div>
 				<label for="aliasemail">Adresse e-mail :</label>
-				<input id="aliasemail" type="email" name="email" placeholder="Votre EMAIL"/>
+				<input id="aliasemail" type="email" name="mail" placeholder="Votre EMAIL"/>
 			</div>
 			<!-- password -->
 			<div>
@@ -66,6 +48,18 @@
 		    	<label for="aliascmdp">Comfirm.Password :</label>
 			    <input id="aliascmdp" type="password" name="password2"/>
 			</div>
+			<!-- adresse -->
+			<p class="white">Adresse de facturation :</p>
+			<div>
+	    		<label for="aliasadresse">Adresse :</label>
+	    		<input id="aliasadresse" type="text" name="address" placeholder="Rue, Ville et Code postal :"/>
+			</div>
+			<!-- telephone -->
+			<div>
+		    	<label for="aliastel">Téléphone :</label>
+		    	<input id="aliastel" type="text" name="phone" placeholder="+33"/>
+			</div>
+			
 			<!-- valid -->
 			<div>
 				<button type="submit" name="register" value="register">Envoyer</button>
