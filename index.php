@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	var_dump($_SESSION);
 	// $db = mysqli_connect("localhost", "root", "troiswa", "boutique");
 	$error = "";
 	$error404 = "";

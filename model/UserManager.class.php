@@ -54,10 +54,10 @@ class UserManager
 	// }
 
 	public function create($password,$mail ,$name ,$firstname 
-			,$adres ,$phone,$admin)
+			,$adress ,$phone,$admin)
 	{
 		$user = new User();
-		$user -> setsetName($name)
+		$user -> setsetName($name);
 		$user->setPassword($password);
 		$user->setMail($mail);
 		$user->setFirstname($firstname);

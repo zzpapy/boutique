@@ -1,6 +1,6 @@
 Prod<?php
 // http://192.168.1.95/partage/models/producerManager.class.php
-class PrducerManager
+class ProducerManager
 {
 	private $db;
 
@@ -11,6 +11,7 @@ class PrducerManager
 
 	public function findAll()
 	{
+		$list=[];
 		$query = "SELECT * FROM producer";
 		$res = mysqli_query($this->db, $query);
 		while ($producer = mysqli_fetch_object($res, "Producer"))
@@ -19,7 +20,7 @@ class PrducerManager
 	}
 	public function findById($id)
 	{
-		$query = "SELECT * FROM producer WHERE id_producer='".$id_producer."'";
+		$query = "SELECT * FROM producer WHERE id_producer='".$id."'";
 		$res = mysqli_query($this->db, $query);
 		$producer = mysqli_fetch_object($res, "Producer");
 		return $producer;
@@ -59,16 +60,17 @@ class PrducerManager
 		$producer->setSociety($society);
 		$producer->setPassword($password);
 		$producer->setMail($mail);
-		$producer->setAdresse($adress);
+		$producer->setAdress($adress);
 		$producer->setSiret($siret);
 		var_dump($producer);
 		
 		
-		$query = "INSERT INTO producers (society, password, mail, adress,siret) VALUES('".$society."','". $password."','". $mail."','"'' $adress."','".$siret."')";
+		$query = "INSERT INTO producer (society, password, mail, adress,siret) 
+		VALUES('".$society."','". $password."','". $mail."','".$adress."','".$siret."')";
 		mysqli_query($this->db, $query);
 		var_dump($query, mysqli_error($this->db));
 		$id_producer = mysqli_insert_id($this->db);
-		return $this->findById($id);
+		return $this->findById($id_producer);
 	}
 }
 ?>
