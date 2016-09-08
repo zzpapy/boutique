@@ -14,6 +14,32 @@ class Product
 	private $image;
 	private $id_producer  ;
 	private $id_category;
+	private $db;
+	// Propriété calculée
+	private $producer;
+	private $category;
+	private $caddys;
+
+	// Méthodes
+	// Le constructeur pour avoir accès à $db
+	public function __construct($db)
+	{
+		$this->db = $db;
+	}
+	public function getCaddys()
+	{
+		// Si l'auteur n'a pas encore été récupéré ou n'est pas connu
+		if (!$this->caddys)
+		{
+			// Il faut donc aller le chercher !
+			// On récupère le manager qui va bien (ici, UserManager)
+			$manager = new CaddyManager($this->db);
+			// Et on lui demande d'aller chercher l'User qui correspond à id_author
+			$this->caddys = $manager->findById($this->id_producer);
+		}
+		// On peut du coup retourner $this->author
+		return $this->caddys;
+	}
 	
 
 	// Méthodes
@@ -50,20 +76,50 @@ class Product
 	{
 		return $this->image;
 	}
-	public function getIdProducer()
+	// public function getIdProducer()
+	// {
+	// 	return $this->id_producer;
+	// }
+	public function getProducer()
 	{
-		return $this->id_producer;
-	}
-	public function getIdCategory()
-	{
-		return $this->id_category;
+		// Si l'auteur n'a pas encore été récupéré ou n'est pas connu
+		if (!$this->producer)
+		{
+			// Il faut donc aller le chercher !
+			// On récupère le manager qui va bien (ici, UserManager)
+			$manager = new ProducerManager($this->db);
+			// Et on lui demande d'aller chercher l'User qui correspond à id_author
+			$this->producer = $manager->findById($this->id_producer);
+		}
+		// On peut du coup retourner $this->author
+		return $this->producer;
 	}
 
-	// Liste des setters
-	public function setIdProduct($id_product)
+	// public function getIdCategory()
+	// {
+	// 	return $this->id_category;
+	// }
+	public function getCategory()
 	{
-		 $this->id_product=$id_product;
+		// Si l'auteur n'a pas encore été récupéré ou n'est pas connu
+		if (!$this->category)
+		{
+			// Il faut donc aller le chercher !
+			// On récupère le manager qui va bien (ici, UserManager)
+			$manager = new CategoryManager($this->db);
+			// Et on lui demande d'aller chercher l'User qui correspond à id_author
+			$this->category = $manager->findById($this->id_category);
+		}
+		// On peut du coup retourner $this->author
+		return $this->category;
 	}
+
+
+	// Liste des setters
+	// public function setIdProduct($id_product)
+	// {
+	// 	 $this->id_product=$id_product;
+	// }
 	public function setName($name)
 	{
 		 $this->name=$name;
@@ -92,14 +148,26 @@ class Product
 	{
 		 $this->image=$image;
 	}
-	public function setIdProducer($id_producer)
+	// public function setIdProducer($id_producer)
+	// {
+	// 	 $this->id_producer=$id_producer;
+	// }
+	public function setProducer(Producer $producer)
 	{
-		 $this->id_producer=$id_producer;
+		$this->id_producer = $producer->getId();
+		$this->producer = $producer;
 	}
-	public function setIdCategory($id_category)
+
+	// public function setIdCategory($id_category)
+	// {
+	// 	 $this->id_category=$id_category;
+	// }
+	public function setCategory(Category $category)
 	{
-		 $this->id_category=$id_category;
+		$this->id_category = $category->getId();
+		$this->category = $category;
 	}
+
 
 	// Liste des fonctions spécifiques
 	// Ici vide
