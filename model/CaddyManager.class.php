@@ -17,6 +17,17 @@ class CaddyManager
 			$list[] = $caddy;
 		return $list;
 	}
+	public function findByProduct(Product $product)
+	{
+		$list=[];
+		$query = "SELECT * FROM rel_caddy_product
+			LEFT JOIN caddy ON rel_caddy_product.id_caddy=caddy.id_caddy
+			WHERE id_product='".$product->getId()."'";
+		$res = mysqli_query($this->db, $query);
+		while ($caddy = mysqli_fetch_object($res, "Caddy"))
+			$list[] = $caddy;
+		return $list;
+	}
 	public function findById($id)
 	{
 		$id = intval($id);
