@@ -55,7 +55,7 @@ class User
 		
 			$this->firstname = $firstname;
 	}
-	public function setContent($mail)
+	public function setMail($mail)
 	{
 		
 			$this->mail = $mail;
@@ -64,7 +64,7 @@ class User
 	{
 		$this->address = $address;
 	}
-	public function setIdPhone($phone)
+	public function setPhone($phone)
 	{
 		$this->phone = $phone;
 	}
