@@ -36,7 +36,7 @@ class CaddyManager
 		$full_price = mysqli_real_escape_string($this->db, $caddy->getFullPrice());
 		$date = mysqli_real_escape_string($this->db, $caddy->getDate());
 		$status = mysqli_real_escape_string($this->db, $caddy->getStatus());
-		if ($id_author == $_SESSION['id'])
+		if ($id_caddy == $_SESSION['id'])
 		{
 			$query = "UPDATE caddy SET id_caddy='".$id_caddy."', 
 			id_user='".$id_user."', 
