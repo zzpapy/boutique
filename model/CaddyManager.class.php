@@ -9,6 +9,7 @@ class CaddyManager
 
 	public function findAll()
 	{
+		$list=[];
 		$query = "SELECT * FROM caddy";
 		$res = mysqli_query($this->db, $query);
 		while ($caddy = mysqli_fetch_object($res, "Caddy"))
@@ -18,7 +19,7 @@ class CaddyManager
 	public function findById($id)
 	{
 		$id = intval($id);
-		$query = "SELECT * FROM caddy WHERE id_caddy='".$id_caddy."'";
+		$query = "SELECT * FROM caddy WHERE id_caddy='".$id."'";
 		$res = mysqli_query($this->db, $query);
 		$caddy = mysqli_fetch_object($res, "Caddy");
 		return $caddy;
@@ -52,9 +53,9 @@ class CaddyManager
 	{
 		$id_caddy = $caddy->getIdCaddy();
 		$status = $caddy->getStatus();
-		if ($id_user == $_SESSION['id'])
+		if ($id_caddy == $_SESSION['id'] && $status=="1")
 		{
-			$query = "DELETE FROM caddy WHERE id='".$id_caddy."'";
+			$query = "DELETE FROM caddy WHERE id_caddy='".$id_caddy."'";
 			mysqli_query($this->db, $query);
 		}
 	}
@@ -63,7 +64,7 @@ class CaddyManager
 	{
 		$caddy = new caddy();
 		$id_user = mysqli_real_escape_string($this->db, $caddy->getIdUser());
-		$caddy -> setsetFullPrice($full_price);
+		$caddy -> setFullPrice($full_price);
 		$caddy->setDate($date);
 		$caddy->setStatus($status);
 		
@@ -71,7 +72,7 @@ class CaddyManager
 		VALUES('".$full_price."', '".$date."', '".$status."')";
 		mysqli_query($this->db, $query);
 		$id_caddy = mysqli_insert_id($this->db);
-		return $this->findById($id);
+		return $this->findById($id_caddy);
 	}
 }
 ?>
