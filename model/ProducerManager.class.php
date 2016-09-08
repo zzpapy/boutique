@@ -68,7 +68,7 @@ class PrducerManager
 		mysqli_query($this->db, $query);
 		var_dump($query, mysqli_error($this->db));
 		$id_producer = mysqli_insert_id($this->db);
-		return $this->findById($id);
+		return $this->findById($id_producer);
 	}
 }
 ?>
