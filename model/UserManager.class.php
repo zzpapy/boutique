@@ -53,7 +53,7 @@ class UserManager
 	// 	}
 	// }
 
-	public function create($password,$mail ,$name ,$firstname 
+	public function create ($password,$mail ,$name ,$firstname 
 			,$address ,$phone,$admin)
 	{
 		$user = new User();
