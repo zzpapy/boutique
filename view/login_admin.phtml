@@ -1,1 +1,22 @@
-<p>login_admin.phtml</p>
+<article >
+	<div class="formulaire">
+	<!--	<?=$error?>  -->
+		<h2>Connexion:</h2>
+		<form method="post">
+			<!-- login -->
+			<div>
+				<label for="aliaslogin">Administrateur :</label>
+				<input id="aliaslogin" type="text" name="admin" placeholder=""/>
+			</div>
+			<!-- password -->
+			<div>
+				<label for="aliasmdp">Mot de passe :</label>
+			    <input id="aliasmdp" type="password" name="password"/>
+			</div>
+			<!-- Connexion -->
+			<div>
+				<button type="submit" name="login" value="login">Connexion</button>
+			</div>
+		</form>
+	</div>
+</article>
