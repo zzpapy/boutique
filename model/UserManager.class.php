@@ -1,7 +1,7 @@
 <?php
 class UserManager
 {
-	
+
 	private $db;
 	public function __construct($db)
 	{
@@ -64,8 +64,16 @@ class UserManager
 		$user-> setAddress($address);
 		$user-> setPhone($phone);
 		$user-> setAdmin($admin);
+
 		$email = mysqli_real_escape_string($this->db, $user->getMail());
 		$password = mysqli_real_escape_string($this->db, $user-> getPassword());
+		$name = mysqli_real_escape_string($this->db, $user->getName());
+		$firstname = mysqli_real_escape_string($this->db, $user-> getFirstname());
+		$address = mysqli_real_escape_string($this->db, $user->getAddress());
+		$phone = mysqli_real_escape_string($this->db, $user-> getPhone());
+		$admin = mysqli_real_escape_string($this->db, $user->getMail());
+		$password = mysqli_real_escape_string($this->db, $user-> getAdmin());
+		
 		$query = "INSERT INTO user (password, mail, name,firstname 
 			,address ,phone,admin) 
 		VALUES('".$password."', '".$mail."', '".$name."', '".$firstname."', 
