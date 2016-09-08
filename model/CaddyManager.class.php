@@ -1,4 +1,5 @@
 <?php
+
 class CaddyManager
 {
 	private $db;

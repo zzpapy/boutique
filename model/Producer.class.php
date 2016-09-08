@@ -1,5 +1,6 @@
 
 <?php 
+
 class Producer
 {
 	
@@ -7,7 +8,7 @@ class Producer
 	private $society  ;
 	private $password  ;
 	private $mail ;
-	private $adress;
+	private $address;
 	private $siret;
 
 	// Méthodes
@@ -28,11 +29,11 @@ class Producer
 	{
 		return $this->mail;
 	}
-	public function getIdAdress()
+	public function getAddress()
 	{
-		return $this->adress;
+		return $this->address;
 	}
-	public function getIdSiret()
+	public function getSiret()
 	{
 		return $this->siret;
 	}
@@ -55,9 +56,9 @@ class Producer
 		
 			$this->mail = $mail;
 	}
-	public function setAdress($adress)
+	public function setAddress($address)
 	{
-		$this->adress = $adress;
+		$this->address = $address;
 	}
 	public function setSiret($siret)
 	{

@@ -1,5 +1,6 @@
 <?php 
 class Caddy
+
 {
 	// Propriétés
 	private $id_caddy  ;

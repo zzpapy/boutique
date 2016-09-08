@@ -2,6 +2,7 @@ Prod<?php
 // http://192.168.1.95/partage/models/producerManager.class.php
 class ProducerManager
 {
+	
 	private $db;
 
 	public function __construct($db)
@@ -54,19 +55,19 @@ class ProducerManager
 	// 	}
 	// }
 
-	public function create($society, $password, $mail, $adress,$siret)
+	public function create($society, $password, $mail, $address,$siret)
 	{
 		$producer = new Producer();
 		$producer->setSociety($society);
 		$producer->setPassword($password);
 		$producer->setMail($mail);
-		$producer->setAdress($adress);
+		$producer->setAddress($address);
 		$producer->setSiret($siret);
 		var_dump($producer);
 		
 		
-		$query = "INSERT INTO producer (society, password, mail, adress,siret) 
-		VALUES('".$society."','". $password."','". $mail."','".$adress."','".$siret."')";
+		$query = "INSERT INTO producer (society, password, mail, address,siret) 
+		VALUES('".$society."','". $password."','". $mail."','".$address."','".$siret."')";
 		mysqli_query($this->db, $query);
 		var_dump($query, mysqli_error($this->db));
 		$id_producer = mysqli_insert_id($this->db);
