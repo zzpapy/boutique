@@ -34,7 +34,7 @@ class CategoryManager
 		
 		$title = mysqli_real_escape_string($this->db, $category->getTitle());
 		$id_category = $category->getIdCategory();
-		if ($id_author == $_SESSION['id'])
+		if ($_SESSION["admin"]== 1)
 		{
 			$query = "UPDATE category SET title='".$title."' WHERE id='".$id_category."'";
 			mysqli_query($this->db, $query);
