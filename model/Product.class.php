@@ -60,45 +60,45 @@ class Product
 	}
 
 	// Liste des setters
-	public function setIdProduct()
+	public function setIdProduct($id_product)
 	{
-		return $this->id_product=$id_product;
+		 $this->id_product=$id_product;
 	}
-	public function setName()
+	public function setName($name)
 	{
-		return $this->name=($name);
+		 $this->name=$name;
 	}
-	public function setPriceBuy()
+	public function setPriceBuy($price_buy)
 	{
-		return $this->price_buy=($price_buy);
+		 $this->price_buy=$price_buy;
 	}
-	public function setMarginSell()
+	public function setMarginSell($margin_sell)
 	{
-		return $this->margin_sell=$(margin_sell);
+		 $this->margin_sell=$margin_sell;
 	}
-	public function setPriceSell()
+	public function setPriceSell($price_sell)
 	{
-		return $this->price_sell=($price_sell);
+		 $this->price_sell=$price_sell;
 	}
-	public function setDescription()
+	public function setDescription($description)
 	{
-		return $this->description=($description);
+		 $this->description=$description;
 	}
-	public function setStock()
+	public function setStock($stock)
 	{
-		return $this->stock=($stock);
+		 $this->stock=$stock;
 	}
-	public function setImage()
+	public function setImage($image)
 	{
-		return $this->image=($image);
+		 $this->image=$image;
 	}
-	public function setIdProducer()
+	public function setIdProducer($id_producer)
 	{
-		return $this->id_producer=($id_producer);
+		 $this->id_producer=$id_producer;
 	}
-	public function setIdCategory()
+	public function setIdCategory($id_category)
 	{
-		return $this->id_category=($id_category);
+		 $this->id_category=$id_category;
 	}
 
 	// Liste des fonctions spécifiques
