@@ -1,1 +1,21 @@
-<p>header.phtml</p>
+	<header>
+		<h1>Titre du site</h1>
+		<nav class="menu">
+			<ul>
+				<li>
+					<a href="index.php?page=home">Accueil</a>
+				</li>
+				<li>
+					<a href="index.php?page=product">Produits</a>
+				</li>
+				<li class="sous-menu">
+					<a href="#">Mon Compte</a>
+					<ul>
+						<li><a href="index.php?page=login_register_user">Particulier</a></li>
+						<li><a href="index.php?page=login_register_pro">Professionnel</a></li>
+						<li><a href="index.php?page=login_admin">Administrateur</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>

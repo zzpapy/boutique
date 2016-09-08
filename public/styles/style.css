@@ -67,28 +67,72 @@ img{
 	display: block;
 }
 
-ul li{
-	margin: 0;
-}
 
 main, .contenair{
 	max-width: 1200px;
 	margin: 0 auto;
 }
+
+h1{
+	margin: 0;
+}
+
+h2{
+	margin: 0;
+}
+
 /*--HEADER--------------------------------------------*/
 header{
-	display: block;
 	border: 1px black solid;
 }
 /*--NAV--------------------------------------------*/
-nav ul li{
-	display: inline-block;
-	padding: 15px 15px;
-	border: 1px black solid;	
+.menu{
+	width: 100%;
+	text-align: center;
 }
 
-nav ul li a{
+.menu ul li{
+	display: inline-block;
+	position: relative;
+}
+
+.menu ul li.sous-menu > a:after{
+	content: "↓";
+	position: relative;		
+}
+
+/* Sous menu */
+.menu ul ul{
+	position: absolute;
+	top: 100%;
+	border: 1px solid #CCC;
+	display: none;
+}
+
+.menu ul ul li{
+	display: block;
+	text-align: center;
+}
+
+/* Au survol, on affiche la sous liste */
+.menu ul li:hover ul{
+	display: block;
+	background: white;
+	padding: 0px 0px;	
+}
+
+a{
+	display: block;
+	padding: 15px 10px;
+	text-transform: uppercase;
+	color: #333;
 	text-decoration: none;
+	white-space: nowrap;
+}
+
+a:hover{	
+	color: #555;
+	background: #f1f1f1;
 }
 
 /*--ARTICLE--------------------------------------------*/
@@ -109,6 +153,7 @@ nav ul li a{
 	text-align: left;
 	border: 1px black solid;
 }
+
 /*-- BLOC ARTICLE-----------------------------------------*/
 
 /*.clearfix{
@@ -184,6 +229,17 @@ figure{
 .boutonPanier{	margin: 20px; }
 .boutonPanier:hover{	box-shadow: 0px 0px 1.5em #78A378; }
 
+
+
+/*--FORMULAIRE--------------------------------------------*/
+.formulaire{
+	display: inline-block;
+	text-align: right;
+	width: 40%;
+	border: 1px black solid;
+	padding: 10px 40px 10px 0px;
+	margin: 0px 40px;
+}
 
 /*--FOOTER--------------------------------------------*/
 footer{
