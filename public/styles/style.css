@@ -23,6 +23,13 @@ main, .contenair{
 	max-width: 1200px;
 	margin: 0 auto;
 }
+
+h1{}
+
+h2{
+	margin: 0;
+}
+
 /*--HEADER--------------------------------------------*/
 header{
 	display: block;
@@ -100,6 +107,15 @@ article{
 	float: right;
 	text-align: left;
 	border: 1px black solid;
+}
+/*--FORMULAIRE--------------------------------------------*/
+.formulaire{
+	display: inline-block;
+	text-align: right;
+	width: 40%;
+	border: 1px black solid;
+	padding: 10px 50px 10px 0px;
+	margin: 0px 40px;
 }
 /*--FOOTER--------------------------------------------*/
 footer{
