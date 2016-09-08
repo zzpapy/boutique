@@ -22,15 +22,15 @@ class Category
 		
 
 	// Liste des setters
-	public function setIdCategory($id_category)
+	// public function setIdCategory($id_category)
+	// {
+		
+	// 		$this->id_category = $id_category;
+	// }
+	public function setTitle($title)
 	{
 		
-			$this->id_category = $id_category;
-	}
-	public function setIdProduct($id_product)
-	{
-		
-			$this->id_product = $id_product;
+			$this->title = $title;
 	}
 	
 
