@@ -121,7 +121,7 @@ header{
 	padding: 0px 0px;	
 }
 
-a{
+.nav{
 	display: block;
 	padding: 15px 10px;
 	text-transform: uppercase;
@@ -129,6 +129,7 @@ a{
 	text-decoration: none;
 	white-space: nowrap;
 }
+
 
 a:hover{	
 	color: #555;
@@ -182,11 +183,12 @@ figure{
 }
 
 
+/*
 .borderGreen{
 	border-width: 3px;
 	border-color: #17980A;
 }
-
+*/
 
 .textCenter{
 	text-align: center;
