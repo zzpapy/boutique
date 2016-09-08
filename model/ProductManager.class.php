@@ -70,7 +70,8 @@ class ProductManager
 	// 	}
 	// }
 
-	public function create ($password,$mail,$name,$firstname,$address,$phone,$admin)
+	public function create ($price_buy,$margin_sale,$price_sell,$description,$stock,
+		$image,$id_producer,$id_category)
 	{
 		$product = new product();
 		$product -> setName($name);
