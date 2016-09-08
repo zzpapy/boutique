@@ -7,7 +7,7 @@ class User
 	private $name  ;
 	private $firstname;
 	private $mail ;
-	private $adress;
+	private $address;
 	private $phone ;
 	private $password  ;
 	private $admin;
@@ -31,9 +31,9 @@ class User
 	{
 		return $this->mail;
 	}
-	public function getAdress()
+	public function getAddress()
 	{
-		return $this->adress;
+		return $this->address;
 	}
 	public function getPassword()
 	{
@@ -45,7 +45,7 @@ class User
 	}
 
 	// Liste des setters
-	public function setNom($name)
+	public function setName($name)
 	{
 		
 			$this->name = $name;
@@ -55,16 +55,16 @@ class User
 		
 			$this->firstname = $firstname;
 	}
-	public function setContent($mail)
+	public function setMail($mail)
 	{
 		
 			$this->mail = $mail;
 	}
-	public function setIdAdress($adress)
+	public function setAddress($address)
 	{
-		$this->adress = $adress;
+		$this->address = $address;
 	}
-	public function setIdPhone($phone)
+	public function setPhone($phone)
 	{
 		$this->phone = $phone;
 	}
