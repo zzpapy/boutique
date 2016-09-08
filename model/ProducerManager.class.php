@@ -20,7 +20,7 @@ class ProducerManager
 	}
 	public function findById($id)
 	{
-		$query = "SELECT * FROM producer WHERE id_producer='".$id_producer."'";
+		$query = "SELECT * FROM producer WHERE id_producer='".$id."'";
 		$res = mysqli_query($this->db, $query);
 		$producer = mysqli_fetch_object($res, "Producer");
 		return $producer;
