@@ -9,6 +9,7 @@ class CaddyManager
 
 	public function findAll()
 	{
+		$list=[];
 		$query = "SELECT * FROM caddy";
 		$res = mysqli_query($this->db, $query);
 		while ($caddy = mysqli_fetch_object($res, "Caddy"))
@@ -63,7 +64,7 @@ class CaddyManager
 	{
 		$caddy = new caddy();
 		$id_user = mysqli_real_escape_string($this->db, $caddy->getIdUser());
-		$caddy -> setsetFullPrice($full_price);
+		$caddy -> setFullPrice($full_price);
 		$caddy->setDate($date);
 		$caddy->setStatus($status);
 		
