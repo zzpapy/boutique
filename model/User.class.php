@@ -60,7 +60,7 @@ class User
 		
 			$this->mail = $mail;
 	}
-	public function setIdAddress($address)
+	public function setAddress($address)
 	{
 		$this->address = $address;
 	}
