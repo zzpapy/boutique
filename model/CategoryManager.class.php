@@ -61,9 +61,8 @@ class CategoryManager
 		$category->setTitle($title);
 		
 		
-		$title = mysqli_real_escape_string($this->db, $category->getIdProduct());
-		$query = "INSERT INTO category (title, id_caddy, id_caddy,note 
-			,id_author ) 
+		$title = mysqli_real_escape_string($this->db, $category->getTitle());
+		$query = "INSERT INTO category (title ) 
 		VALUES('".$title."')";
 		mysqli_query($this->db, $query);
 		$id_category = mysqli_insert_id($this->db);
