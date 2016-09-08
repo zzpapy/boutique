@@ -18,7 +18,7 @@ class UserManager
 	public function findById($id)
 	{
 		$id = intval($id);
-		$query = "SELECT * FROM user WHERE id_user='".$id_user."'";
+		$query = "SELECT * FROM user WHERE id_user='".$id."'";
 		$res = mysqli_query($this->db, $query);
 		$user = mysqli_fetch_object($res, "User");
 		return $user;
