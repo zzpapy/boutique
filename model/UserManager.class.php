@@ -57,11 +57,11 @@ class UserManager
 			,$address ,$phone,$admin)
 	{
 		$user = new User();
-		$user -> setsetName($name);
+		$user -> setName($name);
 		$user->setPassword($password);
 		$user->setMail($mail);
 		$user->setFirstname($firstname);
-		$user-> setAdress($address);
+		$user-> setAddress($address);
 		$user-> setPhone($phone);
 		$user-> setAdmin($admin);
 		$email = mysqli_real_escape_string($this->db, $user->getEmail());
