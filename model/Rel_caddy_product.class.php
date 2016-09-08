@@ -7,9 +7,26 @@ class Rel_caddy_product
 	private $id_caddy  ;
 	private $id_product  ;
 	private $quantity;
+	// La base de données
+	private $db;
+	// Propriété calculée
+	private $product;
+	public function __construct($db)
+	{
+		$this->db = $db;
+	}
 	
 	
-	
+	if (!$this->product)
+		{
+			// Il faut donc aller le chercher !
+			// On récupère le manager qui va bien (ici, UserManager)
+			$product = new ProductManager($this->db);
+			// Et on lui demande d'aller chercher l'User qui correspond à id_product
+			$this->product = $product->findById($this->id_product);
+		}
+		// On peut du coup retourner $this->product
+		return $this->product;
 
 	// Méthodes
 	// Liste des getters
@@ -44,7 +61,12 @@ class Rel_caddy_product
 		
 			$this->quantity = $quantity;
 	}
-	
+	public function setAuthor(User $author)
+	{
+		$this->product = $product;
+		$this->id_product = $author->getIdProduct();
+	}
+
 	
 	
 
