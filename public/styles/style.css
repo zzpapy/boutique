@@ -29,14 +29,52 @@ header{
 	border: 1px black solid;
 }
 /*--NAV--------------------------------------------*/
-nav ul li{
+.menu ul li{
 	display: inline-block;
-	padding: 15px 15px;
-	border: 1px black solid;	
+	position: relative;
 }
 
-nav ul li a{
+.menu ul li.sous-menu > a:after{
+	content: "↓";
+	position: relative;
+	top: -3px;
+	left: 5px;
+}
+
+/* Sous menu */
+.menu ul ul{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	border: 1px solid #CCC;
+	display: none;
+}
+
+.menu ul ul li{
+	display: block;
+}
+
+.menu ul ul li a{
+	text-align:left;
+}
+/* Au survol, on affiche la sous liste */
+.menu ul li:hover ul{
+	display: block;
+	background: white;
+}
+
+a{
+	display: block;
+	padding: 15px 20px;
+	text-transform: uppercase;
+	color: #333;
 	text-decoration: none;
+	white-space: nowrap;
+
+}
+a:hover{
+	color: #555;
+	background: #f1f1f1;
 }
 /*--ARTICLE--------------------------------------------*/
 article{
