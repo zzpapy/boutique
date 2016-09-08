@@ -36,6 +36,10 @@ class User
 	{
 		return $this->address;
 	}
+	public function getPhone()
+	{
+		return $this->phone;
+	}
 	public function getPassword()
 	{
 		return $this->password;
