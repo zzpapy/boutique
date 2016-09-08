@@ -10,6 +10,7 @@ class CategoryManager
 
 	public function findAll()
 	{
+		$list=[];
 		$query = "SELECT * FROM category";
 		$res = mysqli_query($this->db, $query);
 		while ($category = mysqli_fetch_object($res, "category"))
@@ -34,7 +35,7 @@ class CategoryManager
 		
 		$title = mysqli_real_escape_string($this->db, $category->getTitle());
 		$id_category = $category->getIdCategory();
-		if ($id_author == $_SESSION['id'])
+		if (isset($_SESSION["admin"]))
 		{
 			$query = "UPDATE category SET title='".$title."' WHERE id='".$id_category."'";
 			mysqli_query($this->db, $query);

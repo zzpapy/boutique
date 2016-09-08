@@ -1,7 +1,8 @@
 <?php
 	session_start();
+	$db = mysqli_connect("localhost", "root", "troiswa", "boutique");
 	var_dump($_SESSION);
-	// $db = mysqli_connect("localhost", "root", "troiswa", "boutique");
+
 	$error = "";
 	$error404 = "";
 	$page = "home";
@@ -27,10 +28,20 @@
 		}	
 	}
 
-	$traitementList = ["user", "producer", "product", "category", "caddy", "comment", "logout"];
-	if(in_array($page, $traitementList))
+	$traitementList = [
+		"login_admin" => "user", "login_register_user" => "user",
+		"login_register_pro" => "producer",
+		"product" => "product",
+		"category" => "category",
+		"caddy" => "caddy",
+		"comments" => "comments",
+		"logout" => "logout"
+	];
+
+	if(isset($traitementList[$page]))
 	{
-		require("controller/traitement_".$page.".php");
+		require("controller/traitement_".$traitementList[$page].".php");
 	}
+
 	require("controller/skel.php");
 ?>

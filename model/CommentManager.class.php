@@ -10,6 +10,7 @@ class CommentManager
 
 	public function findAll()
 	{
+		$list=[];
 		$query = "SELECT * FROM comment";
 		$res = mysqli_query($this->db, $query);
 		while ($comment = mysqli_fetch_object($res, "Comment"))
@@ -54,7 +55,7 @@ class CommentManager
 		}
 	}
 
-	public function create ($password,$mail,$name,$firstname,$address,$phone,$admin)
+	public function create ($content,$date,$id_caddy,$note,$id_author)
 	{
 		$comment = new comment();
 		$comment -> setDate($date);
