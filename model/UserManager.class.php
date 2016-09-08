@@ -63,7 +63,7 @@ class UserManager
 		$user-> setAddress($address);
 		$user-> setPhone($phone);
 		$user-> setAdmin($admin);
-		$email = mysqli_real_escape_string($this->db, $user->getEmail());
+		$email = mysqli_real_escape_string($this->db, $user->getMail());
 		$password = mysqli_real_escape_string($this->db, $getPassword());
 		$query = "INSERT INTO user (password, mail, name,firstname 
 			,address ,phone,admin) 
