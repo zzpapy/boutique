@@ -31,9 +31,9 @@ class CategoryManager
 
 	public function save(category $category)// la variable $category DOIT etre de la classe category -> Type hinting
 	{
-		$id_category = mysqli_real_escape_string($this->db, $category->getIdCategory());
+		
 		$title = mysqli_real_escape_string($this->db, $category->getTitle());
-		$id_category = $category->getId();
+		$id_category = $category->getIdCategory();
 		if ($id_author == $_SESSION['id'])
 		{
 			$query = "UPDATE category SET title='".$title."' WHERE id='".$id_category."'";
