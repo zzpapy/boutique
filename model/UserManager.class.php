@@ -54,21 +54,22 @@ class UserManager
 	// }
 
 	public function create($password,$mail ,$name ,$firstname 
-			,$adress ,$phone,$admin)
+			,$address ,$phone,$admin)
 	{
 		$user = new User();
 		$user -> setsetName($name);
 		$user->setPassword($password);
 		$user->setMail($mail);
 		$user->setFirstname($firstname);
-		$user-> setAdress($adress);
+		$user-> setAdress($address);
 		$user-> setPhone($phone);
 		$user-> setAdmin($admin);
 		$email = mysqli_real_escape_string($this->db, $user->getEmail());
 		$password = mysqli_real_escape_string($this->db, $getPassword());
-		$query = "INSERT INTO user (password, mail, name) 
+		$query = "INSERT INTO user (password, mail, name,firstname 
+			,address ,phone,admin) 
 		VALUES('".$password."', '".$mail."', '".$name."', '".$firstname."', 
-			'".$adress."', '".$phone."', '".$admin."')";
+			'".$address."', '".$phone."', '".$admin."')";
 		mysqli_query($this->db, $query);
 		$id = mysqli_insert_id($this->db);
 		return $this->findById($id);

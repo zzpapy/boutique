@@ -7,7 +7,7 @@ class User
 	private $name  ;
 	private $firstname;
 	private $mail ;
-	private $adress;
+	private $address;
 	private $phone ;
 	private $password  ;
 	private $admin;
@@ -31,9 +31,9 @@ class User
 	{
 		return $this->mail;
 	}
-	public function getAdress()
+	public function getAddress()
 	{
-		return $this->adress;
+		return $this->address;
 	}
 	public function getPassword()
 	{
@@ -60,9 +60,9 @@ class User
 		
 			$this->mail = $mail;
 	}
-	public function setIdAdress($adress)
+	public function setIdAddress($address)
 	{
-		$this->adress = $adress;
+		$this->address = $address;
 	}
 	public function setIdPhone($phone)
 	{
