@@ -12,7 +12,7 @@ class ProductManager
 	{
 		$list=[];
 		$query = "SELECT * FROM product";
-		$res 
+		$res = mysqli_query($this->db, $query);
 		while ($product = mysqli_fetch_object($res, "Product", [$this->db]))
 
 		

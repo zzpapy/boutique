@@ -13,7 +13,7 @@ class CategoryManager
 		$list=[];
 		$query = "SELECT * FROM category";
 		$res = mysqli_query($this->db, $query);
-		while ($category = mysqli_fetch_object($res, "category"))
+		while ($category = mysqli_fetch_object($res, "Category"))
 			$list[] = $category;
 		return $list;
 	}
@@ -22,7 +22,7 @@ class CategoryManager
 		$id = intval($id);
 		$query = "SELECT * FROM category WHERE id_category='".$id."'";
 		$res = mysqli_query($this->db, $query);
-		$category = mysqli_fetch_object($res, "category");
+		$category = mysqli_fetch_object($res, "Category");
 		return $category;
 	}
 	// public function find($id)
@@ -50,7 +50,7 @@ class CategoryManager
 		
 		if ($id_category == $_SESSION['id'])// || $_SESSION['admin'] === true)
 		{
-			$query = "DELETE FROM categorys WHERE id='".$id_category."'";
+			$query = "DELETE FROM category WHERE id='".$id_category."'";
 			mysqli_query($this->db, $query);
 		}
 	}
