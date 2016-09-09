@@ -1,6 +1,7 @@
 <?php
 class ProductManager
 {
+
 	
 	private $db;
 	public function __construct($db)
@@ -12,7 +13,7 @@ class ProductManager
 	{
 		$list=[];
 		$query = "SELECT * FROM product";
-		$res 
+		$res = mysqli_query($this->db, $query);
 		while ($product = mysqli_fetch_object($res, "Product", [$this->db]))
 
 		
@@ -33,10 +34,21 @@ class ProductManager
 	public function findByCaddy(Caddy $caddy)
 	{
 		$list=[];
-		$query = "SELECT * FROM rel_caddy_product LEFT JOIN product ON product.id_product=rel_caddy_product.id_product WHERE id_caddy='".$caddy->getId()."'";
+
+		$query = "SELECT * FROM rel_caddy_product LEFT JOIN product ON rel_caddy_product.id_product=product.id_product WHERE id_caddy='".$caddy->getId()."'";
 		$res = mysqli_query($this->db, $query);
 		while ($product = mysqli_fetch_object($res, "Product"))
 			$list[] = $product;
+		return $list;
+	}
+	public function findByCategory(Category $category)
+	{
+		$list=[];
+
+		$query = "SELECT * FROM category  WHERE id_category='".$category->getIdCategory()."'";
+		$res = mysqli_query($this->db, $query);
+		while ($category = mysqli_fetch_object($res, "Category",[$this->db]))
+			$list[] = $category;
 		return $list;
 	}
 	// public function find($id)
@@ -49,7 +61,7 @@ class ProductManager
 		$id_product = $product->getIdProduct();
 		$name = mysqli_real_escape_string($this->db, $product->getName());
 		$price_buy = mysqli_real_escape_string($this->db, $product->getPriceBuy());
-		$margin_sell = mysqli_real_escape_string($this->db, $product->getMarginSell());
+		$margin_sale = mysqli_real_escape_string($this->db, $product->getMarginSale());
 		$price_sell = mysqli_real_escape_string($this->db, $product->getPriceSell());
 		$description = mysqli_real_escape_string($this->db, $product->getDescription());
 		$stock = mysqli_real_escape_string($this->db, $product->getStock());

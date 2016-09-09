@@ -1,8 +1,16 @@
+
 <?php
 
-	$category=new Categroy();
-	$list=FindAll($category);
-	var_dump($list);
+	$manager=new CategoryManager($db);
+	$categorys=$manager->findAll();
+	$count=0;
+	
+	while($count<sizeof($categorys))
+	{
+		$category=$categorys[$count];
+		// var_dump($category);
+		require('view/bloc_home_category.phtml');
+		$count++;
+		}
 
-	require('view/bloc_home_category.phtml');
 ?>
