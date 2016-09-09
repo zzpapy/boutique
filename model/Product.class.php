@@ -56,9 +56,9 @@ class Product
 	{
 		return $this->price_buy;
 	}
-	public function getMarginSell()
+	public function getMarginSale()
 	{
-		return $this->margin_sell;
+		return $this->margin_sale;
 	}
 	public function getPriceSell()
 	{
@@ -128,9 +128,9 @@ class Product
 	{
 		 $this->price_buy=$price_buy;
 	}
-	public function setMarginSell($margin_sell)
+	public function setMarginSale($margin_sale)
 	{
-		 $this->margin_sell=$margin_sell;
+		 $this->margin_sale=$margin_sale;
 	}
 	public function setPriceSell($price_sell)
 	{

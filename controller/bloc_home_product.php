@@ -1,10 +1,12 @@
 <?php
-	$manager=new ProductManager($db);
-	$products=$manager->findAll();
-	var_dump($products);
-	$count=0;
-	while ($count<sizeof($products))
-		$product=$products[$i];
-		require('view/bloc_home_product.phtml');
-		$i++;
+$products = $category->getProducts();
+// var_dump($products);
+$countP=0;
+while ($countP<sizeof($products))
+{
+	$product=$products[$countP];
+var_dump($countP);
+	$countP++;
+	require('view/bloc_home_product.phtml');
+}
 ?>

@@ -1,6 +1,7 @@
 <?php
 class ProductManager
 {
+
 	
 	private $db;
 	public function __construct($db)
@@ -40,6 +41,16 @@ class ProductManager
 			$list[] = $product;
 		return $list;
 	}
+	public function findByCategory(Category $category)
+	{
+		$list=[];
+
+		$query = "SELECT * FROM category  WHERE id_category='".$category->getIdCategory()."'";
+		$res = mysqli_query($this->db, $query);
+		while ($category = mysqli_fetch_object($res, "Category",[$this->db]))
+			$list[] = $category;
+		return $list;
+	}
 	// public function find($id)
 	// {
 	// 	return $this->findById($id);
@@ -50,7 +61,7 @@ class ProductManager
 		$id_product = $product->getIdProduct();
 		$name = mysqli_real_escape_string($this->db, $product->getName());
 		$price_buy = mysqli_real_escape_string($this->db, $product->getPriceBuy());
-		$margin_sell = mysqli_real_escape_string($this->db, $product->getMarginSell());
+		$margin_sale = mysqli_real_escape_string($this->db, $product->getMarginSale());
 		$price_sell = mysqli_real_escape_string($this->db, $product->getPriceSell());
 		$description = mysqli_real_escape_string($this->db, $product->getDescription());
 		$stock = mysqli_real_escape_string($this->db, $product->getStock());
