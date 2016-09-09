@@ -1,6 +1,7 @@
 <?php
 	session_start();
-	$db = mysqli_connect("192.168.1.79", "boutique", "boutique", "boutique");
+	var_dump($_SESSION);
+	$db = mysqli_connect("localhost", "root", "troiswa", "boutique");
 
 	$error = "";
 	$error404 = "";

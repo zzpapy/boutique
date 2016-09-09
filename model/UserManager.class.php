@@ -92,7 +92,10 @@ class UserManager
 		$user-> setAdmin($admin);
 
 		$email = mysqli_real_escape_string($this->db, $user->getMail());
-		$password = mysqli_real_escape_string($this->db, $user-> getPassword());
+
+		$password = mysqli_real_escape_string($this->db, $user-> getPassword());		
+		
+
 		$name = mysqli_real_escape_string($this->db, $user->getName());
 		$firstname = mysqli_real_escape_string($this->db, $user-> getFirstname());
 		$address = mysqli_real_escape_string($this->db, $user->getAddress());
@@ -106,6 +109,7 @@ class UserManager
 			'".$address."', '".$phone."', '".$admin."')";
 		mysqli_query($this->db, $query);
 		$id_user = mysqli_insert_id($this->db);
+		var_dump(mysqli_error($this->db));
 		return $this->findById($id_user);
 	}
 }
