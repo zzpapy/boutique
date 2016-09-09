@@ -2,6 +2,7 @@
 class CategoryManager
 {
 	
+	
 	private $db;
 	public function __construct($db)
 	{
@@ -13,7 +14,7 @@ class CategoryManager
 		$list=[];
 		$query = "SELECT * FROM category";
 		$res = mysqli_query($this->db, $query);
-		while ($category = mysqli_fetch_object($res, "Category"))
+		while ($category = mysqli_fetch_object($res, "Category",[$this->db]))
 			$list[] = $category;
 		return $list;
 	}
@@ -22,7 +23,7 @@ class CategoryManager
 		$id = intval($id);
 		$query = "SELECT * FROM category WHERE id_category='".$id."'";
 		$res = mysqli_query($this->db, $query);
-		$category = mysqli_fetch_object($res, "Category");
+		$category = mysqli_fetch_object($res, "Category",[$this->db]);
 		return $category;
 	}
 	// public function find($id)
@@ -30,7 +31,7 @@ class CategoryManager
 	// 	return $this->findById($id);
 	// }
 
-	public function save(category $category)// la variable $category DOIT etre de la classe category -> Type hinting
+	public function save(Category $category)// la variable $category DOIT etre de la classe category -> Type hinting
 	{
 		
 		$title = mysqli_real_escape_string($this->db, $category->getTitle());
@@ -43,7 +44,7 @@ class CategoryManager
 		}
 	}
 
-	public function remove(category $category)
+	public function remove(Category $category)
 	{
 		$id_category = $category->getIdCategory();
 		$title = $category->getTitle();
@@ -57,7 +58,7 @@ class CategoryManager
 
 	public function create ($title)
 	{
-		$category = new category();
+		$category = new Category($this->db);
 		
 		$category->setTitle($title);
 		
