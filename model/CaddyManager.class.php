@@ -45,7 +45,7 @@ class CaddyManager
 	
 		$id_caddy = $caddy->getIdCaddy();
 		$id_user = mysqli_real_escape_string($this->db, $caddy->getIdUser());
-		$full_price = mysqli_real_escape_string($this->db, $caddy->getFullPrice());
+		$full_price = mysqli_real_escape_string($this->dblo, $caddy->getFullPrice());
 		$date = mysqli_real_escape_string($this->db, $caddy->getDate());
 		$status = mysqli_real_escape_string($this->db, $caddy->getStatus());
 		if ($id_caddy == $_SESSION['id'])
