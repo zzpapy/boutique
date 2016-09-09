@@ -80,6 +80,14 @@ h2{
 	margin: 0;
 }
 
+label{
+	margin-top: 10px;
+}
+
+input{
+	margin-top: 10px
+}
+
 /*--HEADER--------------------------------------------*/
 header{
 	display: block;
