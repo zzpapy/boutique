@@ -12,8 +12,11 @@ class ProductManager
 	{
 		$list=[];
 		$query = "SELECT * FROM product";
-		$res = mysqli_query($this->db, $query);
-		while ($product = mysqli_fetch_object($res, "product"))
+		$res 
+		while ($product = mysqli_fetch_object($res, "Product", [$this->db]))
+
+		
+
 			$list[] = $product;
 		return $list;
 	}
@@ -22,12 +25,15 @@ class ProductManager
 		$id = intval($id);
 		$query = "SELECT * FROM product WHERE id_product='".$id."'";
 		$res = mysqli_query($this->db, $query);
-		$product = mysqli_fetch_object($res, "product");
+
+		$product = mysqli_fetch_object($res, "Product", [$this->db]);
+
 		return $product;
 	}
 	public function findByCaddy(Caddy $caddy)
 	{
 		$list=[];
+
 		$query = "SELECT * FROM rel_caddy_product LEFT JOIN product ON rel_caddy_product.id_product=product.id_product WHERE id_caddy='".$caddy->getId()."'";
 		$res = mysqli_query($this->db, $query);
 		while ($product = mysqli_fetch_object($res, "Product"))
@@ -39,7 +45,7 @@ class ProductManager
 	// 	return $this->findById($id);
 	// }
 
-	public function save(product $product)// la variable $product DOIT etre de la classe product -> Type hinting
+	public function save(Product $product)// la variable $product DOIT etre de la classe product -> Type hinting
 	{
 		$id_product = $product->getIdProduct();
 		$name = mysqli_real_escape_string($this->db, $product->getName());
@@ -68,7 +74,7 @@ class ProductManager
 		}
 	}
 
-	// public function remove(product $product)
+	// public function remove(Product $product)
 	// {
 	// 	$id_product = $product->getId();
 	// 	$id_author = $product->getIdAuthor();
@@ -82,7 +88,7 @@ class ProductManager
 	public function create ($name,$price_buy,$margin_sale,$price_sell,$description,$stock,
 		$image,$id_producer,$id_category)
 	{
-		$product = new product();
+		$product = new Product($this-> db);
 		$product -> setName($name);
 		
 		

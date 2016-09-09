@@ -14,6 +14,15 @@ class CaddyManager
 		$query = "SELECT * FROM caddy";
 		$res = mysqli_query($this->db, $query);
 		while ($caddy = mysqli_fetch_object($res, "Caddy", [$this->db]))
+
+	public function findByProduct(Product $product)
+	{
+		$list=[];
+		$query = "SELECT * FROM rel_caddy_product
+			LEFT JOIN caddy ON rel_caddy_product.id_caddy=caddy.id_caddy
+			WHERE id_product='".$product->getId()."'";
+		$res = mysqli_query($this->db, $query);
+		while ($caddy = mysqli_fetch_object($res, "Caddy"))
 			$list[] = $caddy;
 		return $list;
 	}
@@ -34,18 +43,19 @@ class CaddyManager
 	
 		$id_caddy = $caddy->getIdCaddy();
 		$id_user = mysqli_real_escape_string($this->db, $caddy->getIdUser());
-		$full_price = mysqli_real_escape_string($this->db, $caddy->getFullPrice());
+		$full_price = mysqli_real_escape_string($this->dblo, $caddy->getFullPrice());
 		$date = mysqli_real_escape_string($this->db, $caddy->getDate());
 		$status = mysqli_real_escape_string($this->db, $caddy->getStatus());
 		if ($id_caddy == $_SESSION['id'])
 		{
 			$query = "UPDATE caddy SET id_caddy='".$id_caddy."', 
-			id_user='".$id_user."', 
-			full_price='".$full_price."', 
-			id_user='".$id_user."', 
-			date='".$date."', 
-			caddy='".$caddy."' WHERE id_caddy='".$id_caddy."'";
+				id_user='".$id_user."', 
+				full_price='".$full_price."', 
+				id_user='".$id_user."', 
+				date='".$date."', 
+				caddy='".$caddy."' WHERE id_caddy='".$id_caddy."'";
 			mysqli_query($this->db, $query);
+			// $query = "DELETE / INSERT rel_caddy_product"
 			return $this->findById($id_caddy);
 		}
 	}
