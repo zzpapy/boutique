@@ -33,25 +33,22 @@ class Comment
 	{
 		return $this->content;
 	}
-	public function getIdCaddy()
-	{
-		return $this->id_caddy;
-	}
 	public function getNote()
 	{
 		return $this->note;
 	}
-	public function getIdAuthor()
-	{
-		return $this->id_author;
-	}
 	
 
 	// Liste des setters
-	public function setIdComment($id_comment)
+	public function setAuthor(User $author)
 	{
-		
-			$this->id_comment = $id_comment;
+		$this->author = $author;
+		$this->id_author = $author->getIdUser();
+	}
+	public function setCaddy(Caddy $caddy)
+	{
+		$this->caddy = $caddy;
+		$this->id_caddy = $caddy->getIdCaddy();
 	}
 	public function setDate($date)
 	{

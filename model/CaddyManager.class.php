@@ -14,13 +14,32 @@ class CaddyManager
 		$query = "SELECT * FROM caddy";
 		$res = mysqli_query($this->db, $query);
 		while ($caddy = mysqli_fetch_object($res, "Caddy", [$this->db]))
-
+			$list[] = $caddy;
+		return $list;
+	}
+	public function findCurrentByUser(User $user)
+	{
+		$id = intval($id);
+		$query = "SELECT * FROM caddy WHERE id_user='".$user->getIdUser()."' AND status='1'";// /!\
+		$res = mysqli_query($this->db, $query);
+		$caddy = mysqli_fetch_object($res, "Caddy", [$this->db]);
+		return $caddy;
+	}
+	public function findByUser(User $user)
+	{
+		$list=[];
+		$query = "SELECT * FROM caddy WHERE id_user='".$user->getIdUser()."'";
+		$res = mysqli_query($this->db, $query);
+		while ($caddy = mysqli_fetch_object($res, "Caddy", [$this->db]))
+			$list[] = $caddy;
+		return $list;
+	}
 	public function findByProduct(Product $product)
 	{
 		$list=[];
 		$query = "SELECT * FROM rel_caddy_product
 			LEFT JOIN caddy ON rel_caddy_product.id_caddy=caddy.id_caddy
-			WHERE id_product='".$product->getId()."'";
+			WHERE id_product='".$product->getIdProduct()."'";
 		$res = mysqli_query($this->db, $query);
 		while ($caddy = mysqli_fetch_object($res, "Caddy", [$this->db]))
 			$list[] = $caddy;
@@ -55,7 +74,7 @@ class CaddyManager
 				date='".$date."', 
 				caddy='".$caddy."' WHERE id_caddy='".$id_caddy."'";
 			mysqli_query($this->db, $query);
-			// $query = "DELETE / INSERT rel_caddy_product"
+			// $query = "DELETE / INSERT rel_caddy_product" /!\
 			return $this->findById($id_caddy);
 		}
 	}
@@ -71,16 +90,20 @@ class CaddyManager
 		}
 	}
 
-	public function create($full_price, $date, $status)
+	public function create(User $user, $full_price, $date, $status)
 	{
 		$caddy = new Caddy($this->db);
-		$id_user = mysqli_real_escape_string($this->db, $caddy->getIdUser());
 		$caddy -> setFullPrice($full_price);
 		$caddy->setDate($date);
 		$caddy->setStatus($status);
+		$caddy->setUser($user);
 		
-		$query = "INSERT INTO caddy (full_price, date, status) 
-		VALUES('".$full_price."', '".$date."', '".$status."')";
+		$full_price = $caddy->getFullPrice();
+		$date = $caddy->getDate();
+		$status = $caddy->getStatus();
+		$id_user = $caddy->getUser()->getIdUser();
+		$query = "INSERT INTO caddy (full_price, date, status, id_user) 
+			VALUES('".$full_price."', '".$date."', '".$status."', '".$id_user."')";
 		mysqli_query($this->db, $query);
 		$id_caddy = mysqli_insert_id($this->db);
 		return $this->findById($id_caddy);

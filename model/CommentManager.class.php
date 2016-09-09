@@ -13,7 +13,7 @@ class CommentManager
 		$list=[];
 		$query = "SELECT * FROM comment";
 		$res = mysqli_query($this->db, $query);
-		while ($comment = mysqli_fetch_object($res, "Comment"))
+		while ($comment = mysqli_fetch_object($res, "Comment", [$this->db]))
 			$list[] = $comment;
 		return $list;
 	}
@@ -22,7 +22,7 @@ class CommentManager
 		$id = intval($id);
 		$query = "SELECT * FROM comment WHERE id_comment='".$id."'";
 		$res = mysqli_query($this->db, $query);
-		$comment = mysqli_fetch_object($res, "Comment");
+		$comment = mysqli_fetch_object($res, "Comment", [$this->db]);
 		return $comment;
 	}
 	// public function find($id)
@@ -34,7 +34,7 @@ class CommentManager
 		$list=[];
 		$query = "SELECT * FROM comment  WHERE id_caddy='".$caddy->getId()."'";
 		$res = mysqli_query($this->db, $query);
-		while ($comment = mysqli_fetch_object($res, "Comment"))
+		while ($comment = mysqli_fetch_object($res, "Comment", [$this->db]))
 			$list[] = $comment;
 		return $list;
 	}
@@ -43,7 +43,7 @@ class CommentManager
 		$list=[];
 		$query = "SELECT * FROM comment  WHERE id_author='".$author->getId()."'";
 		$res = mysqli_query($this->db, $query);
-		while ($user = mysqli_fetch_object($res, "User"))
+		while ($user = mysqli_fetch_object($res, "Comment", [$this->db]))
 			$list[] = $user;
 		return $list;
 	}
@@ -75,7 +75,7 @@ class CommentManager
 
 	public function create ($content,$date,$id_caddy,$note,$id_author)
 	{
-		$comment = new comment();
+		$comment = new Comment($this->db);
 		$comment -> setDate($date);
 		$comment->setContent($content);
 		$comment->setIdCaddy($id_caddy);

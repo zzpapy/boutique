@@ -23,8 +23,8 @@
 				if ($user->verifPassword($_POST['password']))
 				{
 					$_SESSION['user'] = $user;
-					// header();
-					// exit;
+					header('Location: index.php');
+					exit;
 				}
 				else
 					$error = 'mot de passe incorrect';

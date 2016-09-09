@@ -12,6 +12,7 @@ class Caddy
 	private $db;
 	private $user;
 	private $products;
+	private $comments;
 
 	public function __construct($db)
 	{
@@ -34,10 +35,6 @@ class Caddy
 		return $this->user;
 	}
 	public function getProducts()
-
-	/*
-	public function getIdUser()
-
 	{
 		if (!$this->products)
 		{
@@ -46,26 +43,14 @@ class Caddy
 		}
 		return $this->products;
 	}
-	*/
-	public function getUser()
+	public function getComments()
 	{
-		//
-		if (!$this->user)
+		if (!$this->comments)
 		{
-			$manager = new UserManager($this->db);
-			$this->user = $manager->findById($this->id_user);
+			$manager = new CommentManager($this->db);
+			$this->comments = $manager->findByCaddy($this);
 		}
-		return $this->user;
-	}
-	public function getProducts()
-	{
-		//
-		if (!$this->products)
-		{
-			$manager = new ProductManager($this->db);
-			$this->products = $manager->findByCaddy($this);
-		}
-		return $this->products;
+		return $this->comments;
 	}
 	public function getFullPrice()
 	{
@@ -80,20 +65,7 @@ class Caddy
 		return $this->status;
 	}
 	
-	public function addProducts(Product $product)
-	{
-		$this->products[] = $product;
-	}
-	public function removeProducts(Product $product)
-	{
-		// array_splice
-	}
 	// Liste des setters
-	public function setCaddy($caddy)
-	{
-		
-			$this->caddy = $caddy;
-	}
 	// public function setIdUser($id_user)
 	// {
 	// 	$this->id_user = $id_user;
@@ -106,7 +78,7 @@ class Caddy
 
 	public function setFullPrice($full_price)
 	{
-		
+		// if ()
 			$this->full_price = $full_price;
 	}
 	public function setDate($date)

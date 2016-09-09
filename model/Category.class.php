@@ -6,8 +6,8 @@ class Category
 	// Propriétés
 	private $id_category  ;
 	private $title ;
-	private $products;
 	private $db;
+	private $products;
 
 	
 	

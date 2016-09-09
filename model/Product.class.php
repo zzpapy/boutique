@@ -35,7 +35,7 @@ class Product
 			// On récupère le manager qui va bien (ici, UserManager)
 			$manager = new CaddyManager($this->db);
 			// Et on lui demande d'aller chercher l'User qui correspond à id_author
-			$this->caddys = $manager->findById($this->id_producer);
+			$this->caddys = $manager->findByProduct($this);
 		}
 		// On peut du coup retourner $this->author
 		return $this->caddys;
@@ -126,7 +126,7 @@ class Product
 	}
 	public function setPriceBuy($price_buy)
 	{
-		 $this->price_buy=$price_buy;
+		$this->price_buy=$price_buy;
 	}
 	public function setMarginSale($margin_sale)
 	{
