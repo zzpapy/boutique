@@ -82,7 +82,11 @@ h2{
 
 /*--HEADER--------------------------------------------*/
 header{
-	border: 1px black solid;
+	display: block;
+	background: #E0ECE0;
+	color: #17980A;
+	border: 4px #FD8129 solid;
+	padding: 30px 810px 0px 0px;
 }
 /*--NAV--------------------------------------------*/
 .menu{
@@ -228,9 +232,13 @@ figure{
 /*--FORMULAIRE--------------------------------------------*/
 .formulaire{
 	display: inline-block;
+	background: #E0ECE0;
+	color: #17980A;
+	vertical-align: top;
 	text-align: right;
 	width: 40%;
-	border: 1px black solid;
+	border: 4px #FD8129 solid;
+	border-radius: 0px 20px 0px 20px;
 	padding: 10px 40px 10px 0px;
 	margin: 0px 40px;
 }
