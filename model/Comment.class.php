@@ -10,8 +10,14 @@ class Comment
 	private $id_caddy ;
 	private $note;
 	private $id_author ;
+	private $author;
+	private $caddy;
+	private $db;
 	
-	
+	public function __construct($db)
+	{
+		$this->db = $db;
+	}
 
 	// Méthodes
 	// Liste des getters
@@ -57,14 +63,59 @@ class Comment
 		
 			$this->content = $content;
 	}
-	public function setIdCaddy($id_caddy)
+	// public function setIdCaddy($id_caddy)
+	// {
+	// 	$this->id_caddy = $id_caddy;
+	// }
+	public function getCaddy()
 	{
-		$this->id_caddy = $id_caddy;
+		// Si l'auteur n'a pas encore été récupéré ou n'est pas connu
+		if (!$this->caddy)
+		{
+			// Il faut donc aller le chercher !
+			// On récupère le manager qui va bien (ici, UserManager)
+			$manager = new CaddyManager($this->db);
+			// Et on lui demande d'aller chercher l'User qui correspond à id_author
+			$this->caddy = $manager->findById($this->id_caddy);
+		}
+		// On peut du coup retourner $this->author
+		return $this->caddy;
 	}
-	public function setIdAuthor($id_author)
+	public function getAuthor()
 	{
-		$this->id_author = $id_author;
+		// Si l'auteur n'a pas encore été récupéré ou n'est pas connu
+		if (!$this->author)
+		{
+			// Il faut donc aller le chercher !
+			// On récupère le manager qui va bien (ici, UserManager)
+			$manager = new UserManager($this->db);
+			// Et on lui demande d'aller chercher l'User qui correspond à id_author
+			$this->author = $manager->findById($this->id_author);
+		}
+		// On peut du coup retourner $this->author
+		return $this->author;
 	}
+
+
+
+
+	public function setCaddy(Caddy $caddy)
+	{
+		$this->id_caddy = $caddy->getId();
+		$this->caddy = $caddy;
+	}
+	public function setAuthor(User $author)
+	{
+		$this->id_author = $author->getId();
+		$this->author = $author;
+	}
+
+
+
+	// public function setIdAuthor($id_author)
+	// {
+	// 	$this->id_author = $id_author;
+	// }
 	public function setNote($note)
 	{
 		
