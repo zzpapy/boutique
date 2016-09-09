@@ -24,6 +24,32 @@ class UserManager
 		$user = mysqli_fetch_object($res, "User");
 		return $user;
 	}
+
+	public function findByName($name)
+	{
+		$name = mysqli_real_escape_string($this->db, $name);
+		$query = "SELECT * FROM user WHERE name='".$name."'";
+		$res = mysqli_query($this->db, $query);
+		$user = mysqli_fetch_object($res, "User");
+		
+		return $user;
+
+
+		// $query = "SELECT * FROM user WHERE id_user='".$id."'";
+		// $res = mysqli_query($this->db, $query);
+		// $user = mysqli_fetch_object($res, "User");
+		// return $user;
+
+		// 	public function findByAuthor(User $author)
+		// {
+		// 	$list=[];
+		// 	$query = "SELECT * FROM comment  WHERE id_author='".$author->getId()."'";
+		// 	$res = mysqli_query($this->db, $query);
+		// 	while ($user = mysqli_fetch_object($res, "User"))
+		// 		$list[] = $user;
+		// 	return $list;
+		// }
+	}
 	// public function find($id)
 	// {
 	// 	return $this->findById($id);
