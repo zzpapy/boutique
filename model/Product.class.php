@@ -154,7 +154,7 @@ class Product
 	// }
 	public function setProducer(Producer $producer)
 	{
-		$this->id_producer = $producer->getId();
+		$this->id_producer = $producer->getIdProducer();
 		$this->producer = $producer;
 	}
 
@@ -164,7 +164,7 @@ class Product
 	// }
 	public function setCategory(Category $category)
 	{
-		$this->id_category = $category->getId();
+		$this->id_category = $category->getIdCategory();
 		$this->category = $category;
 	}
 

@@ -1,39 +1,18 @@
 <article >
-	<div class="formulaire">
-	<!--	<?=$error?>  -->
-		<h2>Connexion:</h2>
-		<form method="post">
-			<!-- login -->
-			<div>
-				<label for="aliaslogin">Nom :</label>
-				<input id="aliaslogin" type="text" name="name" placeholder=""/>
-			</div>
-			<!-- password -->
-			<div>
-				<label for="aliasmdp">Mot de passe :</label>
-			    <input id="aliasmdp" type="password" name="password"/>
-			</div>
-			<!-- Connexion -->
-			<div>
-				<button type="submit" name="login" value="login">Connexion</button>
-			</div>
-		</form>
-	</div>
-
+	
 	<div class="formulaire">
 		<h2>Je suis un particulier :</h2>
 		<form method="post">	
 	    	<!-- nom -->
 	    	<div>
-	    		<label class="white" for="aliasnom">Nom :</label>
+	    		<label for="aliasnom">Nom :</label>
 	    		<input id="aliasnom" type="text" name="name" placeholder="Votre NOM"/>
 			</div>
 			<!-- prenom -->
 			<div>
-	    		<label class="white" for="aliasprenom">Prénom :</label>
+	    		<label for="aliasprenom">Prénom :</label>
 	    		<input id="aliasprenom" type="text" name="firstname" placeholder="Votre PRENOM"/>
 			</div>
-			
 			<!-- e-mail -->
 			<div>
 				<label for="aliasemail">Adresse e-mail :</label>
@@ -66,4 +45,26 @@
 			</div>
 		</form>
 	</div>
+
+	<div class="formulaire">
+	<!--	<?=$error?>  -->
+		<h2>Connexion:</h2>
+		<form method="post">
+			<!-- login -->
+			<div>
+				<label for="aliaslogin">Nom :</label>
+				<input id="aliaslogin" type="text" name="name" placeholder=""/>
+			</div>
+			<!-- password -->
+			<div>
+				<label for="aliasmdp">Mot de passe :</label>
+			    <input id="aliasmdp" type="password" name="password"/>
+			</div>
+			<!-- Connexion -->
+			<div>
+				<button type="submit" name="login" value="login">Connexion</button>
+			</div>
+		</form>
+	</div>
+
 </article>

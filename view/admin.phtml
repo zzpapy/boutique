@@ -1,1 +1,16 @@
-<p>admin.phtml</p>
+<form method="post">
+	<input type="text" name="name" id="name"><label for="Nom">Nom</label><br>
+	<input type="text" name="price_buy" id="price_buy" value=""><label for="price_buy">prix d'achat</label><br>
+	<input type="text" name="margin_sale" id="margin_sale" value=""><label for="margin_sale">marge</label><br>
+	<input type="text" name="price_sell" id="price_sell" value=""><label for="price_sell">prix de vente</label><br>
+	<input type="text" name="description" id="description" value=""><label for="description">déscription</label><br>
+	<input type="text" name="stock" id="stock" value=""><label for="stock">stock</label><br>
+	<input type="text" name="image" id="image" value=""><label for="image">image</label><br>
+	<input type="text" name="id_producer" id="id_producer" value=""><label for="id_producer">id_producer</label><br>
+	<!-- <input type="text" name="id_producer" id="name" value=""> -->
+	<input type="radio" name="id_category" value="1" id="fruits" checked /> <label for="fruits">fruits</label>
+	<input type="radio" name="id_category" value="2" id="legumes"  /> <label for="legumes">legumes</label>
+	<input type="radio" name="id_category" value="3" id="viandes"  /> <label for="viandes">viandes</label><br>
+	<input type="hidden" name="create" value="create">
+	<button type="submit" >send</button>
+</form>
