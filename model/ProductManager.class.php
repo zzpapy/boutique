@@ -104,24 +104,32 @@ class ProductManager
 		
 		
 		$product->setPriceBuy($price_buy);
-		$product-> setMarginSell($margin_sale);
+		$product-> setMarginSale($margin_sale);
 		$product-> setPriceSell($price_sell);
 		$product-> setDescription($description);
 		$product->setStock($stock);
 		$product-> setImage($image);
-		$product-> setIdProducer($id_producer);
-		$product-> setIdCategory($id_category);
-		$query = "INSERT INTO product (price_buy,  name,price_buy 
-			,margin_sale ,margin_sale,price_sell,description,stock,image,id_producer,
+		
+		$manager = new ProducerManager($this->db);
+		$producer = $manager->findById($id_producer);
+		$product-> setProducer($producer);
+		
+		$manager = new CategoryManager($this->db);
+		$category = $manager->findById($id_category);
+		$product-> setCategory($category);
+		
+		$query = "INSERT INTO product (price_buy,  name 
+			,margin_sale ,price_sell,description,stock,image,id_producer,
 			id_category) 
-		VALUES('".$price_buy."',  '".$name."', '".$price_buy."', 
-			'".$margin_sale."', '".$margin_sale."', '".$price_sell."',
+		VALUES('".$price_buy."',  '".$name."', 
+			'".$margin_sale."',  '".$price_sell."',
 			'".$description."',
 			'".$stock."',
 			'".$image."',
 			'".$id_producer."',
 			'".$id_category."')";
 		mysqli_query($this->db, $query);
+		var_dump(mysqli_error($this->db));
 		$id_product = mysqli_insert_id($this->db);
 		return $this->findById($id_product);
 	}
