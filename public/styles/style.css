@@ -173,31 +173,52 @@ display: block;
 clear: both;
 }
 
+.floatLeft{
+	display: inline-block;
+	float:left;
+	overflow: hidden;
+}
+
+.floatRight{
+	display: inline-block;
+	float: right;
+	overflow: hidden;
+}
+
+.noMarginBottom{
+	margin-bottom: 0px;
+}
 
 /*-- BLOC PRODUITS-----------------------------------------*/
 
+/*
 figure{
 	margin:15px;
 	padding-top:15px;
 }
+*/
 
 .blocHome{
 	display: block;
 	width: 400px;
 	text-align: center;
 	margin: 0 auto;
+	padding:14px;
 	background-color: #E0ECE0;
 	box-shadow: 0px 0px 0.7em #768976;
+	border: 0.5px #345134 solid;
 }
 
 .imageHome{
 	margin: 0 auto;
 	width:100%;
 	box-shadow: 0px 0px 0.5em #78A378;
+	border: 0.5px #345134 solid;
 }
 
 
 .textCenter{
+	width:100%;
 	text-align: center;
 	margin: 0 auto;
 }
@@ -234,82 +255,105 @@ figure{
 	font-size:1em;	
 }
 
-
-.boutonPanier{margin: 20px;}
-.boutonPanier:hover{box-shadow: 0px 0px 1.5em #78A378;}
+.boutonPanier{margin: 12px 12px 0px 20px;}
+.boutonPanier:hover{box-shadow: 0px 0px 1.5em #619B61;}
 
 /*-- BLOC CADDY-----------------------------------------*/
 
 .blocCaddy{
+	border: 1px #345134 solid;
 	display: block;
-	width: 70%;
-	text-align: center;
-	margin: 0 auto;
+	width: 85%;
+/*	text-align: center;
+*/	margin: 0 auto;
+	padding:10px 20px 10px 12px;
 	background-color: #E0ECE0;
 	box-shadow: 0px 0px 1.5em #768976;
+	overflow: hidden;
 }
 
 .imageCaddy{
-	width:60%;
+	display: block;
+	width:55%;
 	margin:10px;
-	display: inline-block;
 	float:left;
+	border: 1px #345134 solid;
 	box-shadow: 0px 0px 0.5em #78A378;
-	overflow: hidden;
-}
-
-.floatLeft{
-	display: inline-block;
-	float:left;
-	overflow: hidden;
-}
-
-.floatRight{
-	display: inline-block;
-	float: right;
-	overflow: hidden;
 }
 
 .prixCaddy{
-	font-size:8em;
+	font-size:7.5em;
 	font-weight: bold;
 	color:#17980A;
-}
-.clearfix{
-	clear: both;
 	overflow: hidden;
 }
 
+
 .devisePoidsCaddy{
 	margin:0px;
-	font-size:3rem;
+	font-size:2.5rem;
 	font-style: italic;
 	color:#345134;
 	overflow: hidden;
 }
 
 .nameCaddy{
-	display: block;	
-	margin:0px;	
-	font-size:3em;
-	margin-bottom: 15px;
-	color:#345134;	
+	display: inline-block;	
+	margin-top:20px;	
+	font-size:4em;
+	margin-bottom: 10px;
+	color:#345134;
+	overflow: hidden;	
 }
 
 .descriptCaddy{
-	margin:0px;
-	width: 45%;
-	padding-left: 10px;
-	padding-right: 10px;
-	font-size:1.6em;	
+	margin:0px 20px 0px 0px;
+	padding:0px;
+	width: 40%;
+	font-size:1.4em;
+	text-align: justify;
+	overflow: hidden;	
 }
 
-.boutonSupprimer{margin:30px;font-size:30px;}
-.boutonSupprimer:hover{	box-shadow: 0px 0px 1.5em #78A378; }
-
-.champQuantite{margin: 30px;
-	font-size:30px;
+.formCaddy{
+	margin: 0 auto;
+	padding-top: 15px;
+	padding-bottom: 14px;
+	width: 40%;
+	font-size:1.7em;
+	overflow: hidden;	
 }
+
+.indicCaddy{
+	margin-top: 10px;
+	color:#17980A;
+	margin-bottom: 0px;
+}
+
+.quantCaddy{
+	text-align:center;
+	width:500px;
+	height:50px;
+ 	font-size:1em;
+ 	margin: 10px 12px 8px 20px;
+	border: 4px #17980A solid;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 0.5em #A3CBA3;
+}
+.inputCaddy:hover{	box-shadow: 0px 0px 0.8em #78A378; }
+
+.suppCaddy{
+	text-align:center;
+	width:500px;
+	height:50px;
+ 	font-size:1em;
+ 	margin: 20px 12px 8px 20px;
+ 	border: 4px #E43C3C solid;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 0.3em #EE8D8D;
+}
+.suppCaddy:hover{	box-shadow: 0px 0px 0.8em #E43C3C; }
+
 
 /*--FORMULAIRE--------------------------------------------*/
 .formulaire{
