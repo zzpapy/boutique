@@ -161,7 +161,18 @@ article{
 	border: 1px black solid;
 }
 
+
+/*-- BLOC ARTICLE-----------------------------------------*/
+
+.clearfix:after{
+content:"";
+display: block;
+clear: both;
+}
+
+
 /*-- BLOC PRODUITS-----------------------------------------*/
+
 figure{
 	margin:15px;
 	padding-top:15px;
@@ -213,7 +224,7 @@ figure{
 	color:#345134;	
 }
 
-.descripHome{
+.descriptHome{
 	margin:0px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -221,10 +232,81 @@ figure{
 }
 
 
-.boutonPanier{	margin: 20px; }
-.boutonPanier:hover{	box-shadow: 0px 0px 1.5em #78A378; }
+.boutonPanier{margin: 20px;}
+.boutonPanier:hover{box-shadow: 0px 0px 1.5em #78A378;}
 
+/*-- BLOC CADDY-----------------------------------------*/
 
+.blocCaddy{
+	display: block;
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+	background-color: #E0ECE0;
+	box-shadow: 0px 0px 1.5em #768976;
+}
+
+.imageCaddy{
+	width:60%;
+	margin:10px;
+	display: inline-block;
+	float:left;
+	box-shadow: 0px 0px 0.5em #78A378;
+	overflow: hidden;
+}
+
+.floatLeft{
+	display: inline-block;
+	float:left;
+	overflow: hidden;
+}
+
+.floatRight{
+	display: inline-block;
+	float: right;
+	overflow: hidden;
+}
+
+.prixCaddy{
+	font-size:8em;
+	font-weight: bold;
+	color:#17980A;
+}
+.clearfix{
+	clear: both;
+	overflow: hidden;
+}
+
+.devisePoidsCaddy{
+	margin:0px;
+	font-size:3rem;
+	font-style: italic;
+	color:#345134;
+	overflow: hidden;
+}
+
+.nameCaddy{
+	display: block;	
+	margin:0px;	
+	font-size:3em;
+	margin-bottom: 15px;
+	color:#345134;	
+}
+
+.descriptCaddy{
+	margin:0px;
+	width: 45%;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size:1.6em;	
+}
+
+.boutonSupprimer{margin:30px;font-size:30px;}
+.boutonSupprimer:hover{	box-shadow: 0px 0px 1.5em #78A378; }
+
+.champQuantite{margin: 30px;
+	font-size:30px;
+}
 
 /*--FORMULAIRE--------------------------------------------*/
 .formulaire{
