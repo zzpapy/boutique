@@ -25,6 +25,15 @@ class ProductManager
 		$product = mysqli_fetch_object($res, "product");
 		return $product;
 	}
+	public function findByCaddy(Caddy $caddy)
+	{
+		$list=[];
+		$query = "SELECT * FROM rel_caddy_product LEFT JOIN product ON rel_caddy_product.id_product=product.id_product WHERE id_caddy='".$caddy->getId()."'";
+		$res = mysqli_query($this->db, $query);
+		while ($product = mysqli_fetch_object($res, "Product"))
+			$list[] = $product;
+		return $list;
+	}
 	// public function find($id)
 	// {
 	// 	return $this->findById($id);

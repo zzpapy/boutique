@@ -13,7 +13,7 @@ class CaddyManager
 		$list=[];
 		$query = "SELECT * FROM caddy";
 		$res = mysqli_query($this->db, $query);
-		while ($caddy = mysqli_fetch_object($res, "Caddy"))
+		while ($caddy = mysqli_fetch_object($res, "Caddy", [$this->db]))
 			$list[] = $caddy;
 		return $list;
 	}
@@ -22,7 +22,7 @@ class CaddyManager
 		$id = intval($id);
 		$query = "SELECT * FROM caddy WHERE id_caddy='".$id."'";
 		$res = mysqli_query($this->db, $query);
-		$caddy = mysqli_fetch_object($res, "Caddy");
+		$caddy = mysqli_fetch_object($res, "Caddy", [$this->db]);
 		return $caddy;
 	}
 	// public function find($id)
@@ -63,7 +63,7 @@ class CaddyManager
 
 	public function create($full_price, $date, $status)
 	{
-		$caddy = new caddy();
+		$caddy = new Caddy($this->db);
 		$id_user = mysqli_real_escape_string($this->db, $caddy->getIdUser());
 		$caddy -> setFullPrice($full_price);
 		$caddy->setDate($date);
