@@ -29,6 +29,24 @@ class CommentManager
 	// {
 	// 	return $this->findById($id);
 	// }
+	public function findByCaddy(Caddy $caddy)
+	{
+		$list=[];
+		$query = "SELECT * FROM comment  WHERE id_caddy='".$caddy->getId()."'";
+		$res = mysqli_query($this->db, $query);
+		while ($comment = mysqli_fetch_object($res, "Comment"))
+			$list[] = $comment;
+		return $list;
+	}
+	public function findByAuthor(User $author)
+	{
+		$list=[];
+		$query = "SELECT * FROM comment  WHERE id_author='".$author->getId()."'";
+		$res = mysqli_query($this->db, $query);
+		while ($user = mysqli_fetch_object($res, "User"))
+			$list[] = $user;
+		return $list;
+	}
 
 	// public function save(comment $comment)// la variable $comment DOIT etre de la classe comment -> Type hinting
 	// {
