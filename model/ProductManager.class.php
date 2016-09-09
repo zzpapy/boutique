@@ -33,7 +33,8 @@ class ProductManager
 	public function findByCaddy(Caddy $caddy)
 	{
 		$list=[];
-		$query = "SELECT * FROM rel_caddy_product LEFT JOIN product ON product.id_product=rel_caddy_product.id_product WHERE id_caddy='".$caddy->getId()."'";
+
+		$query = "SELECT * FROM rel_caddy_product LEFT JOIN product ON rel_caddy_product.id_product=product.id_product WHERE id_caddy='".$caddy->getId()."'";
 		$res = mysqli_query($this->db, $query);
 		while ($product = mysqli_fetch_object($res, "Product"))
 			$list[] = $product;

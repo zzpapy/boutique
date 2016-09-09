@@ -14,9 +14,7 @@ class CaddyManager
 		$query = "SELECT * FROM caddy";
 		$res = mysqli_query($this->db, $query);
 		while ($caddy = mysqli_fetch_object($res, "Caddy", [$this->db]))
-			$list[] = $caddy;
-		return $list;
-	}
+
 	public function findByProduct(Product $product)
 	{
 		$list=[];
