@@ -1,30 +1,22 @@
-<div class="blocHome borderGreen">
-		<!--	
-		<h6>bloc_home_product.phtml</h6>
-		-->	
-		<!--
-		<a href="index.php?page=product&id=<?=$product['id']?>">
-		-->
-		<figure>
+<link type="text/css" rel="stylesheet" href="../public/styles/style.css"/>
+
+<div class="blocHome">
 			<div class="imageHome">
 				<a href="#">
 				<img src="../public/images/laitue.jpg">
 				<!--<?=htmlentities($product['image'])?>-->
-				Image
 				</a>
 			</div>
-		</figure>
 			<div class="textCenter clearfix">
 				<h2 class="prixHome">1.00</h2>
 				<!--<?=htmlentities($product['price_sell'])?>-->
-				<h2 class="devisePoids">€ / Kg</h2>
+				<h2 class="devisePoids">eur./Kg</h2>
 			</div>
 			<div>
-
 				<?=htmlentities($product['name'])?>
 				<h6 class="descriptHome">Laisser vous tenter par ce produit d'exceptionnelle qualite, cultive dans un respect total de la nature puisque issu d'une approche biodynamique pour le traitement des sols. Vous apprecierez sa saveur bla bla bla...</h6>
 				<?=htmlentities($product['description'])?>
-				<form>
+				<form class="noMarginBottom">
 	            <input type="submit" value="Rajouter a mon panier" class="boutonPanier"/>
 				</form>
 			</div>

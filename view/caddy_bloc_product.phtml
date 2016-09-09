@@ -1,33 +1,27 @@
-
+<link type="text/css" rel="stylesheet" href="../public/styles/style.css"/>
 
 <div class="blocCaddy">
-		<!--	
-		<p>caddy_bloc_product.phtml</p>
-		-->	
-		<!--
-		<a href="index.php?page=product&id=<?=$product['id']?>">
-		-->
-		<figure>
-			<div class="floatLeft">
-				<a href="#" class="imageCaddy">
-				<img src="../public/images/laitue.jpg">
-				<?=htmlentities($product['image'])?>
-				</a>
-			</div>
-			<div class="floatRight">
-				<h2 class="prixCaddy">1.00</h2>
-				<?=htmlentities($product['price_sell'])?>
-				<h2 class="devisePoidsCaddy clearfix:after">eur./Kg</h2>
-			</div>
-			<div>
-				<h4 class="nameCaddy">Notre laitue</h4>
-				<?=htmlentities($product['name'])?>
-				<h6 class="descriptCaddy">Laisser vous tenter par ce produit d'exceptionnelle qualite, cultive dans un respect total de la nature puisque issu d'une approche biodynamique pour le traitement des sols. Vous apprecierez sa saveur bla bla bla...</h6>
-				<?=htmlentities($product['description'])?>
-				<form>
-		            <input type="submit" value="Supprimer ce produit" class="boutonSupprimer"/>
-				</form>
-			</div>
-		</figure>
+	<div>
+		<a href="#" class="imageCaddy">
+		<img src="../public/images/laitue.jpg">
+		<?=htmlentities($product['image'])?>
+		</a>
+	</div>
+	<div>
+		<h2 class="prixCaddy">1.00</h2>
+		<?=htmlentities($product['price_sell'])?>
+		<h2 class="devisePoidsCaddy">eur./Kg</h2>
+		
+		<h4 class="nameCaddy">Notre laitue</h4>
+		<?=htmlentities($product['name'])?>
+		<h6 class="descriptCaddy floatRight">Laisser vous tenter par ce produit d'exceptionnelle qualite, cultive dans un respect total de la nature puisque issu d'une approche biodynamique pour le traitement des sols. Vous apprecierez sa saveur bla bla bla...</h6>
+		<?=htmlentities($product['description'])?>
+		<form class="formCaddy">
+			<h4 class="indicCaddy">veuillez indiquez votre quantite</h4>
+            <input type="text" class="inputCaddy quantCaddy" name="quantity" placeholder="Uniquement par 0.5kg SVP !"/>
+            <input type="submit" value="Supprimer ce produit" class="suppCaddy"/>
+		</form>
+
+	</div>
 </div>
-		<?php require('apps/caddy.php'); ?>
+<?php require('apps/caddy.php'); ?>
