@@ -24,7 +24,7 @@ class CaddyManager
 			LEFT JOIN caddy ON rel_caddy_product.id_caddy=caddy.id_caddy
 			WHERE id_product='".$product->getId()."'";
 		$res = mysqli_query($this->db, $query);
-		while ($caddy = mysqli_fetch_object($res, "Caddy"))
+		while ($caddy = mysqli_fetch_object($res, "Caddy", [$this->db]))
 			$list[] = $caddy;
 		return $list;
 	}
