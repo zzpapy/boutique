@@ -1,3 +1,4 @@
+
 <?php
 $products = $category->getProducts();
 // var_dump($products);

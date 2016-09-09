@@ -1,3 +1,4 @@
+
 <?php
 
 	$manager=new CategoryManager($db);
