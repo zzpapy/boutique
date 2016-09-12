@@ -48,12 +48,19 @@ table {
 	border-spacing: 0;
 }
 */
+/*--FONTS-----------------------------------------------*/
+.fontStyle{
+	font-family: 'Courgette', cursive;
+/*	font-size:30px;
+	font-weight: 400;
+*/
+}
 
 /*--STRUCTURE--------------------------------------------*/
 body{
 	background: white;
-	font-family: arial, helvetica, sans-serif, serif;
-	text-align: center;
+/*	font-family: arial, helvetica, sans-serif, serif;
+*/	text-align: center;
 	margin: 0;
 }
 
@@ -73,7 +80,9 @@ main, .contenair{
 }
 
 h1{
-	margin: 0;
+	font-size:50px;
+	margin:0;
+	margin-right: 400px;
 }
 
 h2{
@@ -94,22 +103,54 @@ header{
 	background: #E0ECE0;
 	color: #17980A;
 	border: 4px #FD8129 solid;
-	padding: 30px 810px 0px 0px;
+	padding: 10px 450px 0px 0px;
 }
 /*--NAV--------------------------------------------*/
+.nav{
+	display: block;
+	padding: 4px 30px 4px 30px;
+	font-size: 25px;
+	color:#41553E;
+	text-decoration: none;
+	white-space: nowrap;
+	margin-top: 4px;
+	margin-bottom: 0px;
+	background-color: rgba();
+}
 .menu{
 	width: 100%;
 	text-align: center;
+	margin-bottom: 0px;
+}
+ ul{
+	padding-top: 2px;
+	padding-left: 0px;
+	margin: 0px;
+ }
+
+.menuDesign{
+	width: 98%;
+/*	padding:0px;
+*/	margin:0 auto;
+	margin-top:15px;
+	margin-bottom:15px;
+	background-color: #E0ECE0;
+	box-shadow: 0px 2px 0.7em #768976;
+	border: 0.5px #345134 solid;
 }
 
 .menu ul li{
 	display: inline-block;
 	position: relative;
+	padding: 0px 10px 0px 10px;
+	margin-right: 20px;
 }
 
 .menu ul li.sous-menu > a:after{
 	content: "↓";
-	position: relative;		
+	position: relative;
+	margin-left:0px;
+	color: #17980A;		
 }
 
 /* Sous menu */
@@ -118,6 +159,8 @@ header{
 	top: 100%;
 	border: 1px solid #CCC;
 	display: none;
+/*	margin-bottom: 4px;
+*/	font-size: 0px;
 }
 
 .menu ul ul li{
@@ -132,26 +175,20 @@ header{
 	padding: 0px;	
 }
 
-.nav{
-	display: block;
-	padding: 20px 10px;
-	text-transform: uppercase;
-	color: #333;
-	text-decoration: none;
-	white-space: nowrap;
-}
 
 a:hover{	
-	color: #555;
-	background: #f1f1f1;
-}
+	color: #17980A;
+	background: #fff;
+	box-shadow: inset 0px 0px 0.7em #768976;
+/*	border: 0.5px #345134 solid;
+*/}
 
 /*--ARTICLE--------------------------------------------*/
 article{
 	display: block;
-	border: 1px black solid;
-	margin: 5px 0px;
-	padding: 5px;
+/*	border: 1px black solid;
+*/	margin: 5px 0px;
+	padding: 10px;
 	overflow: hidden;
 }
 
@@ -213,14 +250,14 @@ figure{
 	margin: 0 auto;
 	padding:14px;
 	background-color: #E0ECE0;
-	box-shadow: 0px 0px 0.7em #768976;
+	box-shadow: 0px 2px 0.7em #768976;
 	border: 0.5px #345134 solid;
 }
 
 .imageHome{
 	margin: 0 auto;
 	width:100%;
-	box-shadow: 0px 0px 0.5em #78A378;
+	box-shadow: 0px 2px 0.5em #78A378;
 	border: 0.5px #345134 solid;
 }
 
@@ -263,8 +300,11 @@ figure{
 	font-size:1em;	
 }
 
-.boutonPanier{margin: 12px 12px 0px 20px;}
-.boutonPanier:hover{box-shadow: 0px 0px 1.5em #619B61;}
+.boutonPanier{
+	margin: 12px 12px 0px 20px;
+	box-shadow: 0px 1px 0.8em #ACC3AC;
+}
+.boutonPanier:hover{box-shadow: 0px 1px 1.5em #619B61;}
 
 /*-- BLOC CADDY-----------------------------------------*/
 
@@ -276,7 +316,7 @@ figure{
 */	margin: 0 auto;
 	padding:10px 20px 10px 12px;
 	background-color: #E0ECE0;
-	box-shadow: 0px 0px 1.5em #768976;
+	box-shadow: 0px 2px 1.5em #768976;
 	overflow: hidden;
 }
 
@@ -286,7 +326,7 @@ figure{
 	margin:10px;
 	float:left;
 	border: 1px #345134 solid;
-	box-shadow: 0px 0px 0.5em #78A378;
+	box-shadow: 0px 2px 0.5em #78A378;
 }
 
 .prixCaddy{
@@ -358,9 +398,9 @@ figure{
  	margin: 20px 12px 8px 20px;
  	border: 4px #E43C3C solid;
 	border-radius: 10px;
-	box-shadow: inset 0px 0px 0.3em #EE8D8D;
+	box-shadow: inset 0px 1px 0.3em #EE8D8D;
 }
-.suppCaddy:hover{	box-shadow: 0px 0px 0.8em #E43C3C; }
+.suppCaddy:hover{	box-shadow: 0px 1px 0.8em #E43C3C; }
 
 
 /*--FORMULAIRE--------------------------------------------*/
@@ -371,11 +411,20 @@ figure{
 	vertical-align: top;
 	text-align: right;
 	width: 40%;
-	border: 4px #FD8129 solid;
-	border-radius: 0px 20px 0px 20px;
-	padding: 10px 40px 10px 0px;
+/*	border: 4px #FD8129 solid;
+*/	border-radius: 0px 20px 0px 20px;
+	padding: 10px 30px 10px 0px;
 	margin: 0px 40px;
 }
+
+.marginVertical{
+	margin-top: 8px;
+	margin-bottom: 0px;
+}
+
+.submitButton{ margin-top: 10px; margin-bottom: 4px;}
+.submitButton:hover{ box-shadow: 0px 1px 1em #78A378;}
+
 /*--404--------------------------------------------*/
 .error{
 	display: block;
@@ -391,5 +440,8 @@ figure{
 /*--FOOTER--------------------------------------------*/
 footer{
 	display: block;
-	border: 1px black solid;
+}
+
+footer p{
+	padding:10px;
 }
