@@ -1,7 +1,7 @@
 <?php 
 if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 	$_POST["description"],$_POST["stock"],
-	$_POST["id_category"],$_POST["id_producer"],$_POST["image"],$_POST["create"]))
+	$_POST["id_category"],$_POST["image"],$_POST["create"]))
 		$price_sell=$_POST["price_buy"]*$_POST["margin_sale"];
 {
 	if($_POST["create"]="create")
@@ -23,8 +23,7 @@ if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 			$product=$productManager->create ($producer, $category,
 			 $_POST["name"],$_POST["price_buy"],
 				$_POST["margin_sale"],$price_sell,
-				$_POST["description"],$_POST["stock"],
-				$_POST["id_category"],$_POST["id_producer"]
+				$_POST["description"],$_POST["stock"]
 				,$_POST["image"]);
 				// var_dump($_POST);
 
