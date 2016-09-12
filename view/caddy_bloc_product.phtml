@@ -1,25 +1,23 @@
-<link type="text/css" rel="stylesheet" href="../public/styles/style.css"/>
 <!--
-
-
+<link type="text/css" rel="stylesheet" href="../public/styles/style.css"/>
 -->
 <div class="blocCaddy">
 	<div>
-		<a href="#" class="imageCaddy">
-		<img src="../public/images/laitue.jpg">
-		<!--<?=htmlentities($product['image'])?>-->
+		<!--<a href="#" class="imageCaddy">-->
+		<img src="./public/images/laitue.jpg" class="imageCaddy">
+		<?=htmlentities($product['image'])?>
 		</a>
 	</div>
 	<div>
-		<h2 class="prixCaddy fontStyle">1.00</h2>
-		<!--<?=htmlentities($product['price_sell'])?>-->
+		<h2 class="prixCaddy">1.00</h2>
+		<?=htmlentities($product['price_sell'])?>
 		<h2 class="devisePoidsCaddy">eur./Kg</h2>
 		
-		<h4 class="nameCaddy fontStyle">Notre laitue</h4>
-		<!--<?=htmlentities($product['name'])?>-->
+		<h4 class="nameCaddy">Notre laitue</h4>
+		<?=htmlentities($product['name'])?>
 		<h6 class="descriptCaddy floatRight">Laisser vous tenter par ce produit d'exceptionnelle qualite, cultive dans un respect total de la nature puisque issu d'une approche biodynamique pour le traitement des sols. Vous apprecierez sa saveur bla bla bla...</h6>
-		<!--<?=htmlentities($product['description'])?>-->
-		<form class="formCaddy fontStyle">
+		<?=htmlentities($product['description'])?>
+		<form class="formCaddy">
 			<h4 class="indicCaddy">veuillez indiquez votre quantite</h4>
             <input type="text" class="inputCaddy quantCaddy" name="quantity" placeholder="Uniquement par 0.5kg SVP !"/>
             <input type="submit" value="Supprimer ce produit" class="suppCaddy"/>
@@ -27,4 +25,5 @@
 
 	</div>
 </div>
-<?php require('apps/caddy.php'); ?>
+<?php require('controller/caddy.php'); ?>
+

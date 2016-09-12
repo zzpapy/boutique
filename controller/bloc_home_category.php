@@ -8,7 +8,6 @@
 	while($count<sizeof($categorys))
 	{
 		$category=$categorys[$count];
-		// var_dump($category);
 		require('view/bloc_home_category.phtml');
 		$count++;
 		}

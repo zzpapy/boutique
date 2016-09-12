@@ -51,16 +51,12 @@ table {
 /*--FONTS-----------------------------------------------*/
 .fontStyle{
 	font-family: 'Courgette', cursive;
-/*	font-size:30px;
-	font-weight: 400;
-*/
 }
 
 /*--STRUCTURE--------------------------------------------*/
 body{
 	background: white;
-/*	font-family: arial, helvetica, sans-serif, serif;
-*/	text-align: center;
+	text-align: center;
 	margin: 0;
 }
 
@@ -77,6 +73,10 @@ img{
 main, .contenair{
 	max-width: 1200px;
 	margin: 0 auto;
+}
+
+h1 h2 h3 h4 h5 h6{
+	font-family: 'Courgette', cursive;
 }
 
 h1{
@@ -190,6 +190,8 @@ article{
 */	margin: 5px 0px;
 	padding: 10px;
 	overflow: hidden;
+/*	background: #E0ECE0;
+*/
 }
 
 .block1{
@@ -438,10 +440,14 @@ figure{
 	font-size: 100px;
 }
 /*--FOOTER--------------------------------------------*/
+/*
 footer{
 	display: block;
-}
-
-footer p{
 	padding:10px;
+}
+*/
+
+.pFooter{
+	display: block;
+	padding:10px;	
 }
