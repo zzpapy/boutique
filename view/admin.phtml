@@ -7,7 +7,6 @@
 			<label for="Nom">Nom</label>
 			<input type="text" name="name" id="name">
 		</div>	
-
 		<div>
 			<label for="price_buy">prix d'achat</label>
 			<input type="text" name="price_buy" id="price_buy" value="">
@@ -16,38 +15,19 @@
 			<label for="margin_sale">marge</label>
 			<input type="text" name="margin_sale" id="margin_sale" value="">
 		</div>	
-		<!-- <div>
-			<label for="price_sell">prix de vente</label>
-			<input type="text" name="price_sell" id="price_sell" value="">
-		</div>	 -->
 		<div>
 			<label for="description">déscription</label>
 			<input type="text" name="description" id="description" value="">
-		</div>	
-		<div>
-			<label for="stock">stock</label>
-			<input type="text" name="stock" id="stock" value="">
-		</div>	
+		</div>			
 		<div>
 			<label for="image">image</label>
 			<input type="text" name="image" id="image" value="">
 		</div>
-		
-			
-<<<<<<< HEAD
 		<div>				
-			<label for="fruits">Choisir une categorie :</label>
-=======
-				
 			<label for="id_category">Choisir une categorie :</label>
->>>>>>> a8ea6ce970452aa9b32192b8be9d30ba2cedaef9
-			<br/>
-
-			<select name="id_category" id="id_category">
-				<option value="0" selected>Sélectionnez votre categorie :</option>
-				<option value="Légume">Légume</option>
-				<option value="Fruit">Fruit</option>
-				<option value="Viande">Viande</option>
+			<br/>			
+			<select name="category" class="form-control">
+				  	<?php require 'controller/selectcat.php'; ?>
 			</select>
 		
 		</div>
@@ -59,15 +39,15 @@
 
 	<div class="formulaire">
 	<!--	<?=$error?>  -->
-		<form method="post">
+		<form method="post" action="index.php?page=category">
 			<!-- login -->
 			<div>
-				<label for="création_catégorie">Créer une catégorie :</label>
-				<input id="création_catégorie" type="text" name="création_catégorie" placeholder=""/>
+				<label for="creacat">Créer une catégorie :</label>
+				<input id="creacat" type="text" name="creacat" placeholder=""/>
 			</div>
 			<!-- Connexion -->
 			<div>
-				<button type="submit" name="valide" value="valide">Validé</button>
+				<button type="submit" name="create" value="create">Validé</button>
 			</div>
 		</form>
 	</div>

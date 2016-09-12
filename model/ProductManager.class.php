@@ -104,7 +104,7 @@ class ProductManager
 	// 	}
 	// }
 
-	public function create (Producer $producer,Category $category,$name,$price_buy,$margin_sale,$price_sell,$description,$stock,$image)
+	public function create (Category $category,$name,$price_buy,$margin_sale,$price_sell,$description,$image)
 	{
 		$product = new Product($this-> db);
 
@@ -113,28 +113,27 @@ class ProductManager
 		$product-> setMarginSale($margin_sale);
 		$product-> setPriceSell($price_sell);
 		$product-> setDescription($description);
-		$product->setStock($stock);
+		
 		$product-> setImage($image);
 		
-		$product-> setProducer($producer);
+		
 		$product-> setCategory($category);
 		
 		$price_buy = $product->getPriceBuy();
 		$name = $product->getName();
 		// ......
-		$id_producer = $product->getProducer()->getIdProducer();
+		
 		$id_category = $product->getCategory()->getIdCategory();
 
 
 		$query = "INSERT INTO product (price_buy,  name 
-			,margin_sale ,price_sell,description,stock,image,id_producer,
+			,margin_sale ,price_sell,description,image,
 			id_category) 
 		VALUES('".$price_buy."',  '".$name."', 
 			'".$margin_sale."',  '".$price_sell."',
 			'".$description."',
-			'".$stock."',
+			
 			'".$image."',
-			'".$id_producer."',
 			'".$id_category."')";
 		mysqli_query($this->db, $query);
 		var_dump($query, mysqli_error($this->db));
