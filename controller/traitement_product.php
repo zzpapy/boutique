@@ -12,7 +12,7 @@ if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 		$productManager = new ProductManager($db);
 		$producerManager = new ProducerManager($db);
 		$categoryManager = new CategoryManager($db);
-
+		$category="";
 		try
 		{
 			// $producer = $producerManager->findById($_POST['id_producer']);
