@@ -90,10 +90,13 @@ input{
 
 /*--HEADER--------------------------------------------*/
 header{
+	max-width: 100%;
 	display: block;
-	background: #E0ECE0;
+	background-image: url("http://www.acheteralasource.com/images/header/portion-herbe.png") !important; 
+	background-position: center bottom !important;
+	background-repeat: repeat-x !important;
+	background: #99CCFF;
 	color: #17980A;
-	padding: 30px 700px 0px 0px;
 	border: 1px black solid;
 }
 /*--NAV--------------------------------------------*/
