@@ -12,7 +12,7 @@ class UserManager
 	{
 		$query = "SELECT * FROM user";
 		$res = mysqli_query($this->db, $query);
-		while ($user = mysqli_fetch_object($res, "User"))
+		while ($user = mysqli_fetch_object($res, "User", [$this->db]))
 			$list[] = $user;
 		return $list;
 	}
@@ -21,7 +21,7 @@ class UserManager
 		$id = intval($id);
 		$query = "SELECT * FROM user WHERE id_user='".$id."'";
 		$res = mysqli_query($this->db, $query);
-		$user = mysqli_fetch_object($res, "User");
+		$user = mysqli_fetch_object($res, "User", [$this->db]);
 		return $user;
 	}
 
@@ -30,7 +30,7 @@ class UserManager
 		$name = mysqli_real_escape_string($this->db, $name);
 		$query = "SELECT * FROM user WHERE name='".$name."'";
 		$res = mysqli_query($this->db, $query);
-		$user = mysqli_fetch_object($res, "User");
+		$user = mysqli_fetch_object($res, "User", [$this->db]);
 		
 		return $user;
 
@@ -82,7 +82,7 @@ class UserManager
 
 	public function create ($password,$mail,$name,$firstname,$address,$phone,$admin)
 	{
-		$user = new User();
+		$user = new User($this->db);
 		$user -> setName($name);
 		$user->setPassword($password);
 		$user->setMail($mail);

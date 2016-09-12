@@ -37,18 +37,26 @@ class ProductManager
 
 		$query = "SELECT * FROM rel_caddy_product LEFT JOIN product ON rel_caddy_product.id_product=product.id_product WHERE id_caddy='".$caddy->getId()."'";
 		$res = mysqli_query($this->db, $query);
-		while ($product = mysqli_fetch_object($res, "Product"))
+		while ($product = mysqli_fetch_object($res, "Product", [$this->db]))
 			$list[] = $product;
 		return $list;
 	}
 	public function findByCategory(Category $category)
 	{
 		$list=[];
-
-		$query = "SELECT * FROM category  WHERE id_category='".$category->getIdCategory()."'";
+		$query = "SELECT * FROM product  WHERE id_category='".$category->getIdCategory()."'";
 		$res = mysqli_query($this->db, $query);
-		while ($category = mysqli_fetch_object($res, "Category",[$this->db]))
-			$list[] = $category;
+		while ($product = mysqli_fetch_object($res, "Product",[$this->db]))
+			$list[] = $product;
+		return $list;
+	}
+	public function findByProducer(Producer $producer)
+	{
+		$list=[];
+		$query = "SELECT * FROM product  WHERE id_producer='".$producer->getIdProducer()."'";
+		$res = mysqli_query($this->db, $query);
+		while ($product = mysqli_fetch_object($res, "Product",[$this->db]))
+			$list[] = $product;
 		return $list;
 	}
 	// public function find($id)
@@ -96,13 +104,11 @@ class ProductManager
 	// 	}
 	// }
 
-	public function create ($name,$price_buy,$margin_sale,$price_sell,$description,$stock,
-		$image,$id_producer,$id_category)
+	public function create (Producer $producer,Category $category,$name,$price_buy,$margin_sale,$price_sell,$description,$stock,$image)
 	{
 		$product = new Product($this-> db);
+
 		$product -> setName($name);
-		
-		
 		$product->setPriceBuy($price_buy);
 		$product-> setMarginSale($margin_sale);
 		$product-> setPriceSell($price_sell);
@@ -110,14 +116,16 @@ class ProductManager
 		$product->setStock($stock);
 		$product-> setImage($image);
 		
-		$manager = new ProducerManager($this->db);
-		$producer = $manager->findById($id_producer);
 		$product-> setProducer($producer);
-		
-		$manager = new CategoryManager($this->db);
-		$category = $manager->findById($id_category);
 		$product-> setCategory($category);
 		
+		$price_buy = $product->getPriceBuy();
+		$name = $product->getName();
+		// ......
+		$id_producer = $product->getProducer()->getIdProducer();
+		$id_category = $product->getCategory()->getIdCategory();
+
+
 		$query = "INSERT INTO product (price_buy,  name 
 			,margin_sale ,price_sell,description,stock,image,id_producer,
 			id_category) 
@@ -129,7 +137,7 @@ class ProductManager
 			'".$id_producer."',
 			'".$id_category."')";
 		mysqli_query($this->db, $query);
-		var_dump(mysqli_error($this->db));
+		var_dump($query, mysqli_error($this->db));
 		$id_product = mysqli_insert_id($this->db);
 		return $this->findById($id_product);
 	}

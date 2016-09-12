@@ -11,6 +11,13 @@ class Producer
 	private $address;
 	private $siret;
 
+	private $db;
+	private $products;
+	public function __construct($db)
+	{
+		$this->db = $db;
+	}
+
 	// Méthodes
 	// Liste des getters
 	public function getIdProducer()
@@ -21,7 +28,7 @@ class Producer
 	{
 		return $this->society;
 	}
-	public function getPasswor()
+	public function getPassword()
 	{
 		return $this->password;
 	}
@@ -36,6 +43,20 @@ class Producer
 	public function getSiret()
 	{
 		return $this->siret;
+	}
+	public function getProducts()
+	{
+		// Si l'auteur n'a pas encore été récupéré ou n'est pas connu
+		if (!$this->products)
+		{
+			// Il faut donc aller le chercher !
+			// On récupère le manager qui va bien (ici, UserManager)
+			$manager = new ProductManager($this->db);
+			// Et on lui demande d'aller chercher l'User qui correspond à id_author
+			$this->products = $manager->findByProducer($this);
+		}
+		// On peut du coup retourner $this->author
+		return $this->products;
 	}
 
 	// Liste des setters

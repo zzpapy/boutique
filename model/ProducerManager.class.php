@@ -15,7 +15,7 @@ class ProducerManager
 		$list=[];
 		$query = "SELECT * FROM producer";
 		$res = mysqli_query($this->db, $query);
-		while ($producer = mysqli_fetch_object($res, "Producer"))
+		while ($producer = mysqli_fetch_object($res, "Producer", [$this->db]))
 			$list[] = $producer;
 		return $list;
 	}
@@ -23,7 +23,7 @@ class ProducerManager
 	{
 		$query = "SELECT * FROM producer WHERE id_producer='".$id."'";
 		$res = mysqli_query($this->db, $query);
-		$producer = mysqli_fetch_object($res, "Producer");
+		$producer = mysqli_fetch_object($res, "Producer", [$this->db]);
 		return $producer;
 	}
 	// public function find($id)
@@ -57,7 +57,7 @@ class ProducerManager
 
 	public function create($society, $password, $mail, $address,$siret)
 	{
-		$producer = new Producer();
+		$producer = new Producer($this->db);
 		$producer->setSociety($society);
 		$producer->setPassword($password);
 		$producer->setMail($mail);

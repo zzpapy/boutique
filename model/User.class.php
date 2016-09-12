@@ -11,12 +11,53 @@ class User
 	private $address;
 	private $phone ;
 	private $password  ;
-	private $password2  ;
 	private $admin;
+
+	private $db;
+	private $comments;
+	private $caddys;
+	private $caddy;
 	
 
+	public function __construct($db)
+	{
+		$this->db = $db;
+	}
 	// Méthodes
 	// Liste des getters
+
+
+
+	public function getComments()
+	{
+		if (!$this->comments)
+		{
+			$manager = new CommentManager($this->db);
+			$this->comments = $manager->findByAuthor($this);
+		}
+		return $this->comments;
+	}
+	public function getCaddys()
+	{
+		if (!$this->caddys)
+		{
+			$manager = new CaddyManager($this->db);
+			$this->caddys = $manager->findByUser($this);
+		}
+		return $this->caddys;
+	}
+	public function getCaddy()
+	{
+		if (!$this->caddy)
+		{
+			$manager = new CaddyManager($this->db);
+			$this->caddy = $manager->findCurrentByUser($this);
+		}
+		return $this->caddy;
+	}
+
+
+
 	public function getIdUser()
 	{
 		return $this->id;
@@ -48,7 +89,7 @@ class User
 	public function verifPassword($password, $password2)
 	{
 		if ($password === $password2) {
-			return $this->password; //password_verify
+			return $this->password; // password_verify
 		}
 	}
 	public function getAdmin()
