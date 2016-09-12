@@ -80,7 +80,7 @@ class UserManager
 	// 	}
 	// }
 
-	public function create ($password,$mail,$name,$firstname,$address,$phone,$admin)
+	public function create ($password, $mail, $name, $firstname, $address, $phone, $admin)
 	{
 		$user = new User($this->db);
 		$user -> setName($name);
@@ -91,20 +91,19 @@ class UserManager
 		$user-> setPhone($phone);
 		$user-> setAdmin($admin);
 
-		$email = mysqli_real_escape_string($this->db, $user->getMail());
+		$mail = mysqli_real_escape_string($this->db, $user->getMail());
 
-		$password = mysqli_real_escape_string($this->db, $user-> getPassword());		
+		// $password = mysqli_real_escape_string($this->db, $user->getPassword());
 		
 
 		$name = mysqli_real_escape_string($this->db, $user->getName());
-		$firstname = mysqli_real_escape_string($this->db, $user-> getFirstname());
+		$firstname = mysqli_real_escape_string($this->db, $user->getFirstname());
 		$address = mysqli_real_escape_string($this->db, $user->getAddress());
 		$phone = mysqli_real_escape_string($this->db, $user-> getPhone());
-		$admin = mysqli_real_escape_string($this->db, $user->getMail());
-		$password = mysqli_real_escape_string($this->db, $user-> getAdmin());
+		$password = mysqli_real_escape_string($this->db, $user->getPassword());
+		$admin = mysqli_real_escape_string($this->db, $user->getAdmin());
 		
-		$query = "INSERT INTO user (password, mail, name,firstname 
-			,address ,phone,admin) 
+		$query = "INSERT INTO user (password, mail, name, firstname, address, phone, admin) 
 		VALUES('".$password."', '".$mail."', '".$name."', '".$firstname."', 
 			'".$address."', '".$phone."', '".$admin."')";
 		mysqli_query($this->db, $query);
