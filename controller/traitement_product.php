@@ -1,9 +1,13 @@
 <?php 
-var_dump($_POST);
 if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
-	$_POST["price_sell"],$_POST["description"],$_POST["stock"],
-	$_POST["id_category"],$_POST["id_producer"],$_POST["image"]))
+	$_POST["description"],$_POST["stock"],
+	$_POST["id_category"],$_POST["id_producer"],$_POST["image"],$_POST["create"]))
+		$price_sell=$_POST["price_buy"]*$_POST["margin_sale"];
 {
+	if($_POST["create"]="create")
+	{
+		/*var_dump($_POST);
+		die;*/
 		$productManager = new ProductManager($db);
 		$producerManager = new ProducerManager($db);
 		$categoryManager = new CategoryManager($db);
@@ -16,7 +20,14 @@ if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 			$category = $categoryManager->findById($_POST['id_category']);
 			if (!$category)
 				throw new Exception("La catégorie n'existe pas");
-			$product=$productManager->create ($producer, $category, $_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],$_POST["price_sell"],$_POST["description"],$_POST["stock"],$_POST["id_category"],$_POST["id_producer"],$_POST["image"]);
+			$product=$productManager->create ($producer, $category,
+			 $_POST["name"],$_POST["price_buy"],
+				$_POST["margin_sale"],$price_sell,
+				$_POST["description"],$_POST["stock"],
+				$_POST["id_category"],$_POST["id_producer"]
+				,$_POST["image"]);
+				// var_dump($_POST);
+
 			if (!$product)
 				throw new Exception("Erreur interne");
 			header("Location: index.php");
@@ -27,9 +38,8 @@ if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 			$error = $e->getMessage();
 			var_dump($error);
 		}
-		// var_dump($_POST);
-		// die;
-		// die;
+		
+	}
 }
 
 
