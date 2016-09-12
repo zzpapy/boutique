@@ -1,3 +1,4 @@
+
 <article >
 	<div class="formulaire">
 		<form method="post">
@@ -15,10 +16,10 @@
 			<label for="margin_sale">marge</label>
 			<input type="text" name="margin_sale" id="margin_sale" value="">
 		</div>	
-		<div>
+		<!-- <div>
 			<label for="price_sell">prix de vente</label>
 			<input type="text" name="price_sell" id="price_sell" value="">
-		</div>	
+		</div>	 -->
 		<div>
 			<label for="description">déscription</label>
 			<input type="text" name="description" id="description" value="">
@@ -41,6 +42,7 @@
 				
 			<label for="id_category">Choisir une categorie :</label>
 			<br/>
+
 			<select name="id_category" id="id_category">
 				<option value="0" selected>Sélectionnez votre categorie :</option>
 				<option value="Légume">Légume</option>
@@ -50,10 +52,11 @@
 		
 		</div>
 		<div>
-			<button type="submit" >send</button>
+			<button type="submit" name="create" value="create">send</button>
 		</div>
 		</form>
 	</div>
+
 	<div class="formulaire">
 	<!--	<?=$error?>  -->
 		<form method="post">
@@ -68,4 +71,5 @@
 			</div>
 		</form>
 	</div>
+
 </article>

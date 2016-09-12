@@ -80,16 +80,21 @@ h2{
 	margin: 0;
 }
 
-input{
-	margin: 10px
+label{
+	margin-top: 10px;
 }
+
+input{
+	margin-top: 10px
+}
+
 /*--HEADER--------------------------------------------*/
 header{
 	display: block;
 	background: #E0ECE0;
 	color: #17980A;
 	border: 4px #FD8129 solid;
-	padding: 30px 800px 0px 0px;
+	padding: 30px 810px 0px 0px;
 }
 /*--NAV--------------------------------------------*/
 .menu{
@@ -386,7 +391,5 @@ figure{
 /*--FOOTER--------------------------------------------*/
 footer{
 	display: block;
-	background: #E0ECE0;
-	color: #17980A;
-	border: 4px #FD8129 solid;
+	border: 1px black solid;
 }
