@@ -39,14 +39,33 @@
 		<div>
 			
 				
-			<label for="fruits">Choisir une categorie :</label>
+			<label for="id_category">Choisir une categorie :</label>
 			<br/>
-			<input type="text" name="id_category" placeholder="Légume, Fruit ou Viande" value="" id="fruits" checked />
+			<select name="id_category" id="id_category">
+				<option value="0" selected>Sélectionnez votre categorie :</option>
+				<option value="Légume">Légume</option>
+				<option value="Fruit">Fruit</option>
+				<option value="Viande">Viande</option>
+			</select>
 		
 		</div>
 		<div>
 			<button type="submit" >send</button>
 		</div>
+		</form>
+	</div>
+	<div class="formulaire">
+	<!--	<?=$error?>  -->
+		<form method="post">
+			<!-- login -->
+			<div>
+				<label for="création_catégorie">Créer une catégorie :</label>
+				<input id="création_catégorie" type="text" name="création_catégorie" placeholder=""/>
+			</div>
+			<!-- Connexion -->
+			<div>
+				<button type="submit" name="valide" value="valide">Validé</button>
+			</div>
 		</form>
 	</div>
 </article>
