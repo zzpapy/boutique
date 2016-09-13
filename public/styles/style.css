@@ -54,6 +54,10 @@ table {
 	font-family: 'Courgette', cursive;
 }
 
+.fontColor{
+	color:#41553E;
+}
+
 /*--STRUCTURE--------------------------------------------*/
 body{
 	background: white;
@@ -130,6 +134,11 @@ header{
 	margin-bottom: 0px;
 	background-color: rgba();
 }
+
+.logRegister{
+	float:right;
+}
+
 .menu{
 	width: 100%;
 	text-align: left;
@@ -275,7 +284,7 @@ clear: both;
 
 .blocHome{
 	display: inline-block;
-	width: 25%;
+	width: 30%;
 	max-height:550px;
 	text-align: center;
 	margin: 0 auto;
@@ -331,13 +340,14 @@ clear: both;
 
 .descriptHome{
 	margin:0px;
+	font-size:40px;	
 	padding-left: 10px;
 	padding-right: 10px;
-	font-size:30px;	
 }
 
 .ajoutPanier{
-	margin: 12px 12px 10px 20px;
+	padding:6px;
+	margin: 12px;
 	box-shadow: 0px 2px 0.8em #ACC3AC;
 }
 .ajoutPanier:hover{box-shadow: 0px 2px 1.5em #619B61;}
@@ -481,6 +491,7 @@ form{margin-bottom:0;}
 }
 /*--FOOTER--------------------------------------------*/
 .pFooter{
+	font-size: 20px;
 	display: block;
-	padding:10px;	
+	padding:5px;	
 }
