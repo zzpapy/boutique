@@ -176,6 +176,7 @@ class Product
 		else
 			throw new Exception("Stock invalide");
 	}
+	
 
 
 	// Liste des fonctions spécifiques

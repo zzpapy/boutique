@@ -43,11 +43,14 @@ if(isset($_POST["quantity_delivery"],$_POST["prod"]))
 	{
 		$productManager= new ProductManager($db);
 		$product= $productManager->findById($_POST["prod"]);
+		$DPManager= new DeliveryProducerManager($db);
+		$DPManager->create(produit, producer, stock);
 		try
 		{
 			$product->addStock($_POST["quantity_delivery"]);
+			
 			$productManager -> save($product);
-			header("Location: index.php");
+			header("Location: index.php?page=summary");
 			exit;
 		}
 		catch (Exception $e)
