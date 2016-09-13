@@ -6,7 +6,7 @@
 	$db = mysqli_connect("192.168.1.79", "boutique", "boutique", "boutique");
 	// $db = mysqli_connect("localhost", "root", "troiswa", "boutique");
 
-	$error = "Toto aime les knacks";
+	$error = "";
 	$error404 = "";
 	$page = "home";
 
