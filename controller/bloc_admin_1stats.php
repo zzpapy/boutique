@@ -1,7 +1,33 @@
 <?php
 	$caddyManager = new CaddyManager($db);
-	$caddy=$caddyManager -> findAll();
+	$caddy = $caddyManager -> findAll();
+	$panierMoyen = 0;
 
 	$caddys = sizeof($caddy);
+
+	$chiffreAffaire = 0;
+	$compteur = 0;
+
+	while($compteur < sizeof($caddy)){
+		$full_price = $caddy[$compteur]->getFullPrice();
+		$chiffreAffaire += $full_price;
+		$compteur++;
+	}
+	$panierMoyen = $chiffreAffaire / $caddys;
+	$chiffreAffaire = number_format($chiffreAffaire, 2, ', ', ' ');
+	$panierMoyen = number_format($panierMoyen, 2, ', ', ' ');
 	require('view/bloc_admin_1stats.phtml');
+
+
+	// $productManager = new ProductManager($db);
+	// $product=$productManager -> findAll();
+
+	// $compteur = 0;
+
+	// while ($compteur < sizeof($product)){
+	// 	$name = $product[$compteur]->getName();
+	// 	$stock = $product[$compteur]->getStock();
+	// 	require('view/bloc_admin_4stock.phtml');
+	// 	$compteur++;
+	// }
 ?>

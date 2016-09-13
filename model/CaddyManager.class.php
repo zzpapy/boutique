@@ -19,7 +19,6 @@ class CaddyManager
 	}
 	public function findCurrentByUser(User $user)
 	{
-		$id = intval($id);
 		$query = "SELECT * FROM caddy WHERE id_user='".$user->getIdUser()."' AND status='1'";// /!\
 		$res = mysqli_query($this->db, $query);
 		$caddy = mysqli_fetch_object($res, "Caddy", [$this->db]);
