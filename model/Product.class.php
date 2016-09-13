@@ -169,6 +169,14 @@ class Product
 		$this->category = $category;
 	}
 
+	public function addStock($stock)
+	{
+		if ($stock > 0)
+			$this->stock += $stock;
+		else
+			throw new Exception("Stock invalide");
+	}
+
 
 	// Liste des fonctions spécifiques
 	// Ici vide

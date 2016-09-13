@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	$_SESSION['id'] = 1;
+	$_SESSION['admin'] = 1;
 	var_dump($_SESSION);
 	$db = mysqli_connect("192.168.1.79", "boutique", "boutique", "boutique");
 	// $db = mysqli_connect("localhost", "root", "troiswa", "boutique");
@@ -31,14 +33,14 @@
 	}
 
 	$traitementList = [
-		"login_admin" => "user", "login_register_user" => "user",
+		"login_admin" => "user", "login_register_user" => "user","logout"=>"user",
 		"login_register_pro" => "producer",
-		"product" => "product", "admin"=>"product",
+		"product" => "product", "admin"=>"product", "admin_stock_change"=>"product", "pro_offer"=>"product"
 		"category" => "category",
 		"caddy" => "caddy",
 		"comments" => "comments",
-		"logout" => "logout",
-		"pro_offer"=>"pro_offer"
+
+		"logout" => "logout"
 	];
 
 	if(isset($traitementList[$page]))
