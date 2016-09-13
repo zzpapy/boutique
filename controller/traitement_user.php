@@ -1,6 +1,11 @@
 <?php
 	// var_dump($_POST);
-
+	if (isset($_GET['page']) && $_GET['page'] == 'logout')
+	{
+		session_destroy();
+		header("Location: index.php");
+		exit;
+	}
 	if(isset($_POST["login"], $_POST['name'], $_POST['password'])){
 		
 		if(!empty($_POST['name'] && !empty($_POST['password']))){

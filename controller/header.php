@@ -1,5 +1,5 @@
 <?php
-	if(isset($_SESSION["user"]))
+	if(isset($_SESSION["user"], $_SESSION['admin']))
 	{
 		if($_SESSION['admin'] == 0){
 			require("view/header_in_user.phtml");
@@ -13,6 +13,6 @@
 	}
 	else
 	{
-		require("view/header.phtml");	
+		require("view/header.phtml");
 	}
 ?>

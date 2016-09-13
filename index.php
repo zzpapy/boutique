@@ -33,16 +33,19 @@
 	}
 
 	$traitementList = [
-		"login_admin" => "user", "login_register_user" => "user",
+		"login_admin" => "user", "login_register_user" => "user","logout"=>"user",
 		"login_register_pro" => "producer",
-		"product" => "product",
+		"product" => "product", "admin"=>"product",
 		"category" => "category",
 		"caddy" => "caddy",
 		"comments" => "comments",
+
 		"logout" => "logout",
 
 		"admin_stock_change"=>"product",
 		"pro_offer"=>"product"
+
+	
 	];
 
 	if(isset($traitementList[$page]))
