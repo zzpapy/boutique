@@ -4,9 +4,11 @@
 		<form method="post">
 			
 		<div>
-		<select name="category" class="form-control">
-				  	<?php require 'controller/selectcat.php'; ?>
-		</select>
+			<select>
+				<optgroup label="<?=htmlentities($category->getTitle())?>" name="category" value="<?=htmlentities($category->getIdCategory())?>" class="form-control">
+						  	<option value="<?=htmlentities($product->getIdProduct())?>"><?=htmlentities($product->getName())?></option>
+				</optgroup>
+	</select>
 		</div>	
 		<div>
 			<input type="text" name="quantity_delivery">
