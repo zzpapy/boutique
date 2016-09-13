@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	var_dump($_SESSION);
+	
 	$db = mysqli_connect("192.168.1.79", "boutique", "boutique", "boutique");
 	// $db = mysqli_connect("localhost", "root", "troiswa", "boutique");
 
@@ -41,7 +41,7 @@
 		"admin"=>"product"
 
 	];
-var_dump($page);
+
 	if(isset($traitementList[$page]))
 	{
 		require("controller/traitement_".$traitementList[$page].".php");
