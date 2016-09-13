@@ -97,6 +97,8 @@ input{
 	margin-top: 10px
 }
 
+
+
 /*--HEADER--------------------------------------------*/
 header{
 	max-width: 100%;
@@ -437,8 +439,44 @@ clear: both;
 
 /*--PANIER--------------------------------------------*/
 .panier{
+	box-shadow: 0px 3px 0.7em #768976;
+	border: 0.5px #345134 solid;
+	margin: 0px 12px;
+	overflow: hidden;
+}
+
+.ProduitPanier{
 	display: block;
 	background: #E0ECE0;
+	width: 20%;
+	max-height:550px;
+	text-align: center;
+	margin: 5px;
+	padding:14px;
+	background-color: #E0ECE0;
+	box-shadow: 0px 3px 0.7em #768976;
+	border: 0.5px #345134 solid;
+	margin: 10px;
+	float: left;
+}
+.facture{
+	display: block;
+	background: #E0ECE0;
+	width: 98%;
+	background-color: #E0ECE0;
+	box-shadow: 0px 3px 0.7em #768976;
+	border: 0.5px #345134 solid;
+	margin: 10px;
+	clear: both;
+}
+
+.h2{
+	text-align: left;
+	margin: 5px;
+}
+
+.button{
+	margin-bottom: 10px!important;
 }
 
 /*--FORMULAIRE--------------------------------------------*/
