@@ -14,8 +14,8 @@
 		require('model/'.$className.'.class.php');
 	}
 
-	$access = ["home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category", "admin_stock_change", "admin_dashboard","pro_offer"];
-	$accessAdmin = ["home", "login_register_user", "admin", "login_register_pro", "404", "logout", "create-post", "edit-post", "delete-post", "single", "selectcat", "selectprod", "category", "admin_stock_change","pro_offer"];
+	$access = ["home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category", "admin_stock_change", "admin_dashboard"];
+	$accessAdmin = ["home", "login_register_user", "admin", "login_register_pro", "404", "logout", "create-post", "edit-post", "delete-post", "single", "selectcat", "selectprod", "category", "admin_stock_change", "pro_offer"];
 
 	if(isset($_SESSION["admin"]) && $_SESSION['admin'] == 1)
 	{
@@ -35,17 +35,10 @@
 	$traitementList = [
 		"login_admin" => "user", "login_register_user" => "user","logout"=>"user",
 		"login_register_pro" => "producer",
-		"product" => "product", "admin"=>"product",
+		"product" => "product", "admin"=>"product", "admin_stock_change"=>"product", "pro_offer"=>"product",
 		"category" => "category",
 		"caddy" => "caddy",
-		"comments" => "comments",
-
-		"logout" => "logout",
-
-		"admin_stock_change"=>"product",
-		"pro_offer"=>"product"
-
-	
+		"comments" => "comments"
 	];
 
 	if(isset($traitementList[$page]))

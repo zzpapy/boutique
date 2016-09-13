@@ -68,6 +68,8 @@ body{
 img{
 	max-width: 100%;
 	display: block;
+	max-height: 180px;
+	text-align: center;
 }
 
 
@@ -106,11 +108,13 @@ header{
 	background: #99CCFF;	
 }
 
+/*
 .imgHeader{
 	background-image: url("http://www.acheteralasource.com/images/header/portion-herbe.png") !important; 
 	background-position: bottom !important;
 	background-repeat: repeat-x !important;
 }
+*/
 
 /*--NAV--------------------------------------------*/
 .nav{
@@ -137,8 +141,7 @@ header{
 
 .menuDesign{
 	width: 98%;
-/*	padding:0px;
-*/	margin:0 auto;
+	margin:0 auto;
 	margin-top:15px;
 	margin-bottom:15px;
 	background-color: #E0ECE0;
@@ -195,12 +198,10 @@ a:hover{
 /*--ARTICLE--------------------------------------------*/
 article{
 	display: block;
-/*	border: 1px black solid;
-*/	margin: 5px 0px;
+	margin: 5px 0px;
 	padding: 10px;
 	overflow: hidden;
-/*	background: #E0ECE0;
-*/
+
 }
 
 .block1{
@@ -229,9 +230,7 @@ article{
 	margin-bottom: 5px;
 }
 
-
 /*-- BLOC ARTICLE-----------------------------------------*/
-
 .clearfix:after{
 content:"";
 display: block;
@@ -288,9 +287,9 @@ clear: both;
 .imageHome{
 	margin: 0 auto;
 	width:100%;
-	max-height:70%;
 	box-shadow: 0px 3px 0.5em #78A378;
 	border: 0.5px #345134 solid;
+	background-color: white;
 }
 
 
@@ -315,8 +314,7 @@ clear: both;
 	margin:0px;
 	font-size:35px;
 	margin-bottom: 8px;
-/*	font-style: italic;
-*/	color:#345134;
+	color:#345134;
 }
 
 .nameHome{
@@ -339,9 +337,7 @@ clear: both;
 }
 .ajoutPanier:hover{box-shadow: 0px 2px 1.5em #619B61;}
 
-.largeBouton{
-	width:300px;
-}
+.largeBouton{width:300px;}
 
 /*-- BLOC CADDY-----------------------------------------*/
 
@@ -378,8 +374,7 @@ clear: both;
 .devisePoidsCaddy{
 	margin:0px;
 	font-size:40px;
-/*	font-style: italic;
-*/	color:#345134;
+	color:#345134;
 	overflow: hidden;
 }
 
@@ -449,15 +444,13 @@ clear: both;
 	vertical-align: top;
 	text-align: right;
 	width: 40%;
-/*	border: 4px #FD8129 solid;
-*/	border-radius: 0px 20px 0px 20px;
+	border-radius: 0px 20px 0px 20px;
 	padding: 10px 30px 10px 0px;
 	margin: 0px 40px;
 }
 
-form{
-	margin-bottom:0;
-}
+form{margin-bottom:0;}
+
 .marginVertical{
 	margin-top: 8px;
 	margin-bottom: 0px;
@@ -479,13 +472,6 @@ form{
 	font-size: 100px;
 }
 /*--FOOTER--------------------------------------------*/
-/*
-footer{
-	display: block;
-	padding:10px;
-}
-*/
-
 .pFooter{
 	display: block;
 	padding:10px;	

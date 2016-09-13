@@ -1,5 +1,5 @@
 <?php
-		$productManager = new ProductManager($db);
+	$productManager = new ProductManager($db);
 	$product=$productManager -> findAll();
 
 	$compteur = 0;
