@@ -1,27 +1,32 @@
 <!--	
+<link href='https://fonts.googleapis.com/css?family=Courgette|Open+Sans' rel='stylesheet' type='text/css'>
+
 <link type="text/css" rel="stylesheet" href="../public/styles/style.css"/>
 -->
 
-<div class="blocHome">
+<div class="blocHome fontStyle">
 	<div class="imageHome">
 		<a href="#">
 		<img src="<?=htmlentities($product->getImage())?>">
-		
 		</a>
 	</div>
 	<div class="textCenter clearfix">
-		<h2 class="prixHome">1.00</h2>
+		<h2 class="prixHome">
 			<?=htmlentities($product->getPriceSell())?>
+		</h2>
 		<h2 class="devisePoids">eur./Kg</h2>
 	</div>
 	<div>
-		<h4 class="nameHome">Notre laitue</h4>
+		<h4 class="nameHome">
 			<?=htmlentities($product->getName())?>
+		</h4>
+		<h6 class="descripHome">	
 			<?=htmlentities($product->getDescription())?>
+		</h6>
 	</div>
 	<div>
 		<form class="noMarginBottom">
-        <input type="submit" value="Rajouter a mon panier" class="boutonPanier"/>
+        <input type="submit" value="Rajouter a mon panier" class="ajoutPanier"/>
 		</form>
 	</div>
 </div>
