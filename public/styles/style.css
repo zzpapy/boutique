@@ -83,6 +83,7 @@ h1{
 	font-size:50px;
 	margin:0;
 	margin-right: 400px;
+	text-shadow:0 0 3px black;
 }
 
 h2{
@@ -105,7 +106,7 @@ header{
 	background-position: center bottom !important;
 	background-repeat: repeat-x !important;
 	background: #99CCFF;
-	color: #17980A;
+	color: white;
 
 	border: 1px black solid;
 
@@ -124,6 +125,7 @@ header{
 	margin-top: 4px;
 	margin-bottom: 0px;
 	background-color: rgba();
+	text-shadow:0 0 3px white;
 }
 .menu{
 	width: 100%;
