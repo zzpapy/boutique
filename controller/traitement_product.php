@@ -46,18 +46,25 @@ if(isset($_POST["quantity_delivery"],$_POST["prod"]))
 		$DPManager = new DeliveryProducerManager($db);
 		$product = $productManager->findById($_POST["prod"]);
 		$producer = $producerManager->findById($_SESSION['id']);
-		try
+		if (!$product)
+			$error = 'Product not found';
+		else if (!$producer)
+			$error = 'Producer not found';
+		else
 		{
-			// $product->addStock($_POST["quantity_delivery"]);
-			$delivery = $DPManager->create($product, $producer, $_POST['quantity_delivery']);
-			header("Location: index.php?page=summary&id=".$delivery->getIdDeliveryProducer());
-			exit;
-var_dump($_POST);
-die;
-		}
-		catch (Exception $e)
-		{
-			$error = $e->getMessage();
+			try
+			{
+				// $product->addStock($_POST["quantity_delivery"]);
+				$delivery = $DPManager->create($product, $producer, $_POST['quantity_delivery']);
+				header("Location: index.php?page=summary&id=".$delivery->getIdDeliveryProducer());
+				exit;
+	var_dump($_POST);
+	die;
+			}
+			catch (Exception $e)
+			{
+				$error = $e->getMessage();
+			}
 		}
 	}
 
