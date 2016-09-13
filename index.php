@@ -12,7 +12,8 @@
 		require('model/'.$className.'.class.php');
 	}
 
-	$access = ["home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category"];
+
+	$access = ["home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category","pro_offer"];
 	$accessAdmin = ["home", "register", "login", "admin","logout", "create-post", "edit-post", "delete-post", "single", "404","selectcat","selectprod","category"];
 
 	if(isset($_SESSION["pseudo"]))
@@ -38,7 +39,8 @@
 		"caddy" => "caddy",
 		"comments" => "comments",
 		"logout" => "logout",
-		"admin"=>"product"
+		"admin"=>"product",
+		"pro_offer"=>"pro_offer"
 
 	];
 

@@ -1,1 +1,6 @@
-traitement_pro_offer.php
+<?php 
+var_dump($_POST);
+// die;
+
+
+ ?>
