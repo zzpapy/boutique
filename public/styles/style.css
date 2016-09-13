@@ -83,7 +83,6 @@ h1{
 	font-size:50px;
 	margin:0;
 	margin-right: 400px;
-	text-shadow:0 0 3px black;
 }
 
 h2{
@@ -102,18 +101,19 @@ input{
 header{
 	max-width: 100%;
 	display: block;
-	background-image: url("../header/portion-herbe.png") !important; 
-	background-position: center bottom !important;
-	background-repeat: repeat-x !important;
-	background: #99CCFF;
-	color: white;
-
+	color: #17980A;
 	border: 1px black solid;
-
 	border: 4px #FD8129 solid;
 	padding: 10px 450px 0px 0px;
-
+	background: #99CCFF;	
 }
+
+.imgHeader{
+	background-image: url("http://www.acheteralasource.com/images/header/portion-herbe.png") !important; 
+	background-position: center bottom !important;
+	background-repeat: repeat-x !important;
+}
+
 /*--NAV--------------------------------------------*/
 .nav{
 	display: block;
@@ -125,7 +125,6 @@ header{
 	margin-top: 4px;
 	margin-bottom: 0px;
 	background-color: rgba();
-	text-shadow:0 0 3px white;
 }
 .menu{
 	width: 100%;
@@ -171,8 +170,10 @@ header{
 	top: 100%;
 	border: 1px solid #CCC;
 	display: none;
-/*	margin-bottom: 4px;
-*/	font-size: 0px;
+}
+
+.noCR{
+	font-size: 0px;
 }
 
 .menu ul ul li{
@@ -191,14 +192,6 @@ header{
 a:hover{	
 	color: #17980A;
 	background: #fff;
-/*	box-shadow: 0px 0px 0.7em #768976;
-	border-top: 0.5px;
-	border-left: 0.5px;
-	border-right: 0.5px;
-	border-bottom: 0px;
-	border-color:#345134;
-	border-style: solid;
-*/
 }
 
 /*--ARTICLE--------------------------------------------*/
@@ -264,14 +257,15 @@ figure{
 */
 
 .blocHome{
-	display: block;
-	width: 400px;
+	display: inline-block;
+	width: 25%;
 	text-align: center;
 	margin: 0 auto;
 	padding:14px;
 	background-color: #E0ECE0;
 	box-shadow: 0px 2px 0.7em #768976;
 	border: 0.5px #345134 solid;
+	margin: 5px;
 }
 
 .imageHome{
@@ -291,7 +285,7 @@ figure{
 .prixHome{
 	display: inline-block;
 	margin:0px;
-	font-size:4em;
+	font-size:2em;
 	font-weight: bold;
 	color:#17980A;
 }
@@ -300,7 +294,7 @@ figure{
 	padding-left: 10px;	
 	display: inline-block;
 	margin:0px;
-	font-size:2rem;
+	font-size:1rem;
 	margin-bottom: 8px;
 	font-style: italic;
 	color:#345134;
@@ -308,7 +302,7 @@ figure{
 
 .nameHome{	
 	margin:0px;	
-	font-size:2em;
+	font-size:1.5em;
 	margin-bottom: 5px;
 	color:#345134;	
 }

@@ -3,26 +3,26 @@
 -->
 
 <div class="blocHome">
-			<div class="imageHome">
-				<a href="#">
-				<img src="<?=htmlentities($product->getImage())?>">
-				
-				</a>
-			</div>
-			<div class="textCenter clearfix">
-				<h2 class="prixHome">1.00</h2>
-					<?=htmlentities($product->getPriceSell())?>
-				<h2 class="devisePoids">eur./Kg</h2>
-			</div>
-			<div>
-				<h4 class="nameHome">Notre laitue</h4>
-					<?=htmlentities($product->getName())?>
-				<h6 class="descripHome">Laisser vous tenter par ce produit d'exceptionnelle qualite, cultive dans un respect total de la nature puisque issu d'une approche biodynamique pour le traitement des sols. Vous apprecierez sa saveur bla bla bla...</h6>
-					<?=htmlentities($product->getDescription())?>
-			</div>
-			<div>
-				<form class="noMarginBottom">
-	            <input type="submit" value="Rajouter a mon panier" class="boutonPanier"/>
-				</form>
-			</div>
+	<div class="imageHome">
+		<a href="#">
+		<img src="<?=htmlentities($product->getImage())?>">
+		
+		</a>
+	</div>
+	<div class="textCenter clearfix">
+		<h2 class="prixHome">1.00</h2>
+			<?=htmlentities($product->getPriceSell())?>
+		<h2 class="devisePoids">eur./Kg</h2>
+	</div>
+	<div>
+		<h4 class="nameHome">Notre laitue</h4>
+			<?=htmlentities($product->getName())?>
+		<h6 class="descripHome">Laisser vous tenter par ce produit d'exceptionnelle qualite, cultive dans un respect total de la nature puisque issu d'une approche biodynamique pour le traitement des sols. Vous apprecierez sa saveur bla bla bla...</h6>
+			<?=htmlentities($product->getDescription())?>
+	</div>
+	<div>
+		<form class="noMarginBottom">
+        <input type="submit" value="Rajouter a mon panier" class="boutonPanier"/>
+		</form>
+	</div>
 </div>
