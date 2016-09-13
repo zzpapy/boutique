@@ -74,8 +74,8 @@ class ProductManager
 		$description = mysqli_real_escape_string($this->db, $product->getDescription());
 		$stock = mysqli_real_escape_string($this->db, $product->getStock());
 		$image = mysqli_real_escape_string($this->db, $product->getImage());
-		$id_producer = mysqli_real_escape_string($this->db, $product->getIdProducer());
-		$id_category = mysqli_real_escape_string($this->db, $product->getIdCategory());
+		
+		
 		
 		if (isset( $_SESSION['admin']))
 		{
@@ -86,8 +86,7 @@ class ProductManager
 			description='".$description."',
 			stock='".$stock."',
 			image='".$image."',
-			id_producer='".$id_producer."',
-			id_category='".$id_category."' WHERE id='".$id_product."'";
+			 WHERE id='".$id_product."'";
 			mysqli_query($this->db, $query);
 			return $this->findById($id_product);
 		}
