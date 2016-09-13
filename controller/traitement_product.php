@@ -1,24 +1,22 @@
 <?php 
-var_dump($_POST);
+// var_dump($_POST);
 if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 	$_POST["description"],
 	$_POST["category"],$_POST["image"],$_POST["create"]))
-		$price_sell=$_POST["price_buy"]*$_POST["margin_sale"];
 {
+		$price_sell=$_POST["price_buy"]*$_POST["margin_sale"];
 	if($_POST["create"]="create")
 	{
 		/*var_dump($_POST);
 		die;*/
 		$productManager = new ProductManager($db);
-		$producerManager = new ProducerManager($db);
+		
 		$categoryManager = new CategoryManager($db);
 		$category="";
 		try
 		{
-			// $producer = $producerManager->findById($_POST['id_producer']);
-			// if (!$producer)
-			// 	throw new Exception("Le producteur n'existe pas");
-			$category = $categoryManager->findById($_POST['category']);
+			
+				$category = $categoryManager->findById($_POST['category']);
 			if (!$category)
 				throw new Exception("La catégorie n'existe pas");
 			$product=$productManager->create ($category,
