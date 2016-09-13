@@ -31,13 +31,12 @@
 	}
 
 	$traitementList = [
-		"login_admin" => "user", "login_register_user" => "user",
+		"login_admin" => "user", "login_register_user" => "user","logout"=>"user",
 		"login_register_pro" => "producer",
 		"product" => "product", "admin"=>"product",
 		"category" => "category",
 		"caddy" => "caddy",
 		"comments" => "comments",
-		"logout" => "logout",
 		"pro_offer"=>"pro_offer"
 	];
 
