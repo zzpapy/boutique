@@ -45,12 +45,15 @@ if(isset($_POST["quantity_delivery"],$_POST["prod"]))
 		$producerManager = new ProducerManager($db);
 		$DPManager = new DeliveryProducerManager($db);
 		$product = $productManager->findById($_POST["prod"]);
-		$producer = $productManager->findById($_SESSION['id']);
+		$producer = $producerManager->findById($_SESSION['id']);
 		try
 		{
-			$DPManager->create($product, $producer, $_POST['quantity_delivery']);
-			header("Location: index.php?page=summary");
+			// $product->addStock($_POST["quantity_delivery"]);
+			$delivery = $DPManager->create($product, $producer, $_POST['quantity_delivery']);
+			header("Location: index.php?page=summary&id=".$delivery->getIdDeliveryProducer());
 			exit;
+var_dump($_POST);
+die;
 		}
 		catch (Exception $e)
 		{

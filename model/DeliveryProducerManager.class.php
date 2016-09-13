@@ -43,10 +43,15 @@ class DeliveryProducerManager
 		$delivery_producer = mysqli_fetch_object($res, "DeliveryProducer", [$this->db]);
 		return $delivery_producer;
 	}
-	// public function find($id)
-	// {
-	// 	return $this->findById($id);
-	// }
+	public function getTotalInfo()
+	{
+		$list=[];
+		$query = "SELECT SUM(quantity_delivery) AS total_quantity, SUM(price) AS total_price
+				  FROM delivery_producer";
+		$res = mysqli_query($this->db, $query);
+		$total_delivery = mysqli_fetch_assoc($res);
+		return $total_delivery;
+	}
 	public function save(DeliveryProducer $delivery_producer)// la variable $article DOIT etre de la classe Article -> Type hinting
 	{
 		$id_delivery_producer = $delivery_producer->getIdDeliveryProducer();
@@ -61,7 +66,7 @@ class DeliveryProducerManager
 			date='".$date."' WHERE id_delivery_producer='".$id_delivery_producer."'";
 		mysqli_query($this->db, $query);
 		// $query = "DELETE / INSERT rel_delivery_producer_product" /!\
-		return $this->findById($id_delivery_producer);
+		return $this->findByIdProducer($id_delivery_producer);
 	}
 
 	public function remove(DeliveryProducer $delivery_producer)
@@ -89,7 +94,7 @@ class DeliveryProducerManager
 		if ($res)
 		{
 			$id_delivery_producer = mysqli_insert_id($this->db);
-			$productManager = new ProductManager($db);
+			$productManager = new ProductManager($this->db);
 			$product->addStock($quantity_delivery);
 			$productManager -> save($product);
 			return $this->findById($id_delivery_producer);

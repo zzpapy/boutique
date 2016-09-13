@@ -35,7 +35,7 @@ class ProductManager
 	{
 		$list=[];
 
-		$query = "SELECT * FROM rel_caddy_product LEFT JOIN product ON rel_caddy_product.id_product=product.id_product WHERE id_caddy='".$caddy->getId()."'";
+		$query = "SELECT * FROM rel_caddy_product LEFT JOIN product ON rel_caddy_product.id_product=product.id_product WHERE id_caddy='".$caddy->getIdCaddy()."'";
 		$res = mysqli_query($this->db, $query);
 		while ($product = mysqli_fetch_object($res, "Product", [$this->db]))
 			$list[] = $product;

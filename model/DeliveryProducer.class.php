@@ -63,12 +63,12 @@ class DeliveryProducer
 	public function setProduct(Product $product)
 	{
 		$this->product = $product;
-		$this->id_product = $product->getId();
+		$this->id_product = $product->getIdProduct();
 	}
 	public function setProducer(Producer $producer)
 	{
 		$this->producer = $producer;
-		$this->id_producer = $producer->getId();
+		$this->id_producer = $producer->getIdProducer();
 	}
 	public function setQuantityDelivery($quantity_delivery)
 	{
@@ -79,7 +79,6 @@ class DeliveryProducer
 	{
 		$this->date = $date;
 	}
-	
 	
 
 	// Liste des fonctions spécifiques

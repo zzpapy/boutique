@@ -15,9 +15,29 @@
 		
 		if(!empty($_POST['society'] && !empty($_POST['password']))){
 			$manager = new UserManager($db);
-			$list = $manager->findAll();
-			header("Location: index.php?page=login");
-			exit;
+			$user = $manager->findAll();
+			if($user){
+				if ($user->verifPassword($_POST['password']))
+				{
+					$_SESSION['id'] = $user->getIdUser();
+					$_SESSION['user'] = $user->getFirstName();
+					$_SESSION['admin'] = $user->getAdmin();
+					// $_SESSION['caddy'] = $caddy->getCaddy();
+					header('Location: index.php');
+					exit;
+				}
+				else{
+					$error = 'mot de passe incorrect';
+					var_dump($error);
+				}
+
+			}
+			else{
+				$error = 'Utilisateur inconnu';
+				var_dump($error);
+			}
+			// header("Location: index.php?page=login");
+			// exit;
 		}
 		else{
 			$error = "Veuillez remplir tout les champs";

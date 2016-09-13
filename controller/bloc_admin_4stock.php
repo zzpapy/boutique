@@ -1,6 +1,6 @@
 <?php
 	$productManager = new ProductManager($db);
-	$product=$productManager -> findAll();
+	$product = $productManager -> findAll();
 
 	$compteur = 0;
 
