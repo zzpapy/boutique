@@ -122,7 +122,7 @@ class Product
 	// }
 	public function setName($name)
 	{
-		 $this->name=$name;
+		$this->name=$name;
 	}
 	public function setPriceBuy($price_buy)
 	{
@@ -130,23 +130,23 @@ class Product
 	}
 	public function setMarginSale($margin_sale)
 	{
-		 $this->margin_sale=$margin_sale;
+		$this->margin_sale=$margin_sale;
 	}
 	public function setPriceSell($price_sell)
 	{
-		 $this->price_sell=$price_sell;
+		$this->price_sell=$price_sell;
 	}
 	public function setDescription($description)
 	{
-		 $this->description=$description;
+		$this->description=$description;
 	}
 	public function setStock($stock)
 	{
-		 $this->stock=$stock;
+		$this->stock=$stock;
 	}
 	public function setImage($image)
 	{
-		 $this->image=$image;
+		$this->image=$image;
 	}
 	// public function setIdProducer($id_producer)
 	// {

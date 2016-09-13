@@ -38,7 +38,9 @@
 		"caddy" => "caddy",
 		"comments" => "comments",
 		"logout" => "logout",
-		"admin"=>"product"
+
+		"admin"=>"product",
+		"pro_offer"=>"pro_offer"
 	];
 
 	if(isset($traitementList[$page]))

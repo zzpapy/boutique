@@ -15,15 +15,15 @@ if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 		$category="";
 		try
 		{
+			$category = $categoryManager->findById($_POST['category']);
 			
-				$category = $categoryManager->findById($_POST['category']);
 			if (!$category)
 				throw new Exception("La catégorie n'existe pas");
-			$product=$productManager->create ($category,
-			 $_POST["name"],$_POST["price_buy"],
+				$product=$productManager->create ($category,
+			 	$_POST["name"],$_POST["price_buy"],
 				$_POST["margin_sale"],$price_sell,
-				$_POST["description"]
-				,$_POST["image"]);
+				$_POST["description"],
+				$_POST["image"]);
 				// var_dump($_POST);
 
 			if (!$product)

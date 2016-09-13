@@ -5,8 +5,6 @@ if (isset($_POST["create"],$_POST["creacat"]))
 	{
 		$categoryManager= new CategoryManager($db);
 		$category=$categoryManager -> create($_POST["creacat"]);
-
-		
 	}
 }
 	
