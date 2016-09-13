@@ -33,7 +33,7 @@
 	}
 
 	$traitementList = [
-		"login_admin" => "user", "login_register_user" => "user","logout"=>"user",
+		"login_admin" => "user", "login_register_user" => "user", "logout"=>"user",
 		"login_register_pro" => "producer",
 		"product" => "product", "admin"=>"product", "admin_stock_change"=>"product", "pro_offer"=>"product",
 		"category" => "category",
