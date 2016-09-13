@@ -102,7 +102,7 @@ input{
 header{
 	max-width: 100%;
 	display: block;
-	background-image: url("http://www.acheteralasource.com/images/header/portion-herbe.png") !important; 
+	background-image: url("../header/portion-herbe.png") !important; 
 	background-position: center bottom !important;
 	background-repeat: repeat-x !important;
 	background: #99CCFF;
