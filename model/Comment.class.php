@@ -94,19 +94,16 @@ class Comment
 	}
 
 
-
-
-	public function setCaddy(Caddy $caddy)
-	{
-		$this->id_caddy = $caddy->getId();
-		$this->caddy = $caddy;
-	}
-	public function setAuthor(User $author)
-	{
-		$this->id_author = $author->getId();
-		$this->author = $author;
-	}
-
+	// public function setCaddy(Caddy $caddy)
+	// {
+	// 	$this->id_caddy = $caddy->getId();
+	// 	$this->caddy = $caddy;
+	// }
+	// public function setAuthor(User $author)
+	// {
+	// 	$this->id_author = $author->getId();
+	// 	$this->author = $author;
+	// }
 
 
 	// public function setIdAuthor($id_author)

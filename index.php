@@ -12,10 +12,10 @@
 		require('model/'.$className.'.class.php');
 	}
 
-	$access = ["home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category"];
-	$accessAdmin = ["home", "register", "login", "admin","logout", "create-post", "edit-post", "delete-post", "single", "404","selectcat","selectprod","category"];
+	$access = ["home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category", "admin_stock_change", "admin_dashboard"];
+	$accessAdmin = ["home", "login_register_user", "admin", "login_register_pro", "404", "logout", "create-post", "edit-post", "delete-post", "single", "selectcat", "selectprod", "category", "admin_stock_change"];
 
-	if(isset($_SESSION["pseudo"]))
+	if(isset($_SESSION["admin"]) && $_SESSION['admin'] == 1)
 	{
 		if(isset($_GET["page"]) && in_array($_GET["page"], $accessAdmin))
 		{
@@ -39,7 +39,6 @@
 		"comments" => "comments",
 		"logout" => "logout",
 		"admin"=>"product"
-
 	];
 
 	if(isset($traitementList[$page]))
