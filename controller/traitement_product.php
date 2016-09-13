@@ -46,8 +46,9 @@ if(isset($_POST["quantity_delivery"],$_POST["prod"]))
 		try
 		{
 			$product->addStock($_POST["quantity_delivery"]);
+			
 			$productManager -> save($product);
-			header("Location: index.php");
+			header("Location: index.php?page=summary");
 			exit;
 		}
 		catch (Exception $e)
