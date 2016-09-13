@@ -39,6 +39,21 @@ if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 		
 	}
 }
+var_dump($_POST);
+if(isset($_POST["quantity_delivery"],$_POST["prod"]))
+	{
+		
+
+		$productManager= new ProductManager($db);
+		$product= $productManager->findById($_POST["prod"]);
+		$stock=$product->getStock();
+		$sotck=$stock+$_POST["quantity_delivery"];
+		$product -> setStock($stock);
+		$productManager -> save($product);
+
+		header("Location: index.php");
+	}
+
 
 
  ?>

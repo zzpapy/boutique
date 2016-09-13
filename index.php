@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	$_SESSION['id'] = 1;
+	$_SESSION['admin'] = 1;
 	var_dump($_SESSION);
 	$db = mysqli_connect("192.168.1.79", "boutique", "boutique", "boutique");
 	// $db = mysqli_connect("localhost", "root", "troiswa", "boutique");
@@ -12,8 +14,8 @@
 		require('model/'.$className.'.class.php');
 	}
 
-	$access = ["home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category", "admin_stock_change", "admin_dashboard"];
-	$accessAdmin = ["home", "login_register_user", "admin", "login_register_pro", "404", "logout", "create-post", "edit-post", "delete-post", "single", "selectcat", "selectprod", "category", "admin_stock_change"];
+	$access = ["home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category", "admin_stock_change", "admin_dashboard","pro_offer"];
+	$accessAdmin = ["home", "login_register_user", "admin", "login_register_pro", "404", "logout", "create-post", "edit-post", "delete-post", "single", "selectcat", "selectprod", "category", "admin_stock_change","pro_offer"];
 
 	if(isset($_SESSION["admin"]) && $_SESSION['admin'] == 1)
 	{
@@ -39,8 +41,8 @@
 		"comments" => "comments",
 		"logout" => "logout",
 
-		"admin"=>"product",
-		"pro_offer"=>"pro_offer"
+		"admin_stock_change"=>"product",
+		"pro_offer"=>"product"
 	];
 
 	if(isset($traitementList[$page]))

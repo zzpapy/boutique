@@ -79,15 +79,16 @@ class ProductManager
 		
 		if (isset( $_SESSION['admin']))
 		{
-			$query = "UPDATE products SET name='".$name."', 
+			$query = "UPDATE product SET name='".$name."', 
 			price_buy='".$price_buy."',
 			margin_sale='".$margin_sale."',
 			price_sell='".$price_sell."',
 			description='".$description."',
 			stock='".$stock."',
-			image='".$image."',
-			 WHERE id='".$id_product."'";
+			image='".$image."'
+			WHERE id_product='".$id_product."'";
 			mysqli_query($this->db, $query);
+			var_dump($query,mysqli_error($this->db));
 			return $this->findById($id_product);
 		}
 	}
