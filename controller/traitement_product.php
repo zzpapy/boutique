@@ -5,7 +5,7 @@ if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 	$_POST["category"],$_POST["image"],$_POST["create"]))
 {
 		$price_sell=$_POST["price_buy"]*$_POST["margin_sale"];
-	if($_POST["create"]="create")
+	if($_POST["create"]=="create")
 	{
 		/*var_dump($_POST);
 		die;*/
@@ -39,19 +39,21 @@ if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 		
 	}
 }
-var_dump($_POST);
 if(isset($_POST["quantity_delivery"],$_POST["prod"]))
 	{
-		
-
 		$productManager= new ProductManager($db);
 		$product= $productManager->findById($_POST["prod"]);
-		$stock=$product->getStock();
-		$sotck=$stock+$_POST["quantity_delivery"];
-		$product -> setStock($stock);
-		$productManager -> save($product);
-
-		header("Location: index.php");
+		try
+		{
+			$product->addStock($_POST["quantity_delivery"]);
+			$productManager -> save($product);
+			header("Location: index.php");
+			exit;
+		}
+		catch (Exception $e)
+		{
+			$error = $e->getMessage();
+		}
 	}
 
 
