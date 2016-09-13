@@ -42,6 +42,8 @@ if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 if(isset($_POST["quantity_delivery"],$_POST["prod"]))
 	{
 		$productManager= new ProductManager($db);
+		// $DPManager= new DeliveryProducerManager($db);
+		// $DPManager->create(produit, producer, stock);
 		$product= $productManager->findById($_POST["prod"]);
 		try
 		{

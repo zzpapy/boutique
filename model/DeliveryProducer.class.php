@@ -7,6 +7,7 @@ class DeliveryProducer
 	private $quantity_delivery;
 	private $date;
 	private $id_producer;
+	private $price;
 	// Propriété calculée
 	private $db;
 	private $product;
@@ -49,8 +50,16 @@ class DeliveryProducer
 	{
 		return $this->date;
 	}
+	public function getPrice()
+	{
+		return $this->price;
+	}
 	
 	// Liste des setters
+	public function setPrice($price)
+	{
+		$this->price = $price;
+	}
 	public function setProduct(Product $product)
 	{
 		$this->product = $product;
