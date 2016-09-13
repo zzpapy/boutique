@@ -49,6 +49,7 @@ table {
 }
 */
 /*--FONTS-----------------------------------------------*/
+
 .fontStyle{
 	font-family: 'Courgette', cursive;
 }
@@ -75,10 +76,11 @@ main, .contenair{
 	margin: 0 auto;
 }
 
+/*
 h1 h2 h3 h4 h5 h6{
 	font-family: 'Courgette', cursive;
 }
-
+*/
 h1{
 	font-size:50px;
 	margin:0;
@@ -104,13 +106,13 @@ header{
 	color: #17980A;
 	border: 1px black solid;
 	border: 4px #FD8129 solid;
-	padding: 10px 450px 0px 0px;
+	padding: 2px 450px 0px 0px;
 	background: #99CCFF;	
 }
 
 .imgHeader{
 	background-image: url("http://www.acheteralasource.com/images/header/portion-herbe.png") !important; 
-	background-position: center bottom !important;
+	background-position: bottom !important;
 	background-repeat: repeat-x !important;
 }
 
@@ -144,7 +146,7 @@ header{
 	margin-top:15px;
 	margin-bottom:15px;
 	background-color: #E0ECE0;
-	box-shadow: 0px 2px 0.7em #768976;
+	box-shadow: 0px 3px 0.7em #768976;
 	border: 0.5px #345134 solid;
 }
 
@@ -207,19 +209,28 @@ article{
 
 .block1{
 	display: block;
-	width: 79.5%;
-	padding: 5px 5px;
+	width: 78%;
+	height:220px;
+	padding: 10px;
 	float: left;
 	text-align: left;
-	border: 1px black solid;
+	background-color: #E0ECE0;
+	box-shadow: 0px 3px 0.7em #768976;
+	border: 0.5px #345134 solid;
+	margin-bottom: 25px;
 }
+
 .block2{
 	display: block;
 	width: 20%;
-	padding: 5px 5px;
+	height:220px;
+	padding: 10px;
 	float: right;
-	text-align: left;
-	border: 1px black solid;
+	text-align: right;
+	background-color: #E0ECE0;
+	box-shadow: 0px 3px 0.7em #768976;
+	border: 0.5px #345134 solid;
+	margin-bottom: 25px;
 }
 
 
@@ -248,13 +259,20 @@ clear: both;
 }
 
 /*-- BLOC PRODUITS-----------------------------------------*/
-
-/*
-figure{
-	margin:15px;
-	padding-top:15px;
+.catHome{
+	display: inline-block;
+	font-size:25px;
+	color:#17980A;
+	width: 98%;
+	padding:0px;
+	padding-bottom:3px;
+	margin:0 auto;
+	margin-top:0px;
+	margin-bottom:20px;
+	background-color: #E0ECE0;
+	box-shadow: 0px 3px 0.7em #768976;
+	border: 0.5px #345134 solid;
 }
-*/
 
 .blocHome{
 	display: block;
@@ -263,14 +281,15 @@ figure{
 	margin: 0 auto;
 	padding:14px;
 	background-color: #E0ECE0;
-	box-shadow: 0px 2px 0.7em #768976;
+	box-shadow: 0px 3px 0.7em #768976;
 	border: 0.5px #345134 solid;
+	margin-bottom: 25px;
 }
 
 .imageHome{
 	margin: 0 auto;
 	width:100%;
-	box-shadow: 0px 2px 0.5em #78A378;
+	box-shadow: 0px 3px 0.5em #78A378;
 	border: 0.5px #345134 solid;
 }
 
@@ -284,7 +303,7 @@ figure{
 .prixHome{
 	display: inline-block;
 	margin:0px;
-	font-size:4em;
+	font-size:60px;
 	font-weight: bold;
 	color:#17980A;
 }
@@ -293,15 +312,15 @@ figure{
 	padding-left: 10px;	
 	display: inline-block;
 	margin:0px;
-	font-size:2rem;
+	font-size:35px;
 	margin-bottom: 8px;
-	font-style: italic;
-	color:#345134;
+/*	font-style: italic;
+*/	color:#345134;
 }
 
-.nameHome{	
+.nameHome{
 	margin:0px;	
-	font-size:2em;
+	font-size:45px;
 	margin-bottom: 5px;
 	color:#345134;	
 }
@@ -310,14 +329,18 @@ figure{
 	margin:0px;
 	padding-left: 10px;
 	padding-right: 10px;
-	font-size:1em;	
+	font-size:20px;	
 }
 
-.boutonPanier{
-	margin: 12px 12px 0px 20px;
-	box-shadow: 0px 1px 0.8em #ACC3AC;
+.ajoutPanier{
+	margin: 12px 12px 10px 20px;
+	box-shadow: 0px 2px 0.8em #ACC3AC;
 }
-.boutonPanier:hover{box-shadow: 0px 1px 1.5em #619B61;}
+.ajoutPanier:hover{box-shadow: 0px 2px 1.5em #619B61;}
+
+.largeBouton{
+	width:300px;
+}
 
 /*-- BLOC CADDY-----------------------------------------*/
 
@@ -329,8 +352,9 @@ figure{
 */	margin: 0 auto;
 	padding:10px 20px 10px 12px;
 	background-color: #E0ECE0;
-	box-shadow: 0px 2px 1.5em #768976;
+	box-shadow: 0px 3px 1.5em #768976;
 	overflow: hidden;
+	margin-bottom: 25px;
 }
 
 .imageCaddy{
@@ -339,11 +363,11 @@ figure{
 	margin:10px;
 	float:left;
 	border: 1px #345134 solid;
-	box-shadow: 0px 2px 0.5em #78A378;
+	box-shadow: 0px 3px 0.5em #78A378;
 }
 
 .prixCaddy{
-	font-size:7.5em;
+	font-size:80px;
 	font-weight: bold;
 	color:#17980A;
 	overflow: hidden;
@@ -352,16 +376,16 @@ figure{
 
 .devisePoidsCaddy{
 	margin:0px;
-	font-size:2.5rem;
-	font-style: italic;
-	color:#345134;
+	font-size:40px;
+/*	font-style: italic;
+*/	color:#345134;
 	overflow: hidden;
 }
 
 .nameCaddy{
 	display: inline-block;	
 	margin-top:20px;	
-	font-size:4em;
+	font-size:50px;
 	margin-bottom: 10px;
 	color:#345134;
 	overflow: hidden;	
@@ -371,7 +395,7 @@ figure{
 	margin:0px 20px 0px 0px;
 	padding:0px;
 	width: 40%;
-	font-size:1.4em;
+	font-size:20px;
 	text-align: justify;
 	overflow: hidden;	
 }
@@ -395,7 +419,7 @@ figure{
 	text-align:center;
 	width:500px;
 	height:50px;
- 	font-size:1em;
+ 	font-size:25px;
  	margin: 10px 12px 8px 20px;
 	border: 4px #17980A solid;
 	border-radius: 10px;
@@ -407,13 +431,13 @@ figure{
 	text-align:center;
 	width:500px;
 	height:50px;
- 	font-size:1em;
+ 	font-size:25px;
  	margin: 20px 12px 8px 20px;
  	border: 4px #E43C3C solid;
 	border-radius: 10px;
-	box-shadow: inset 0px 1px 0.3em #EE8D8D;
+	box-shadow: inset 0px 0px 0.3em #EE8D8D;
 }
-.suppCaddy:hover{	box-shadow: 0px 1px 0.8em #E43C3C; }
+.suppCaddy:hover{	box-shadow: 0px 0px 0.8em #E43C3C; }
 
 
 /*--FORMULAIRE--------------------------------------------*/
@@ -430,13 +454,16 @@ figure{
 	margin: 0px 40px;
 }
 
+form{
+	margin-bottom:0;
+}
 .marginVertical{
 	margin-top: 8px;
 	margin-bottom: 0px;
 }
 
 .submitButton{ margin-top: 10px; margin-bottom: 4px;}
-.submitButton:hover{ box-shadow: 0px 1px 1em #78A378;}
+.submitButton:hover{ box-shadow: 0px 0px 1em #78A378;}
 
 /*--404--------------------------------------------*/
 .error{
