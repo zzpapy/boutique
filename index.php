@@ -13,14 +13,8 @@
 	function __autoload($className){
 		require('model/'.$className.'.class.php');
 	}
-
-<<<<<<< HEAD
-	$access = ["home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category", "admin_stock_change", "admin_dashboard"];
-	$accessAdmin = ["panier", "home", "login_register_user", "admin", "product", "login_register_pro", "404", "logout", "create-post", "edit-post", "delete-post", "single", "selectcat", "selectprod", "category", "admin_stock_change", "pro_offer"];
-=======
 	$access = ["home", "panier", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category", "admin_stock_change", "admin_dashboard"];
-	$accessAdmin = ["home", "login_register_user", "admin", "product", "login_register_pro", "404", "logout", "create-post", "edit-post", "delete-post", "single", "selectcat", "selectprod", "category", "admin_stock_change", "pro_offer"];
->>>>>>> 462c8554b819bf4ceb56872131f32f6e79b97142
+	$accessAdmin = ["panier", "home", "login_register_user", "admin", "product", "login_register_pro", "404", "logout", "create-post", "edit-post", "delete-post", "single", "selectcat", "selectprod", "category", "admin_stock_change", "pro_offer"];
 
 	if(isset($_SESSION["admin"]) && $_SESSION['admin'] == 1)
 	{
