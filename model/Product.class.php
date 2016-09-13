@@ -3,6 +3,7 @@
 class Product
 {
 	
+	
 	// Propriétés
 	private $id_product  ;
 	private $name  ;
