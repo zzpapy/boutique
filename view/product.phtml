@@ -11,16 +11,21 @@
 		</a>
 	</div>
 	<div>
-		<h2 class="prixCaddy">2.00</h2>
-		<?=htmlentities($product['price_sell'])?>
+		<h2 class="prixCaddy">
+			<?=htmlentities($product->getPriceSell())?>
+		</h2>
+
 		<h2 class="devisePoidsCaddy">eur./Kg</h2>
-		
-		<h4 class="nameCaddy">Nos peches</h4>
-		<?=htmlentities($product['name'])?>
-		<h6 class="descriptCaddy floatRight">Laisser vous tenter par ce produit d'exceptionnelle qualite, cultive dans un respect total de la nature puisque issu d'une approche biodynamique pour le traitement des sols. Vous apprecierez sa saveur bla bla bla...</h6>
-		<?=htmlentities($product['description'])?>
+
+		<h4 class="nameCaddy">
+		<?=htmlentities($product->getName())?>
+		</h4>
+
+		<h6 class="descriptCaddy floatRight">
+			<?=htmlentities($product->getDescription())?>
+		</h6>
+		<!-- Ajout au panier -->
 		<form class="formCaddy">
-			<!--<h4 class="indicCaddy">Ajouter</h4>-->
  	        <input type="submit" value="Rajouter a mon panier" class="ajoutPanier largeBouton"/>
 		</form>
 

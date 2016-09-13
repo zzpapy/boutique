@@ -7,24 +7,27 @@
 <div class="blocHome fontStyle">
 	<div class="imageHome">
 		<a href="#">
-		<img src="<?=htmlentities($product->getImage())?>">
+		<img src="<?=htmlentities($product->getImage())?>" class="textCenter">
 		</a>
 	</div>
 	<div class="textCenter clearfix">
 		<h2 class="prixHome">
 			<?=htmlentities($product->getPriceSell())?>
 		</h2>
+
 		<h2 class="devisePoids">eur./Kg</h2>
 	</div>
 	<div>
 		<h4 class="nameHome">
 			<?=htmlentities($product->getName())?>
 		</h4>
+
 		<h6 class="descripHome">	
 			<?=htmlentities($product->getDescription())?>
 		</h6>
 	</div>
 	<div>
+		<!-- Ajout au panier -->
 		<form class="noMarginBottom">
         <input type="submit" value="Rajouter a mon panier" class="ajoutPanier"/>
 		</form>
