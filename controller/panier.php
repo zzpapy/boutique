@@ -1,19 +1,7 @@
 <?php
-require('view/panier.phtml');
 if (isset($_SESSION['id']))
 {
-	$manager = new UserManager($db);
-	$user = $manager->findById($_SESSION['id']);
-	$caddy = $user->getCaddy();
-	$products = $caddy->getProducts();
-	$i = 0;
-	$max = sizeof($products);
-	while ($i < $max)
-	{
-		$product = $products[$i];
-		require('view/product.phtml');
-		$i++;
-	}
+	require('view/panier.phtml');
 }
 else
 {
