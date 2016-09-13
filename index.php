@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	var_dump($_SESSION);
+	
 	$db = mysqli_connect("192.168.1.79", "boutique", "boutique", "boutique");
 	// $db = mysqli_connect("localhost", "root", "troiswa", "boutique");
 
@@ -12,8 +12,9 @@
 		require('model/'.$className.'.class.php');
 	}
 
-	$access = ["home", "login_register_user", "admin","login_register_pro", "404", "login_admin", "product", "caddy"];
-	$accessAdmin = ["home", "register", "login", "admin","logout", "create-post", "edit-post", "delete-post", "single", "404"];
+	$access = ["home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category"];
+	$accessAdmin = ["home", "register", "login", "admin","logout", "create-post", "edit-post", "delete-post", "single", "404","selectcat","selectprod","category"];
+
 	if(isset($_SESSION["pseudo"]))
 	{
 		if(isset($_GET["page"]) && in_array($_GET["page"], $accessAdmin))
@@ -38,6 +39,7 @@
 		"comments" => "comments",
 		"logout" => "logout",
 		"admin"=>"product"
+
 	];
 
 	if(isset($traitementList[$page]))

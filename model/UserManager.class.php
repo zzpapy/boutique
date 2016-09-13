@@ -58,9 +58,14 @@
 			VALUES('".$password."', '".$mail."', '".$name."', '".$firstname."', 
 				'".$address."', '".$phone."', '".$admin."')";
 			mysqli_query($this->db, $query);
+			
+			// var_dump(mysqli_error($this->db), mysqli_errno($this->db));
+
+			if (mysqli_errno($this->db) == 1062){
+				throw new Exception("Adresse mail déjà existante");
+			}
 			$id_user = mysqli_insert_id($this->db);
-			var_dump(mysqli_error($this->db));
 			return $this->findById($id_user);
 		}
 	}
-?>
+?>				
