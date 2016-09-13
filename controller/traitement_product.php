@@ -41,13 +41,15 @@ if (isset($_POST["name"],$_POST["price_buy"],$_POST["margin_sale"],
 }
 if(isset($_POST["quantity_delivery"],$_POST["prod"]))
 	{
-		$productManager= new ProductManager($db);
-		$product= $productManager->findById($_POST["prod"]);
+		$productManager = new ProductManager($db);
+		$producerManager = new ProducerManager($db);
+		$DPManager = new DeliveryProducerManager($db);
+		$product = $productManager->findById($_POST["prod"]);
+		$producer = $productManager->findById($_SESSION['id']);
 		try
 		{
-			$product->addStock($_POST["quantity_delivery"]);
-			$productManager -> save($product);
-			header("Location: index.php");
+			$DPManager->create($product, $producer, $_POST['quantity_delivery']);
+			header("Location: index.php?page=summary");
 			exit;
 		}
 		catch (Exception $e)
