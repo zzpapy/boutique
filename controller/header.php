@@ -1,3 +1,10 @@
 <?php
-	require('view/header.phtml');
+	if(isset($_SESSION["user"]))
+	{
+		require("view/header_in_user.phtml");
+	}
+	else
+	{
+		require("view/header.phtml");	
+	}
 ?>
