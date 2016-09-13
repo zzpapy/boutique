@@ -78,8 +78,7 @@ class Caddy
 	}
 	public function setFullPrice($full_price)
 	{
-		// if ()
-			$this->full_price = $full_price;
+		$this->full_price = $full_price;
 	}
 	public function setDate($date)
 	{

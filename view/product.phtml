@@ -5,14 +5,26 @@
 		</a>
 	</div>
 	<div>
-		<h4 class="nameCaddy"><?=htmlentities($product->getName())?></h4>
-		<h2 class="prixCaddy"><?=htmlentities($product->getPriceSell())?></h2>
+		<h2 class="prixCaddy">
+			<?=htmlentities($product->getPriceSell())?>
+		</h2>
+
 		<h2 class="devisePoidsCaddy">eur./Kg</h2>
-		<h6 class="descriptCaddy floatRight"><?=htmlentities($product->getDescription())?></h6>
+
+		<h4 class="nameCaddy">
+			?=htmlentities($product->getName())?>
+		</h4>
+
+		<h6 class="descriptCaddy floatRight">
+			<?=htmlentities($product->getDescription())?>
+		</h6>
+		<!-- Ajout au panier -->
 		<form class="formCaddy">
-			<!--<h4 class="indicCaddy">Ajouter</h4>-->
  	        <input type="submit" value="Rajouter a mon panier" class="ajoutPanier largeBouton"/>
 		</form>
-
 	</div>
 </div>
+
+<!--
+<?php //require('controller/traitement_caddy.php'); ?>
+-->
