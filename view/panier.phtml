@@ -1,4 +1,14 @@
 <div class="panier">
+	<h2 class="h2">Votre "Panier" :</h2>
+	<?php require('controller/listpanier.php'); ?>
 
-
+	<div class="facture">
+		<h2>Récapitulatif :</h2>
+		<p>"Quantité de produit"</p>
+		<p>Prix T.T.C. (ou H.T.)</p>
+		<p>Adresse de facturation</p>
+		<div>
+			<button type="submit" name="paiment" value="paiment" class="submitButton button">Payer votre commande</button>
+		</div>
+	</div>
 </div>
