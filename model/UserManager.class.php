@@ -23,6 +23,14 @@
 			$user = mysqli_fetch_object($res, "User", [$this->db]);
 			return $user;
 		}
+		public function findParticular()
+		{
+			$query = "SELECT * FROM user WHERE admin=0";
+			$res = mysqli_query($this->db, $query);
+			while ($user = mysqli_fetch_object($res, "User", [$this->db]))
+				$list[] = $user;
+			return $list;
+		}
 
 		public function findByName($name)
 		{
@@ -37,10 +45,10 @@
 		public function create ($password, $mail, $name, $firstname, $address, $phone, $admin)
 		{
 			$user = new User($this->db);
-			$user -> setName($name);
-			$user->setPassword($password);
-			$user->setMail($mail);
-			$user->setFirstname($firstname);
+			$user-> setName($name);
+			$user-> setPassword($password);
+			$user-> setMail($mail);
+			$user-> setFirstname($firstname);
 			$user-> setAddress($address);
 			$user-> setPhone($phone);
 			$user-> setAdmin($admin);
