@@ -77,15 +77,23 @@ class DeliveryProducerManager
 		$delivery_producer -> setQuantityDelivery($quantity_delivery);
 		$delivery_producer->setProduct($product);
 		$delivery_producer->setProducer($producer);
+		$delivery_producer->setPrice($quantity_delivery * $product->getPriceBuy());
 		
 		$quantity_delivery = $delivery_producer->getQuantityDelivery();
 		$id_product = $delivery_producer->getProduct()->getIdProduct();
 		$id_producer = $delivery_producer->getProducer()->getIdProducer();
-		$query = "INSERT INTO delivery_producer (quantity_delivery, id_product, id_producer) 
-			VALUES('".$quantity_delivery."', '".$id_product."', '".$id_producer."')";
-		mysqli_query($this->db, $query);
-		$id_delivery_producer = mysqli_insert_id($this->db);
-		return $this->findById($id_delivery_producer);
+		$price = $delivery_producer->getPrice();
+		$query = "INSERT INTO delivery_producer (quantity_delivery, id_product, id_producer, price) 
+			VALUES('".$quantity_delivery."', '".$id_product."', '".$id_producer."', '".$price."')";
+		$res = mysqli_query($this->db, $query);
+		if ($res)
+		{
+			$id_delivery_producer = mysqli_insert_id($this->db);
+			$productManager = new ProductManager($db);
+			$product->addStock($quantity_delivery);
+			$productManager -> save($product);
+			return $this->findById($id_delivery_producer);
+		}
 	}
 }
 ?>
