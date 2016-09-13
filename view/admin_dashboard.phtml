@@ -1,1 +1,30 @@
 <p>admin_dashboard.phtml</p>
+<p><a href="index.php?page=admin_stock_change">admin_stock_change</a></p>
+<style>
+	h2{
+		color: green;
+	}
+	.cadre{
+		border: 1px solid green;
+		margin: 10px;
+	}
+</style>
+<div class="cadre">
+	<h2>CHIFFRES</h2>
+	<?php require('controller/bloc_admin_1stats.php'); ?>
+</div>
+
+<div class="cadre">
+	<h2>PARTICULIERS</h2>
+	<?php require('controller/bloc_admin_2users.php'); ?>
+</div>
+
+<div class="cadre">
+	<h2>PROS</h2>
+	<?php require('controller/bloc_admin_3pro.php'); ?>
+</div>
+	
+<div class="cadre">
+	<h2>MON STOCK</h2>
+	<?php require('controller/bloc_admin_4stock.php'); ?>
+</div>

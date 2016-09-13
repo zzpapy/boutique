@@ -1,3 +1,3 @@
 <?php
-	require('view/admin.phtml');
+	require('view/admin_dashboard.phtml');
 ?>

@@ -1,3 +1,3 @@
 <?php
-	require('view/pro_offer.phtml');
+require('view/pro_offer.phtml');
 ?>
