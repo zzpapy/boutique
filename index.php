@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	$_SESSION['id'] = 1;
-	$_SESSION['admin'] = 1;
+	// $_SESSION['id'] = 1;
+	// $_SESSION['admin'] = 1;
 	var_dump($_SESSION);
 	$db = mysqli_connect("192.168.1.79", "boutique", "boutique", "boutique");
 	// $db = mysqli_connect("localhost", "root", "troiswa", "boutique");
