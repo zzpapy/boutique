@@ -1,4 +1,5 @@
 <?php
+require('view/panier.phtml');
 if (isset($_SESSION['id']))
 {
 	$manager = new UserManager($db);
