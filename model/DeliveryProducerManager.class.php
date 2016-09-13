@@ -61,7 +61,7 @@ class DeliveryProducerManager
 			date='".$date."' WHERE id_delivery_producer='".$id_delivery_producer."'";
 		mysqli_query($this->db, $query);
 		// $query = "DELETE / INSERT rel_delivery_producer_product" /!\
-		return $this->findById($id_delivery_producer);
+		return $this->findByIdProducer($id_delivery_producer);
 	}
 
 	public function remove(DeliveryProducer $delivery_producer)
@@ -89,7 +89,7 @@ class DeliveryProducerManager
 		if ($res)
 		{
 			$id_delivery_producer = mysqli_insert_id($this->db);
-			$productManager = new ProductManager($db);
+			$productManager = new ProductManager($this->db);
 			$product->addStock($quantity_delivery);
 			$productManager -> save($product);
 			return $this->findById($id_delivery_producer);
