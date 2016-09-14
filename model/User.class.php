@@ -151,7 +151,7 @@
 		{
 			//conditions de verification de password
 			if(empty($password)){
-				throw new Exception("Merci de remplir tout les champs22");
+				throw new Exception("Merci de remplir tout les champs");
 			}
 			else if(strlen($password) < 3){
 				throw new Exception("Le mot de passe est trop court");
