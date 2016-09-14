@@ -10,5 +10,4 @@
 		require('view/bloc_admin_4stock.phtml');
 		$compteur++;
 	}
-
 ?>
