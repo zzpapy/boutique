@@ -5,10 +5,10 @@ if (isset($_POST["create"],$_POST["creacat"]))
 	{
 		$categoryManager= new CategoryManager($db);
 		$category=$categoryManager -> create($_POST["creacat"]);
+		header("Location: index.php");
+		exit;
 	}
 }
 	
-header("Location: index.php");
-exit;
 
  ?>

@@ -1,5 +1,5 @@
 <?php
-	if (!empty($error)) {
+	if(!empty($error)){
 		require 'view/error.phtml'; 
 	}
 ?>
