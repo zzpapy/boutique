@@ -1,16 +1,27 @@
 <div class="panier">
 	<h2 class="h2">Votre "Panier" :</h2>
 	<?php require('controller/listpanier.php'); ?>
+	<form method="post" action="index.php?page=payment">
+		<div class="facture">
+			<h2>Récapitulatif :</h2>
+			<p>Nombre de produits : <?=sizeof($caddy->getProducts())?></p>
+			<p>Poids global : <?=sizeof($caddy->getProducts())?> kg (en cours)</p>
+			<p>Prix T.T.C. : <?=$caddy->getFullPrice()?> €</p>
+			<p>Adresse de facturation : <?=$user->getAddress()?></p>
+			<p>Téléphone de contact : <?=$user->getPhone()?></p>
+			<input type="hidden" name="fullprice" value="<?=$caddy->getFullPrice()?>">
+			<input type="hidden" name="payment"value="payment">
 
-	<div class="facture">
-		<h2>Récapitulatif :</h2>
-		<p>Nombre de produits : <?=sizeof($caddy->getProducts())?></p>
-		<p>Poids global : <?=sizeof($caddy->getProducts())?> kg (en cours)</p>
-		<p>Prix T.T.C. : <?=$caddy->getFullPrice()?> €</p>
-		<p>Adresse de facturation : <?=$user->getAddress()?></p>
-		<p>Téléphone de contact : <?=$user->getPhone()?></p>
-		<div>
-			<button type="submit" name="paiment" value="paiment" class="submitButton button">Payer votre commande</button>
+				<label for="type">Type de carte</label>
+				visa<input type="radio" name="type" value="visa" id="visa" checked /> 
+				mastercard<input type="radio" name="type" value="mastercard" id="mastercard" /> 
+				americanexpress<input type="radio" name="type" value="Americanexpress" id="americanexpress"/> <br>
+				nom<input type="text"name="nom" value=""><br>
+				prénom<input type="text"name="prenom" value=""><br>
+				numero<input type="text"name="num" value=""><br>
+				csv<input type="text" name="csv" value=""><br>
+				<button type="submit" class="ajoutPanier" >payer</button>
+	
 		</div>
-	</div>
+	</form>
 </div>
