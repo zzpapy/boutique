@@ -17,6 +17,7 @@ class Product
 	private $id_category;
 	private $db;
 	// Propriété calculée
+	private $quantity;
 	private $producer;
 	private $category;
 	private $caddys;
@@ -73,6 +74,10 @@ class Product
 	{
 		return $this->stock;
 	}
+	public function getQuantity()
+	{
+		return $this->quantity;
+	}
 	public function getImage()
 	{
 		return $this->image;
@@ -121,6 +126,14 @@ class Product
 	// {
 	// 	 $this->id_product=$id_product;
 	// }
+	public function addQuantity($quantity)
+	{
+		$this->quantity += $quantity;
+	}
+	public function setQuantity($quantity)
+	{
+		$this->quantity = $quantity;
+	}
 	public function setName($name)
 	{
 		$this->name=$name;

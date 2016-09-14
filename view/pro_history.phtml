@@ -1,1 +1,19 @@
 <p>pro_history.phtml</p>
+<p><a href="index.php?page=pro_offer">pro_offer</a></p>
+
+<style>
+	h2{
+		color: green;
+	}
+	.cadre{
+		border: 1px solid green;
+		margin: 10px;
+	}
+</style>
+<div class="cadre">
+	<h2>HISTORIQUE DE MES VENTES</h2>
+</div>
+
+<div class="cadre">
+	<?php require('controller/bloc_pro_history.php'); ?>
+</div>

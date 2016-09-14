@@ -5,10 +5,9 @@
 -->
 
 <div class="blocHome fontStyle">
-<form method="post" action=" index.php?page=caddy"class="noMarginBottom">
 	<div class="imageHome">
-		<a href="#">
-		<img src="<?=htmlentities($product->getImage())?>" class="textCenter">
+		<a href="index.php?page=product&id=<?=$product->getIdProduct()?>">
+			<img src="<?=htmlentities($product->getImage())?>" class="textCenter">
 		</a>
 	</div>
 	<div class="textCenter clearfix">
@@ -20,7 +19,7 @@
 	</div>
 	<div>
 		<h4 class="nameHome">
-			<?=htmlentities($product->getName())?>
+			<?=htmlentities($product->getName())?></a>
 		</h4>
 
 		<p class="descripHome">	
@@ -28,10 +27,11 @@
 		</p>
 	</div>
 	<div>
+	<!-- <form method="post" class="noMarginBottom"> -->
 		<!-- Ajout au panier -->
-		<input type="hidden" name="page" value="caddy">
-        <input type="hidden" value="<?=$product->getIdProduct();?>" name="id" class="ajoutPanier"/>
-        <input type="submit" value="ajouter"  class="ajoutPanier"/>
-		</form>
+		<input type="hidden" name="page" value="caddy"/>
+        <input type="hidden" value="<?=$product->getIdProduct();?>" name="id"/>
+        <button type="submit" href="index.php?page=product&id=<?=$product->getIdProduct()?>" class="ajoutPanier">ajouter</button>	
+		<!-- </form> -->
 	</div>
 </div>

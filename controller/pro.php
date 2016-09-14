@@ -1,3 +1,3 @@
 <?php
-	require('view/pro.phtml');
+	require('controller/pro_history.php');
 ?>

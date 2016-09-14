@@ -16,18 +16,6 @@
 	$panierMoyen = $chiffreAffaire / $caddys;
 	$chiffreAffaire = number_format($chiffreAffaire, 2, ', ', ' ');
 	$panierMoyen = number_format($panierMoyen, 2, ', ', ' ');
+	
 	require('view/bloc_admin_1stats.phtml');
-
-
-	// $productManager = new ProductManager($db);
-	// $product=$productManager -> findAll();
-
-	// $compteur = 0;
-
-	// while ($compteur < sizeof($product)){
-	// 	$name = $product[$compteur]->getName();
-	// 	$stock = $product[$compteur]->getStock();
-	// 	require('view/bloc_admin_4stock.phtml');
-	// 	$compteur++;
-	// }
 ?>

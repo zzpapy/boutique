@@ -74,7 +74,7 @@ class Caddy
 	public function setUser(User $user)
 	{
 		$this->user = $user;
-		$this->id_user = $user->getId();
+		$this->id_user = $user->getIdUser();
 	}
 	public function setFullPrice($full_price)
 	{
@@ -87,6 +87,27 @@ class Caddy
 	public function setStatus($status)
 	{
 		$this->status = $status;
+	}
+	public function addProduct(Product $product, $quantity)
+	{
+		$this->getProducts();
+		$exist = false;
+		$count = 0;
+		$max = sizeof($this->products);
+		while ($count < $max)
+		{
+			if ($this->products[$count]->getIdProduct() == $product->getIdProduct())
+			{
+				$this->products[$count]->addQuantity($quantity);
+				$exist = true;
+			}
+			$count++;
+		}
+		if (!$exist)
+		{
+			$product->setQuantity($quantity);
+			$this->products[] = $product;
+		}
 	}
 	
 	
