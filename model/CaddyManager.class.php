@@ -58,24 +58,35 @@ class CaddyManager
 	// }
 	public function save(Caddy $caddy)// la variable $article DOIT etre de la classe Article -> Type hinting
 	{
-	
 		$id_caddy = $caddy->getIdCaddy();
-		$id_user = mysqli_real_escape_string($this->db, $caddy->getIdUser());
-		$full_price = mysqli_real_escape_string($this->dblo, $caddy->getFullPrice());
+		$id_user = mysqli_real_escape_string($this->db, $caddy->getUser()->getIdUser());
 		$date = mysqli_real_escape_string($this->db, $caddy->getDate());
 		$status = mysqli_real_escape_string($this->db, $caddy->getStatus());
-		if ($id_caddy == $_SESSION['id'])
+		$full_price = 0;
+		$products = $caddy->getProducts();
+		$count = 0;
+		$max = sizeof($products);
+		while ($count < $max)
 		{
-			$query = "UPDATE caddy SET id_caddy='".$id_caddy."', 
-				id_user='".$id_user."', 
-				full_price='".$full_price."', 
-				id_user='".$id_user."', 
-				date='".$date."', 
-				caddy='".$caddy."' WHERE id_caddy='".$id_caddy."'";
-			mysqli_query($this->db, $query);
-			// $query = "DELETE / INSERT rel_caddy_product" /!\
-			return $this->findById($id_caddy);
+			$full_price += $products[$count]->getPriceSell() * $products[$count]->getQuantity();
+			$count++;
 		}
+		$caddy->setFullPrice($full_price);
+		$full_price = floatval($caddy->getFullPrice());
+		$query = "UPDATE caddy SET id_user='".$id_user."', 
+			full_price='".$full_price."' WHERE id_caddy='".$id_caddy."'";
+		mysqli_query($this->db, $query);
+		$query = "DELETE rel_caddy_product WHERE id_caddy='".$id_caddy."'";
+		mysqli_query($this->db, $query);
+		$count = 0;
+		$max = sizeof($products);
+		while ($count < $max)
+		{
+			$query = "INSERT INTO rel_caddy_product (id_caddy, id_product, quantity) VALUES('".$id_caddy."', '".$products[$count]->getIdProduct()."', '".$products[$count]->getQuantity()."')";
+			mysqli_query($this->db, $query);
+			$count++;
+		}
+		return $this->findById($id_caddy);
 	}
 
 	public function remove(Caddy $caddy)
@@ -89,8 +100,11 @@ class CaddyManager
 		}
 	}
 
-	public function create(User $user, $full_price, $date, $status)
+	public function create(User $user)
 	{
+		$full_price = 0;
+		$date = date('Y\-m\-d H:i:s');
+		$status = 1;
 		$caddy = new Caddy($this->db);
 		$caddy -> setFullPrice($full_price);
 		$caddy->setDate($date);

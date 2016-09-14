@@ -88,6 +88,27 @@ class Caddy
 	{
 		$this->status = $status;
 	}
+	public function addProduct(Product $product, $quantity)
+	{
+		$this->getProducts();
+		$exist = false;
+		$count = 0;
+		$max = sizeof($this->products);
+		while ($count < $max)
+		{
+			if ($this->products[$count]->getIdProduct() == $product->getIdProduct())
+			{
+				$this->products[$count]->addQuantity($quantity);
+				$exist = true;
+			}
+			$count++;
+		}
+		if (!$exist)
+		{
+			$product->setQuantity($quantity);
+			$this->products[] = $product;
+		}
+	}
 	
 	
 

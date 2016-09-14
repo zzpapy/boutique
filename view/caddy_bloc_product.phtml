@@ -17,7 +17,7 @@
 		<h2 class="devisePoidsCaddy">eur./Kg</h2>
 		
 		<h4 class="nameCaddy">
-			<?=htmlentities($product->getName())?>
+			<a href="index.php?page=product&id=<?=$product->getIdProduct()?>"><?=htmlentities($product->getName())?></a>
 		</h4>
 		
 		<h6 class="descriptCaddy floatRight">
