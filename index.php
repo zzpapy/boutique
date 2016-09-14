@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	var_dump($_SESSION);
+
 	
 	$db = mysqli_connect("192.168.1.79", "boutique", "boutique", "boutique");
 	// $db = mysqli_connect("localhost", "root", "troiswa", "boutique");
@@ -53,9 +53,11 @@
 		"product" => "product", "admin"=>"product", "admin_stock_change"=>"product", "pro_offer"=>"product",
 		"category" => "category",
 		"caddy" => "caddy",
-		"comments" => "comments"
+		"comments" => "comments",
+		"payment"=>"payment"
 	];
 
+	
 	if(isset($traitementList[$page]))
 	{
 		require("controller/traitement_".$traitementList[$page].".php");
