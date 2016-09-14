@@ -34,6 +34,19 @@ class Caddy
 		}
 		return $this->user;
 	}
+	public function getWeight()
+	{
+		$this->getProducts();
+		$weight = 0;
+		$count = 0;
+		$max = sizeof($this->products);
+		while ($count < $max)
+		{
+			$weight += $this->products[$count]->getQuantity();
+			$count++;
+		}
+		return $weight;
+	}
 	public function getProducts()
 	{
 		if (!$this->products)

@@ -12,10 +12,10 @@
 		require('model/'.$className.'.class.php');
 	}
 
-	$access = ["panier", "home", "login_register_user", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "category"/*, "summary"*/];
-	$accessUser = ["panier", "home", "404", "product", "caddy", "logout", "category", "panier", "payment",/*, "summary"*/];
+	$access = ["panier", "home", "login_register_user", "login_register_pro", "404", "login_admin", "product", /*"caddy",*/ "logout", "category"/*, "summary"*/];
+	$accessUser = ["panier", "home", "404", "product", /*"caddy",*/ "logout", "category", "panier", "payment",/*, "summary"*/];
 	$accessAdmin = ["panier", "home", "admin", "product", "404", "logout", "category", "admin_stock_change", "pro", "pro_offer", "pro_history", "summary"];
-	$accesPro = ["panier", "home", "404", "product", "caddy", "logout", "category", "summary", "pro", "pro_offer", "pro_history"];
+	$accesPro = ["panier", "home", "404", "product", /*"caddy",*/ "logout", "category", "summary", "pro", "pro_offer", "pro_history"];
 
 	if(isset($_SESSION["admin"]) && $_SESSION['admin'] == 1)
 	{

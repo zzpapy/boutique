@@ -91,29 +91,17 @@ h1{
 	margin-left: 20px;
 }
 
-h2{
-	margin: 0;
-}
+h2{	margin: 0;}
 
-label{
-	margin-top: 10px;
-}
+label{	margin-top: 10px;}
 
-input{
-	margin-top: 10px
-}
-
-
+input{	margin-top: 10px}
 
 /*--HEADER--------------------------------------------*/
 header{
 	max-width: 100%;
 	display: block;
 	color: #17980A;
-	border: 1px black solid;
-	border: 4px #FD8129 solid;
-	padding: 2px 10px 0px 0px;
-	background: #99CCFF;	
 }
 
 /*
@@ -125,16 +113,53 @@ header{
 */
 
 /*--NAV--------------------------------------------*/
+
+.windowCaddy{
+	display:inline-block;
+	float:right;
+	position:relative;
+	width: 300px;
+	height: 50px;
+	margin-right: 10px;
+	font-size: 20px;
+	background-color:white;
+	box-shadow: inset 0px 3px 0.5em #768976;
+	border: 0.5px #345134 solid;
+	text-align:right;
+	text-decoration: none;
+	margin-top: 10px;
+}
+
+.windowRecherche{
+	display:inline-block;
+/*	float:right;
+*/	position:relative;
+	width: 400px;
+	height: 30px;
+	margin-right: 10px;
+	font-size: 20px;
+	background-color:white;
+	box-shadow: inset 0px 3px 0.5em #768976;
+	border: 0.5px #345134 solid;
+	text-align:right;
+	text-decoration: none;
+	margin-top: 10px;
+}
+
+.pNoMargin{
+	margin:0;
+	padding: 4px 8px 0px 0px;
+	text-shadow: 0px 4px 0.3em #768976;
+}
+
 .nav{
 	display: block;
 	padding: 4px 10px 4px 10px;
 	font-size: 25px;
 	color:#41553E;
 	text-decoration: none;
-	white-space: nowrap;
 	margin-top: 4px;
 	margin-bottom: 0px;
-	background-color: rgba();
 }
 
 .logRegister{
@@ -163,49 +188,59 @@ header{
 }
 
 .menu ul li{
+	margin:0 auto;
 	display: inline-block;
 	position: relative;
 	padding: 0px 10px 0px 10px;
-	margin-right: 20px;
-}
+/*	border-bottom-width: 0.5px;
+	border-bottom-color:#345134;
+	border-bottom-style: solid;
+*/}
 
 /* La flêche */
 .menu ul li.sous-menu > a:after{
-	content: "↓";
+	content: " ↓";
 	position: relative;
-	margin-left:0px;
+/*	margin-left:0px;
 	margin-right:0px;
-	color: #17980A;	
+*/	color: #17980A;	
 }
 
-/* Sous menu */
+/* Sous menu produits et se connecter */
 .menu ul ul{
+	text-align: center;
+	margin:0 auto;
 	position: absolute;
-	top: 100%;
+/*	top: 100%;
 	border: 1px solid #CCC;
-	display: none;
+*/	display: none;
+	box-shadow: 0px 3px 0.7em #768976;
 }
 
-.noCR{
-	font-size: 0px;
-}
 
 .menu ul ul li{
 	display: block;
 	text-align: center;
+	padding: 0px;
+	margin: 0px;
+	margin:5px;
+	box-shadow: 0px 3px 0.7em #768976;
 }
 
 /* Au survol, on affiche la sous liste */
 .menu ul li:hover ul{
 	display: block;
 	background: white;
-	padding: 0px;	
+	padding: 0px;
+	margin: 0px;
+	box-shadow: 0px 3px 0.7em #768976;	
 }
 
 
 a:hover{	
 	color: #17980A;
 	background: #fff;
+	box-shadow: 0px 3px 0.7em #768976;
 }
 
 /*--ARTICLE--------------------------------------------*/
@@ -219,8 +254,8 @@ article{
 
 .block1{
 	display: block;
-	width: 78%;
-	height:220px;
+	width: 77%;
+	height:150px;
 	padding: 10px;
 	float: left;
 	text-align: left;
@@ -233,8 +268,8 @@ article{
 
 .block2{
 	display: block;
-	width: 20%;
-	height:220px;
+	width: 21%;
+	height:150px;
 	padding: 10px;
 	float: right;
 	text-align: right;
@@ -291,12 +326,12 @@ clear: both;
 	text-align: center;
 	margin: 0 auto;
 	padding:14px;
+	padding-bottom: 20px;
 	background-color: #E0ECE0;
 	box-shadow: 0px 3px 0.7em #768976;
 	border: 0.5px #345134 solid;
 	margin: 10px;
 	overflow: hidden;
-
 }
 
 .imageHome{
@@ -308,7 +343,6 @@ clear: both;
 	margin:0 auto;
 	overflow: hidden;
 }
-
 
 .textCenter{
 	text-align: center;
@@ -345,25 +379,37 @@ clear: both;
 	font-size:40px;	
 	padding-left: 10px;
 	padding-right: 10px;
+	font-color:#41553E !important;
 }
 
 .ajoutPanier{
-	padding:6px;
+	padding:0px 12px 0px 12px;
 	margin: 12px;
 	box-shadow: 0px 2px 0.8em #ACC3AC;
 }
 .ajoutPanier:hover{box-shadow: 0px 2px 1.5em #619B61;}
 
+.fauxAjoutPanier{
+	text-decoration:none;
+	color:#41553E;
+	background-color: white;
+	width:120px;
+	height: 50px;
+	border: 1px #A2A2A2 solid;
+	border-radius:10px;
+	padding:3px 17px 3px 17px;
+	box-shadow: inset 0px 0px 0.6em #BFBFBF, 0px 2px 0.8em #ACC3AC;
+}
+.fauxAjoutPanier:hover{box-shadow: 0px 2px 1.5em #619B61;}
+
 .largeBouton{width:300px;}
 
 /*-- BLOC CADDY-----------------------------------------*/
-
 .blocCaddy{
 	border: 1px #345134 solid;
 	display: block;
 	width: 85%;
-/*	text-align: center;
-*/	margin: 0 auto;
+	margin: 0 auto;
 	padding:10px 20px 10px 12px;
 	background-color: #E0ECE0;
 	box-shadow: 0px 3px 1.5em #768976;
@@ -435,7 +481,7 @@ clear: both;
 	text-align:center;
 	width:300px;
 	height:50px;
- 	font-size:25px;
+ 	font-size:20px;
  	margin: 10px 12px 8px 20px;
 	border: 4px #17980A solid;
 	border-radius: 10px;
@@ -447,13 +493,14 @@ clear: both;
 	text-align:center;
 	width:300px;
 	height:50px;
- 	font-size:25px;
+ 	font-size:20px;
  	margin: 20px 12px 8px 20px;
  	border: 4px #E43C3C solid;
 	border-radius: 10px;
 	box-shadow: inset 0px 0px 0.3em #EE8D8D;
 }
 .suppCaddy:hover{	box-shadow: 0px 0px 0.8em #E43C3C; }
+
 
 /*--PANIER--------------------------------------------*/
 .panier{
