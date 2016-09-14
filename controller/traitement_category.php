@@ -13,10 +13,10 @@ if(isset($_GET["id"]))
 {
 	$manager=new CategoryManager($db);
 	$products= $manager->findById($_GET["id"]);
-	var_dump($products);
-	die;
+	// var_dump($products);
+	// die;
 
-	header("Location: index.php?page=category&id=$id");
+	header("Location: index.php?page=category&id=");
 		exit;
 
 }
