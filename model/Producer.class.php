@@ -58,6 +58,10 @@ class Producer
 		// On peut du coup retourner $this->author
 		return $this->products;
 	}
+	public function verifPassword($password)
+		{
+			return password_verify($password, $this->password);
+		}
 
 	// Liste des setters
 	public function setSociety($society)
@@ -66,10 +70,18 @@ class Producer
 			$this->society = $society;
 	}
 	public function setPassword($password)
-	{
-		
-			$this->password = $password;
-	}
+		{
+			//conditions de verification de password
+			if(empty($password)){
+				throw new Exception("Merci de remplir tout les champs22");
+			}
+			else if(strlen($password) < 3){
+				throw new Exception("Le mot de passe est trop court");
+			}
+			else{
+				$this->password = password_hash($password, PASSWORD_DEFAULT);
+			}
+		}
 	
 	
 	public function setMail($mail)

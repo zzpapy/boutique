@@ -2,26 +2,26 @@
 	var_dump($_POST);
 
 	if(isset($_POST["register"], $_POST['society'], $_POST['siret'], $_POST['mail'], $_POST['password'], $_POST['password2'], $_POST['address'], $_POST['phone'])){
-
+		$admin = 0;
 		$manager = new ProducerManager($db);
 		// $list = $manager->create($password, $mail, $name, $firstname, $address, $phone, $admin);
 		$list = $manager->create($_POST['society'], $_POST['siret'], $_POST['mail'], $_POST['password'], $_POST['password2'], $_POST['address'], $_POST['phone'], $admin);
-		header("Location: index.php?page=login");
+		// header("Location: index.php?page=login");
 		exit;
 	}
 
 	if(isset($_POST["login"], $_POST['society'], $_POST['password'])){
-
 		
 		if(!empty($_POST['society'] && !empty($_POST['password']))){
-			$manager = new UserManager($db);
-			$user = $manager->findAll();
-			if($user){
-				if ($user->verifPassword($_POST['password']))
+
+			$manager = new ProducerManager($db);
+			$producer = $manager->findByName($_POST['society']);
+			if($producer){
+				if ($producer->verifPassword($_POST['password']))
 				{
-					$_SESSION['id'] = $user->getIdUser();
-					$_SESSION['user'] = $user->getFirstName();
-					$_SESSION['admin'] = $user->getAdmin();
+					$_SESSION['id'] = $producer->getIdProducer();
+					$_SESSION['producer'] = $producer->getFirstName();
+					$_SESSION['admin'] = $producer->getAdmin();
 					// $_SESSION['caddy'] = $caddy->getCaddy();
 					header('Location: index.php');
 					exit;
