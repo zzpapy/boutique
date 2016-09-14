@@ -103,16 +103,18 @@ input{
 	margin-top: 10px
 }
 
+
+
 /*--HEADER--------------------------------------------*/
 header{
 	max-width: 100%;
 	display: block;
 	color: #17980A;
-/*	border: 1px black solid;
+	border: 1px black solid;
 	border: 4px #FD8129 solid;
 	padding: 2px 10px 0px 0px;
 	background: #99CCFF;	
-*/}
+}
 
 /*
 .imgHeader{
@@ -123,32 +125,6 @@ header{
 */
 
 /*--NAV--------------------------------------------*/
-.windowCaddy{
-	display:inline-block;
-	float:right;
-	position:relative;
-	width: 650px;
-	height: 50px;
-	margin-right: 10px;
-	font-size: 20px;
-	background-color:white;
-	box-shadow: inset 0px 3px 0.5em #768976;
-	border: 0.5px #345134 solid;
-	text-align:right;
-	text-decoration: none;
-	margin-top: 10px;
-}
-
-.pNoMargin{
-	margin:0;
-	padding: 4px 8px 0px 0px;
-	text-shadow: 0px 4px 0.3em #768976;
-}
-
-.windowPosition{
-	
-}
-
 .nav{
 	display: block;
 	padding: 4px 10px 4px 10px;
@@ -158,8 +134,8 @@ header{
 	white-space: nowrap;
 	margin-top: 4px;
 	margin-bottom: 0px;
-/*	background-color: rgba();
-*/}
+	background-color: rgba();
+}
 
 .logRegister{
 	float:right;
@@ -366,7 +342,7 @@ clear: both;
 
 .descriptHome{
 	margin:0px;
-	font-size:40px !important;	
+	font-size:40px;	
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -481,8 +457,44 @@ clear: both;
 
 /*--PANIER--------------------------------------------*/
 .panier{
+	box-shadow: 0px 3px 0.7em #768976;
+	border: 0.5px #345134 solid;
+	margin: 0px 12px;
+	overflow: hidden;
+}
+
+.ProduitPanier{
 	display: block;
 	background: #E0ECE0;
+	width: 20%;
+	max-height:550px;
+	text-align: center;
+	margin: 5px;
+	padding:14px;
+	background-color: #E0ECE0;
+	box-shadow: 0px 3px 0.7em #768976;
+	border: 0.5px #345134 solid;
+	margin: 10px;
+	float: left;
+}
+.facture{
+	display: block;
+	background: #E0ECE0;
+	width: 98%;
+	background-color: #E0ECE0;
+	box-shadow: 0px 3px 0.7em #768976;
+	border: 0.5px #345134 solid;
+	margin: 10px;
+	clear: both;
+}
+
+.h2{
+	text-align: left;
+	margin: 5px;
+}
+
+.button{
+	margin-bottom: 10px!important;
 }
 
 /*--FORMULAIRE--------------------------------------------*/
@@ -509,24 +521,14 @@ form{margin-bottom:0;}
 .submitButton:hover{ box-shadow: 0px 0px 1em #78A378;}
 
 /*--404--------------------------------------------*/
-
 .error{
-	color:#FFF;
-	font-family: 'Courgette', cursive;
-  	font-size:2.5em;
-  	text-align:center;
-  	border-radius:35px;
-  	width:60%;
-  	background-color:#D00;
-  	padding:10px;
-  	margin:0 auto;
-  	margin-top:10px;
-  	margin-bottom:10px;
-  	border:4px black solid;
-  	box-shadow:inset 0px 10px 0.3em #7C0000;
-	text-shadow: 0px 3px 5px #4F0000;
+	display: block;
+	border: 1px black solid;
+	background: white;
+	padding: 5px 5px;
+	margin: 5px 0px;
+	padding: 0% 30%;
 }
-
 .big{
 	font-size: 100px;
 }
