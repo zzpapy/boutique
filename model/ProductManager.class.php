@@ -15,9 +15,16 @@ class ProductManager
 		$query = "SELECT * FROM product";
 		$res = mysqli_query($this->db, $query);
 		while ($product = mysqli_fetch_object($res, "Product", [$this->db]))
-
-		
-
+			$list[] = $product;
+		return $list;
+	}
+	public function search($search)
+	{
+		$search = mysqli_real_escape_string($this->db, $search);
+		$list=[];
+		$query = "SELECT * FROM product WHERE name LIKE '%".$search."%' OR description LIKE '%".$search."%'";
+		$res = mysqli_query($this->db, $query);
+		while ($product = mysqli_fetch_object($res, "Product", [$this->db]))
 			$list[] = $product;
 		return $list;
 	}

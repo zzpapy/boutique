@@ -1,4 +1,7 @@
 <?php
+$search = '';
+if (isset($_GET['recherche']))
+	$search = $_GET['recherche'];
 	if(isset($_SESSION["id"]))
 	{
 		if(isset($_SESSION['producer'])){
