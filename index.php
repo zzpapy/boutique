@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	
+	var_dump($_SESSION);
 	
 	$db = mysqli_connect("192.168.1.79", "boutique", "boutique", "boutique");
 	// $db = mysqli_connect("localhost", "root", "troiswa", "boutique");
@@ -14,8 +14,8 @@
 	}
 
 
-	$access = ["panier", "home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category", "admin_stock_change", "admin_dashboard","summary"];
-	$accessAdmin = ["panier", "home", "login_register_user", "admin", "product", "login_register_pro", "404", "logout", "create-post", "edit-post", "delete-post", "single", "selectcat", "selectprod", "category", "admin_stock_change", "pro_offer","summary"];
+	$access = ["panier", "home", "login_register_user", "admin", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "selectcat", "selectprod", "category", "admin_stock_change", "admin_dashboard","summary","pro_offer","caddy_bloc_product"];
+	$accessAdmin = ["panier", "home", "login_register_user", "admin", "product", "login_register_pro", "404", "logout", "create-post", "edit-post", "delete-post", "single", "selectcat", "selectprod", "category", "admin_stock_change", "pro_offer","caddy","summary","caddy_bloc_product"];
 
 
 	if(isset($_SESSION["admin"]) && $_SESSION['admin'] == 1)

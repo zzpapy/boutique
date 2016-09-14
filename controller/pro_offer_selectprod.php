@@ -1,5 +1,6 @@
 <?php
 $products = $category->getProducts();
+$countP=0;
 while ($countP<sizeof($products))
 {
 	$product=$products[$countP];

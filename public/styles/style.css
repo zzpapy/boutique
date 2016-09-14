@@ -91,24 +91,18 @@ h1{
 	margin-left: 20px;
 }
 
-h2{
-	margin: 0;
-}
+h2{	margin: 0;}
 
-label{
-	margin-top: 10px;
-}
+label{	margin-top: 10px;}
 
-input{
-	margin-top: 10px
-}
+input{	margin-top: 10px}
 
 /*--HEADER--------------------------------------------*/
 header{
 	max-width: 100%;
 	display: block;
 	color: #17980A;
-/}
+}
 
 /*
 .imgHeader{
@@ -119,6 +113,7 @@ header{
 */
 
 /*--NAV--------------------------------------------*/
+
 .windowCaddy{
 	display:inline-block;
 	float:right;
@@ -147,7 +142,6 @@ header{
 	font-size: 25px;
 	color:#41553E;
 	text-decoration: none;
-	white-space: nowrap;
 	margin-top: 4px;
 	margin-bottom: 0px;
 }
@@ -178,37 +172,43 @@ header{
 }
 
 .menu ul li{
+	margin:0 auto;
 	display: inline-block;
 	position: relative;
-	padding: 0px 30px 0px 30px;
-}
+	padding: 0px 10px 0px 10px;
+/*	border-bottom-width: 0.5px;
+	border-bottom-color:#345134;
+	border-bottom-style: solid;
+*/}
 
 /* La flêche */
 .menu ul li.sous-menu > a:after{
 	content: " ↓";
 	position: relative;
-	margin-left:0px;
+/*	margin-left:0px;
 	margin-right:0px;
-	color: #17980A;	
+*/	color: #17980A;	
 }
 
-/* Sous menu */
+/* Sous menu produits et se connecter */
 .menu ul ul{
+	text-align: center;
+	margin:0 auto;
 	position: absolute;
-	top: 100%;
+/*	top: 100%;
 	border: 1px solid #CCC;
-	display: none;
+*/	display: none;
+	box-shadow: 0px 3px 0.7em #768976;
 }
 
-.noCR{
-	font-size: 0px;
-}
 
 .menu ul ul li{
 	display: block;
 	text-align: center;
 	padding: 0px;
 	margin: 0px;
+	margin:5px;
+	box-shadow: 0px 3px 0.7em #768976;
 }
 
 /* Au survol, on affiche la sous liste */
@@ -216,13 +216,15 @@ header{
 	display: block;
 	background: white;
 	padding: 0px;
-	margin: 0px;	
+	margin: 0px;
+	box-shadow: 0px 3px 0.7em #768976;	
 }
 
 
 a:hover{	
 	color: #17980A;
 	background: #fff;
+	box-shadow: 0px 3px 0.7em #768976;
 }
 
 /*--ARTICLE--------------------------------------------*/
@@ -236,8 +238,8 @@ article{
 
 .block1{
 	display: block;
-	width: 78%;
-	height:220px;
+	width: 77%;
+	height:150px;
 	padding: 10px;
 	float: left;
 	text-align: left;
@@ -250,8 +252,8 @@ article{
 
 .block2{
 	display: block;
-	width: 20%;
-	height:220px;
+	width: 21%;
+	height:150px;
 	padding: 10px;
 	float: right;
 	text-align: right;
@@ -358,7 +360,7 @@ clear: both;
 
 .descriptHome{
 	margin:0px;
-	font-size:20px;	
+	font-size:40px;	
 	padding-left: 10px;
 	padding-right: 10px;
 	font-color:#41553E !important;
@@ -470,6 +472,7 @@ clear: both;
 }
 .suppCaddy:hover{	box-shadow: 0px 0px 0.8em #E43C3C; }
 
+
 /*--PANIER--------------------------------------------*/
 .panier{
 	box-shadow: 0px 3px 0.7em #768976;
@@ -512,7 +515,6 @@ clear: both;
 	margin-bottom: 10px!important;
 }
 
-
 /*--FORMULAIRE--------------------------------------------*/
 .formulaire{
 	display: inline-block;
@@ -537,24 +539,14 @@ form{margin-bottom:0;}
 .submitButton:hover{ box-shadow: 0px 0px 1em #78A378;}
 
 /*--404--------------------------------------------*/
-
 .error{
-	color:#FFF;
-	font-family: 'Courgette', cursive;
-  	font-size:2.5em;
-  	text-align:center;
-  	border-radius:35px;
-  	width:60%;
-  	background-color:#D00;
-  	padding:10px;
-  	margin:0 auto;
-  	margin-top:10px;
-  	margin-bottom:10px;
-  	border:4px black solid;
-  	box-shadow:inset 0px 10px 0.3em #7C0000;
-	text-shadow: 0px 3px 5px #4F0000;
+	display: block;
+	border: 1px black solid;
+	background: white;
+	padding: 5px 5px;
+	margin: 5px 0px;
+	padding: 0% 30%;
 }
-
 .big{
 	font-size: 100px;
 }

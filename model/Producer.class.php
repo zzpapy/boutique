@@ -32,6 +32,14 @@ class Producer
 	{
 		return $this->password;
 	}
+	public function verifPassword($password)
+	{
+		return password_verify($password, $this->password);
+	}
+	public function getAdmin()
+	{
+		return $this->admin;
+	}
 	public function getMail()
 	{
 		return $this->mail;
@@ -58,41 +66,63 @@ class Producer
 		// On peut du coup retourner $this->author
 		return $this->products;
 	}
-	public function verifPassword($password)
-		{
-			return password_verify($password, $this->password);
-		}
-
 	// Liste des setters
-	public function setSociety($society)
-	{
+	// public function setSociety($society)
+	// {
 		
-			$this->society = $society;
-	}
-	public function setPassword($password)
+	// 		$this->society = $society;
+	// }
+	public function setSociety($society)
 		{
-			//conditions de verification de password
-			if(empty($password)){
-				throw new Exception("Merci de remplir tout les champs22");
+			if(empty($society)){
+				throw new Exception("Veuillez renseigner un nom");
 			}
-			else if(strlen($password) < 3){
-				throw new Exception("Le mot de passe est trop court");
+			else if(strlen($society) < 3 || strlen($society) > 63){
+				throw new Exception("Nom trop court");
 			}
 			else{
-				$this->password = password_hash($password, PASSWORD_DEFAULT);
+				$this->society = $society;
 			}
 		}
-	
-	
+	public function setPassword($password)
+	{
+		//conditions de verification de password
+		if(empty($password)){
+			throw new Exception("Merci de remplir tout les champs");
+		}
+		else if(strlen($password) < 3){
+			throw new Exception("Le mot de passe est trop court");
+		}
+		else{
+			$this->password = password_hash($password, PASSWORD_DEFAULT);
+		}
+	}
 	public function setMail($mail)
-	{
-		
-			$this->mail = $mail;
-	}
-	public function setAddress($address)
-	{
-		$this->address = $address;
-	}
+		{
+			if(empty($mail)){
+				throw new Exception("Veuillez renseigner une adresse mail");
+			}
+			else if(strlen($mail) < 5 || strlen($mail) > 255){
+				throw new Exception("Mail trop court");
+			}
+			elseif (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+				throw new Exception("Adresse mail non valide");	
+			}
+			// else if($mail){
+			// 	throw new Exception("Adresse mail déjà utilisée");
+			// }
+			else{
+				$this->mail = $mail;
+			}
+				
+		}
+		public function setAddress($address)
+		{
+			if(empty($address)){
+				throw new Exception("Adresse trop longue");
+			}
+			$this->address = $address;
+		}
 	public function setSiret($siret)
 	{
 		$this->siret = $siret;
