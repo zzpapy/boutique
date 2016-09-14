@@ -1,4 +1,11 @@
 <?php
+$f = 1;
+while ( $f <= 10) {
+	require('view/bloc_pro_history.phtml');
+	$f++;
+}
+?>
+<!-- 
 	$productManager = new ProductManager($db);
 	$product = $productManager -> findAll();
 
@@ -9,5 +16,4 @@
 		$stock = $product[$compteur]->getStock();
 		require('view/bloc_admin_4stock.phtml');
 		$compteur++;
-	}
-?>
+	} -->
