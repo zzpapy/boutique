@@ -1,6 +1,6 @@
 <div class="ProduitPanier">
 	<h2><?=$product->getName()?></h2>
 	<p><img src="<?=$product->getImage()?>"></p>
-	<P><?=$product->quantity?> kg</p>
-	<p><?=$product->quantity * $product->getPriceSell()?>€</p>
+	<P><?=$product->getQuantity()?> kg</p>
+	<p><?=$product->getQuantity() * $product->getPriceSell()?>€</p>
 </div>
