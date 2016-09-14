@@ -1,5 +1,10 @@
-	<header class="menuDesign fontStyle">
-		<h1>La boutique</h1>
+<header class="menuDesign fontStyle">
+		<div class="fontStyle fontColor windowCaddy">
+			<p class="pNoMargin">Champ d'affichage d'informations</p>
+				<a href="index.php?page=panier">
+				</a>
+		</div>
+	<h1>La boutique</h1>
 		<nav class="menu">
 			<ul>
 				<li>
@@ -18,9 +23,9 @@
 					<a class="nav" href="index.php?page=product">Viandes</a>
 				</li>
 				<li class="sous-menu">
-					<a class="nav" href="#">Mon Compte - <?=$_SESSION['user']?></a>
+					<a class="nav" href="#">Mon Compte - <?=$_SESSION['producer']?></a>
 					<ul>
-						<li><a class="nav" href="#">Deconnexion</a></li>
+						<li><a class="nav" href="index.php?page=logout">Deconnexion</a></li>
 					</ul>
 				</li>
 			</ul>

@@ -64,7 +64,7 @@ class ProducerManager
 	// 	}
 	// }
 
-	public function create($society, $password, $mail, $address,$siret)
+	public function create($society, $password, $mail, $address, $siret)
 	{
 		$producer = new Producer($this->db);
 		$producer->setSociety($society);
@@ -72,13 +72,22 @@ class ProducerManager
 		$producer->setMail($mail);
 		$producer->setAddress($address);
 		$producer->setSiret($siret);
-		var_dump($producer);
+		// var_dump($producer);
 		
-		
-		$query = "INSERT INTO producer (society, password, mail, address,siret) 
+		$society = mysqli_real_escape_string($this->db, $producer->getSociety());
+		$password = mysqli_real_escape_string($this->db, $producer->getPassword());
+		$mail = mysqli_real_escape_string($this->db, $producer->getMail());
+		$address = mysqli_real_escape_string($this->db, $producer->getAddress());
+		$siret = mysqli_real_escape_string($this->db, $producer->getSiret());
+
+		$query = "INSERT INTO producer (society, password, mail, address, siret) 
 		VALUES('".$society."','". $password."','". $mail."','".$address."','".$siret."')";
 		mysqli_query($this->db, $query);
 		var_dump($query, mysqli_error($this->db));
+
+		if (mysqli_errno($this->db) == 1062){
+			throw new Exception("Adresse mail déjà existante");
+		}
 		$id_producer = mysqli_insert_id($this->db);
 		return $this->findById($id_producer);
 	}
