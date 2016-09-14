@@ -26,6 +26,15 @@ class ProducerManager
 		$producer = mysqli_fetch_object($res, "Producer", [$this->db]);
 		return $producer;
 	}
+	public function findByName($name)
+		{
+			$name = mysqli_real_escape_string($this->db, $name);
+			$query = "SELECT * FROM producer WHERE society='".$name."'";
+			$res = mysqli_query($this->db, $query);
+			$producer = mysqli_fetch_object($res, "Producer", [$this->db]);
+			
+			return $producer;
+		}
 	// public function find($id)
 	// {
 	// 	return $this->findById($id);
