@@ -118,8 +118,24 @@ header{
 	display:inline-block;
 	float:right;
 	position:relative;
-	width: 650px;
+	width: 300px;
 	height: 50px;
+	margin-right: 10px;
+	font-size: 20px;
+	background-color:white;
+	box-shadow: inset 0px 3px 0.5em #768976;
+	border: 0.5px #345134 solid;
+	text-align:right;
+	text-decoration: none;
+	margin-top: 10px;
+}
+
+.windowRecherche{
+	display:inline-block;
+/*	float:right;
+*/	position:relative;
+	width: 400px;
+	height: 30px;
 	margin-right: 10px;
 	font-size: 20px;
 	background-color:white;
@@ -310,6 +326,7 @@ clear: both;
 	text-align: center;
 	margin: 0 auto;
 	padding:14px;
+	padding-bottom: 20px;
 	background-color: #E0ECE0;
 	box-shadow: 0px 3px 0.7em #768976;
 	border: 0.5px #345134 solid;
@@ -326,7 +343,6 @@ clear: both;
 	margin:0 auto;
 	overflow: hidden;
 }
-
 
 .textCenter{
 	text-align: center;
@@ -372,6 +388,19 @@ clear: both;
 	box-shadow: 0px 2px 0.8em #ACC3AC;
 }
 .ajoutPanier:hover{box-shadow: 0px 2px 1.5em #619B61;}
+
+.fauxAjoutPanier{
+	text-decoration:none;
+	color:#41553E;
+	background-color: white;
+	width:120px;
+	height: 50px;
+	border: 1px #A2A2A2 solid;
+	border-radius:10px;
+	padding:3px 17px 3px 17px;
+	box-shadow: inset 0px 0px 0.6em #BFBFBF, 0px 2px 0.8em #ACC3AC;
+}
+.fauxAjoutPanier:hover{box-shadow: 0px 2px 1.5em #619B61;}
 
 .largeBouton{width:300px;}
 
@@ -452,7 +481,7 @@ clear: both;
 	text-align:center;
 	width:300px;
 	height:50px;
- 	font-size:25px;
+ 	font-size:20px;
  	margin: 10px 12px 8px 20px;
 	border: 4px #17980A solid;
 	border-radius: 10px;
@@ -464,7 +493,7 @@ clear: both;
 	text-align:center;
 	width:300px;
 	height:50px;
- 	font-size:25px;
+ 	font-size:20px;
  	margin: 20px 12px 8px 20px;
  	border: 4px #E43C3C solid;
 	border-radius: 10px;
