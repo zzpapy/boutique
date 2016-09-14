@@ -1,5 +1,4 @@
 <?php 
-		var_dump($_POST);
 	if(isset($_POST["page"] ,$_POST["id"]))
 	{
 		if($_POST["page"]=="caddy")
@@ -13,4 +12,6 @@
 		header("Location: index.php?page=caddy&id=".$_POST["id"]);
 		exit;
 	}
+		var_dump($_POST);
+	if (isset($_POST["quantity"]))
  ?>

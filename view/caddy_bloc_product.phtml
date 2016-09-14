@@ -24,13 +24,13 @@
 			<?=htmlentities($product->getDescription())?>
 		</h6>
 		<!-- Quantité et suppression -->
-		<form class="formCaddy">
+		<form class="formCaddy" method="post" action="index.php?page=caddy">
 			<h4 class="indicCaddy">veuillez indiquez votre quantite</h4>
             <input type="text" class="inputCaddy quantCaddy" name="quantity" placeholder="Uniquement par 0.5kg SVP !"/>
-            <input type="submit" value="Supprimer ce produit" class="suppCaddy"/>
+            <input type="submit" value="valider" name="caddy"class="suppCaddy"/>
 		</form>
 
 	</div>
 </div>
-<?php require('controller/caddy.php'); ?>
+
 
