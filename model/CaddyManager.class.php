@@ -76,13 +76,14 @@ class CaddyManager
 		$query = "UPDATE caddy SET id_user='".$id_user."', 
 			full_price='".$full_price."' WHERE id_caddy='".$id_caddy."'";
 		mysqli_query($this->db, $query);
-		$query = "DELETE rel_caddy_product WHERE id_caddy='".$id_caddy."'";
+		$query = "DELETE FROM rel_caddy_product WHERE id_caddy='".$id_caddy."'";
 		mysqli_query($this->db, $query);
 		$count = 0;
 		$max = sizeof($products);
 		while ($count < $max)
 		{
 			$query = "INSERT INTO rel_caddy_product (id_caddy, id_product, quantity) VALUES('".$id_caddy."', '".$products[$count]->getIdProduct()."', '".$products[$count]->getQuantity()."')";
+			var_dump($query);
 			mysqli_query($this->db, $query);
 			$count++;
 		}

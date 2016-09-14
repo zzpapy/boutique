@@ -74,7 +74,7 @@ class Caddy
 	public function setUser(User $user)
 	{
 		$this->user = $user;
-		$this->id_user = $user->getId();
+		$this->id_user = $user->getIdUser();
 	}
 	public function setFullPrice($full_price)
 	{
