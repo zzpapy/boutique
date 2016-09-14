@@ -4,9 +4,11 @@
 
 	<div class="facture">
 		<h2>Récapitulatif :</h2>
-		<p>"Quantité de produit"</p>
-		<p>Prix T.T.C. (ou H.T.)</p>
-		<p>Adresse de facturation</p>
+		<p>Nombre de produits : <?=sizeof($caddy->getProducts())?></p>
+		<p>Poids global : <?=sizeof($caddy->getProducts())?> kg (en cours)</p>
+		<p>Prix T.T.C. : <?=$caddy->getFullPrice()?> €</p>
+		<p>Adresse de facturation : <?=$user->getAddress()?></p>
+		<p>Téléphone de contact : <?=$user->getPhone()?></p>
 		<div>
 			<button type="submit" name="paiment" value="paiment" class="submitButton button">Payer votre commande</button>
 		</div>
