@@ -26,18 +26,18 @@ class CategoryManager
 		$category = mysqli_fetch_object($res, "Category",[$this->db]);
 		return $category;
 	}
-	// public function findByName($name)
-	// {
-	// 	$name = $name;
-	// 	$query = "SELECT * FROM category WHERE title='".$name."'";
-	// 	$res = mysqli_query($this->db, $query);
-	// 	$category = mysqli_fetch_object($res, "Category",[$this->db]);
-	// 	return $category;
-	// }
-	// public function find($name)
-	// {
-	// 	return $this->findById($id);
-	// }
+	public function findByName($name)
+	{
+		$name = $name;
+		$query = "SELECT * FROM category WHERE title='".$name."'";
+		$res = mysqli_query($this->db, $query);
+		$category = mysqli_fetch_object($res, "Category",[$this->db]);
+		return $category;
+	}
+	public function find($name)
+	{
+		return $this->findById($id);
+	}
 
 	public function save(Category $category)// la variable $category DOIT etre de la classe category -> Type hinting
 	{
