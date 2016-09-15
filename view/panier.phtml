@@ -1,7 +1,7 @@
 <div class="panier">
 	<h2 class="h2">Votre "Panier" :</h2>
 	<?php require('controller/listpanier.php'); ?>
-	<form method="post" action="index.php?page=payment">
+	<form method="post" action="index.php?page=panier">
 		<div class="facture">
 			<h2>Récapitulatif :</h2>
 			<p>Nombre de produits : <?=sizeof($caddy->getProducts())?></p>
@@ -10,7 +10,7 @@
 			<p>Adresse de facturation : <?=$user->getAddress()?></p>
 			<p>Téléphone de contact : <?=$user->getPhone()?></p>
 			<input type="hidden" name="fullprice" value="<?=$caddy->getFullPrice()?>">
-			<input type="hidden" name="payment"value="payment">
+			<input type="hidden" name="caddy"value="caddy">
 
 
 				<label for="type">Type de carte</label>
