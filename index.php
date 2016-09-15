@@ -13,6 +13,7 @@
 		require('model/'.$className.'.class.php');
 	}
 
+
 	$access = ["recherche","panier", "home", "login_register_user", "login_register_pro", "404", "login_admin", "product", "caddy", "logout", "category", "pro_offer_summary"];
 	$accessUser = ["recherche","panier", "home", "404", "product", "caddy", "logout", "category", "panier", "payment", "pro_offer_summary"];
 	$accessAdmin = ["recherche","panier", "home", "admin", "product", "404", "logout", "category", "admin_stock_change", "pro", "pro_offer", "pro_history", "pro_offer_summary"];
@@ -52,9 +53,8 @@
 		"login_register_pro" => "producer",
 		"product" => "product", "admin"=>"product", "admin_stock_change"=>"product", "pro_offer"=>"product",
 		"category" => "category",
-		"caddy" => "caddy",
-		"comments" => "comments",
-		"payment"=>"payment"
+		"caddy" => "caddy","panier" => "caddy",
+		"comments" => "comments"
 	];
 
 	
