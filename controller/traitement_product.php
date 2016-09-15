@@ -56,7 +56,7 @@ if(isset($_POST["quantity_delivery"],$_POST["prod"]))
 			{
 				// $product->addStock($_POST["quantity_delivery"]);
 				$delivery = $DPManager->create($product, $producer, $_POST['quantity_delivery']);
-				header("Location: index.php?page=summary&id=".$delivery->getIdDeliveryProducer());
+				header("Location: index.php?page=pro_offer_summary&id=".$delivery->getIdDeliveryProducer());
 				exit;
 	var_dump($_POST);
 	die;
