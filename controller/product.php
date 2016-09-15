@@ -8,12 +8,12 @@
 		else
 		{
 			$error = 'Product not found';
-			require('controller/error.php');
+			require('controller/404.php');
 		}
 	}
 	else
 	{
 		$error = 'Product not found';
-		require('controller/error.php');
+		require('controller/404.php');
 	}
 ?>
