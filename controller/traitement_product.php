@@ -45,7 +45,7 @@ if(isset($_POST["quantity_delivery"],$_POST["prod"]))
 		$producerManager = new ProducerManager($db);
 		$DPManager = new DeliveryProducerManager($db);
 		$product = $productManager->findById($_POST["prod"]);
-		// $producer = $producerManager->findById($_SESSION['id']);
+		$producer = $producerManager->findById($_SESSION['id']);
 		if (!$product)
 			$error = 'Product not found';
 		else if (!$producer)
