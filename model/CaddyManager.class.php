@@ -2,11 +2,69 @@
 
 class CaddyManager
 {
+	// private $sumTable = array(array(0,1,2,3,4,5,6,7,8,9),array(0,2,4,6,8,1,3,5,7,9));
 	private $db;
 	public function __construct($db)
 	{
 		$this->db = $db;
 	}
+	// public function calculate($number){
+ //        $length = strlen($number);
+ //        $sum = 0;
+ //        $flip = 1;
+        
+ //        for($i=$length-1;$i>=0;--$i) $sum += $this->sumTable[$flip++ & 0x1][$number[$i]];
+        
+ //        $sum *= 9;
+        
+ //        return (int)substr($sum,-1,1);
+ //    }
+   	//Fonction algorithme de Luhn
+	public function isLuhnNum($num)
+	{
+		$length = strlen($num);
+		$tot = 0;
+		for($i=$length-1;$i>=0;$i--)
+		{
+			$digit = substr($num, $i, 1);
+			
+			if ((($length - $i) % 2) == 0)
+			{
+				$digit = $digit*2;
+				if ($digit>9)
+					$digit = $digit-9;
+			}
+			$tot += $digit;
+		}
+		return (($tot % 10) == 0);
+	}
+    // public function calculateOld($number){
+    //     $length = strlen($number);
+    //     $sum = 0;
+    //     $p = $length % 2;
+    //     for($i=$length-1;$i>=0;--$i){
+    //         $digit = $number[$i];
+    //         if($i % 2 != $p){
+    //             $digit *= 2;
+    //             if($digit > 9){
+    //                 $sum += $digit[0];
+    //                 $sum += $digit[1];
+    //             } else{
+    //                 $sum += $digit;
+    //             }
+    //         } else{
+    //             $sum += $digit;
+    //         }
+    //     }
+    //     $sum *= 9;
+    //     return (int)substr($sum,-1,1);
+    // }
+    // public function validate($number,$digit){
+    //     $calculated = $this->calculate($number);
+    //     if($digit == $calculated) return true;
+    //     else return false;
+    // }
+
 
 	public function findAll()
 	{
@@ -17,6 +75,7 @@ class CaddyManager
 			$list[] = $caddy;
 		return $list;
 	}
+
 	public function findCurrentByUser(User $user)
 	{
 		$query = "SELECT * FROM caddy WHERE id_user='".$user->getIdUser()."' AND status='1'";// /!\

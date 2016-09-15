@@ -1,4 +1,5 @@
 <?php
+var_dump($_POST);
 if (isset($_POST['add_caddy'], $_POST['id_product'], $_POST['quantity'], $_SESSION['id']))
 {
 	$productManager = new ProductManager($db);
@@ -28,4 +29,30 @@ if (isset($_POST['add_caddy'], $_POST['id_product'], $_POST['quantity'], $_SESSI
 		$error = $e->getMessage();
 	}
 }
+// var_dump($_GET["page"]);
+		if(isset($_POST["fullprice"],$_POST["type"]))
+		{
+		
+			$caddyManager= new CaddyManager($db);
+			// $caddy=$caddyManager -> calculate($num); 
+			// $caddy=$caddyManager -> calculateOld($num);
+			$res = $caddyManager -> isLuhnNum($_POST['num']);
+			var_dump($res, $_POST['num']);
+			// var_dump($res);
+			// die;
+			if($res==true)
+			{
+				header("Location: index.php?page=payment");
+				exit;
+			}
+			else
+			{
+				$error="carte non valide";
+				var_dump($error);
+			}
+
+			
+		}
+
+
  ?>

@@ -1,18 +1,29 @@
 <?php
-	if(isset($_GET["id"]))
+	if(isset($_GET["name"]))
 	{
 		$manager = new CategoryManager($db);
-		$products = $manager->findById($_GET["id"]);
+		$category = $manager->findByName($_GET["name"]);
+		if ($category)
+		{
+			$products = $category->getProducts();
+			$countP=0;
+			while ($countP<sizeof($products))
+			{
+				$product=$products[$countP];
+				require('view/bloc_home_product.phtml');
+				$countP++;
+			}
+		}
+		else
+		{
+			$error = 'Category not found';
+			require('controller/error.php');
+		}
 		// $product = $manager->getIdCategory();
 		
 		// var_dump($products);
 		// die;
-		
-		// header("Location: index.php?page=category");
-		// 	exit;
-
 	}
-	require('view/category.phtml');
 
 	// $deliveryManager= new DeliveryProducerManager($db);
 	// $delivery=$deliveryManager->findById($_GET["id"]);

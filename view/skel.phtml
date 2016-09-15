@@ -20,14 +20,17 @@
 		<script>
 		$('#in_recherche').keyup(function()
 		{
+			var search = $(this).val();
+			if (search == '')
+				return;
 			if ($('#list_recherche').length > 0)
 			{
-				var search = $(this).val();
 				$('#list_recherche').load('index.php?page=recherche&ajax&recherche='+search);
 			}
 			else
 				$('#in_recherche').parents('form').submit();
 		});
+		
 		</script>
 	</body>
 </html>
